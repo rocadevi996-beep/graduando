@@ -58,7 +58,6 @@
             padding: 0 1rem;
         }
 
-        /* Selector de Servicios (Pestañas) */
         .services-nav {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -137,7 +136,7 @@
             color: var(--text-dark);
         }
 
-        select, input[type="text"], input[type="date"], textarea {
+        select, input[type="text"], textarea {
             width: 100%;
             padding: 0.85rem;
             border: 2px solid #e2e8f0;
@@ -166,7 +165,7 @@
             border-radius: 8px;
             cursor: pointer;
             width: 100%;
-            transition: background-color 0.3s, transform 0.1s;
+            transition: background-color 0.3s;
         }
 
         .btn:hover {
@@ -240,7 +239,6 @@
     </header>
 
     <div class="container">
-        <!-- Menú de 4 Servicios -->
         <div class="services-nav">
             <div class="service-tab active" onclick="cambiarTab('tesis', this)">
                 <span>🎓</span>
@@ -316,7 +314,6 @@
                 <button class="btn" onclick="generarPropuesta()">Generar Sugerencia de Título y Referentes</button>
             </div>
 
-            <!-- Resultado Generado -->
             <div class="card" id="resultado-container">
                 <h2>2. Propuesta de Investigación Sugerida</h2>
                 <div class="propuesta-box" id="propuesta-contenido"></div>
@@ -352,7 +349,6 @@
                 <button class="btn-whatsapp" onclick="enviarWhatsAppDirecto('trabajos')">📲 Cotizar Trabajo por WhatsApp</button>
             </div>
         </div>
-
         <!-- PANEL 3: EJERCICIOS DE CIENCIAS BÁSICAS -->
         <div id="panel-ciencias" class="tab-panel">
             <div class="card">
@@ -386,35 +382,83 @@
         <div id="panel-tutorias" class="tab-panel">
             <div class="card">
                 <h2>💻 Tutorías y Clases Virtuales Personalizadas</h2>
+                
                 <div class="form-group">
-                    <label for="materia-tutoria">Materia o área de refuerzo:</label>
-                    <select id="materia-tutoria">
-                        <option value="Cálculo 1, 2 o 3">Cálculo 1, 2 o 3</option>
+                    <label for="materia-tutoria">1. Selecciona la materia o área de refuerzo:</label>
+                    <select id="materia-tutoria" onchange="actualizarTemasTutoria()">
+                        <option value="Cálculo Diferencial (Cálculo 1)">Cálculo Diferencial (Cálculo 1)</option>
+                        <option value="Cálculo Integral (Cálculo 2)">Cálculo Integral (Cálculo 2)</option>
+                        <option value="Cálculo Multivariado (Cálculo 3)">Cálculo Multivariado (Cálculo 3)</option>
                         <option value="Ecuaciones Diferenciales (EDO)">Ecuaciones Diferenciales (EDO)</option>
-                        <option value="Álgebra / Álgebra Lineal">Álgebra / Álgebra Lineal</option>
+                        <option value="Álgebra y Trigonometría">Álgebra y Trigonometría</option>
+                        <option value="Álgebra Lineal">Álgebra Lineal</option>
                         <option value="Metodología de la Investigación / Tesis">Metodología de la Investigación / Tesis</option>
                         <option value="Bioestadística / Análisis de Datos">Bioestadística / Análisis de Datos</option>
-                        <option value="Otra asignatura universitaria">Otra asignatura universitaria</option>
                     </select>
                 </div>
+
                 <div class="form-group">
-                    <label for="tema-tutoria">¿Qué temas quieres repasar o preparar?</label>
+                    <label for="tema-select-tutoria">2. Escoge el tema específico a repasar:</label>
+                    <select id="tema-select-tutoria">
+                        <option value="Funciones, Límites y Continuidad">Funciones, Límites y Continuidad</option>
+                        <option value="Reglas de Derivación y Regla de la Cadena">Reglas de Derivación y Regla de la Cadena</option>
+                        <option value="Optimización y Razones de Cambio">Optimización y Razones de Cambio</option>
+                        <option value="Gráficas y Análisis de Funciones">Gráficas y Análisis de Funciones</option>
+                        <option value="Otro tema (especificar abajo)">Otro tema (especificar abajo)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tema-tutoria">3. Detalle adicional o tema específico (Opcional):</label>
+                    <input type="text" id="tema-tutoria" placeholder="Ej. Preparación para parcial del viernes, taller específico...">
+                </div>
+
+                <div class="form-group">
+                    <label for="horario-tutoria">4. Disponibilidad horaria preferida:</label>
+                    <input type="text" id="horario-tutoria" placeholder="Ej. Hoy en la tarde, noches después de las 7 PM...">
+                </div>
+
+                <button class="btn-whatsapp" onclick="enviarWhatsAppDirecto('tutorias')">📲 Agendar Clase por WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <p>© 2026 GRADUANDO - Expertos en Investigación Académica y Asesoría Universitaria | Todos los derechos reservados.</p>
     </footer>
-
     <script>
         const WHATSAPP_NUMBER = "573104714499";
 
         function cambiarTab(tabId, element) {
-            document.querySelectorAll('.tab-panel').forEach(panel => {
-                panel.classList.remove('active');
-            });
-            document.querySelectorAll('.service-tab').forEach(tab => {
-                tab.classList.remove('active');
-            });
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.service-tab').forEach(t => t.classList.remove('active'));
             document.getElementById('panel-' + tabId).classList.add('active');
             element.classList.add('active');
+        }
+
+        const temasPorMateria = {
+            "Cálculo Diferencial (Cálculo 1)": ["Funciones, Límites y Continuidad", "Reglas de Derivación y Regla de la Cadena", "Optimización y Razones de Cambio", "Gráficas y Análisis de Funciones", "Otro tema (especificar abajo)"],
+            "Cálculo Integral (Cálculo 2)": ["Integrales Indefinidas y Sustitución", "Integración por Partes y Fracciones Parciales", "Áreas bajo la curva y Volúmenes de Revolución", "Series y Sucesiones", "Otro tema (especificar abajo)"],
+            "Cálculo Multivariado (Cálculo 3)": ["Derivadas Parciales y Gradiente", "Optimización con Multiplicadores de Lagrange", "Integrales Dobles y Triples", "Cálculo Vectorial", "Otro tema (especificar abajo)"],
+            "Ecuaciones Diferenciales (EDO)": ["EDO de Primer Orden (Separables, Lineales, Exactas)", "EDO de Orden Superior (Homogéneas y No Homogéneas)", "Transformada de Laplace", "Sistemas de Ecuaciones Diferenciales", "Otro tema (especificar abajo)"],
+            "Álgebra y Trigonometría": ["Factorización y Ecuaciones", "Funciones Exponenciales y Logarítmicas", "Identidades y Ecuaciones Trigonométricas", "Otro tema (especificar abajo)"],
+            "Álgebra Lineal": ["Sistemas de Ecuaciones y Matrices (Gauss-Jordan)", "Determinantes e Inversa de una Matriz", "Espacios Vectoriales y Subespacios", "Valores y Vectores Propios (Eigenvalores)", "Otro tema (especificar abajo)"],
+            "Metodología de la Investigación / Tesis": ["Planteamiento del Problema y Objetivos", "Marco Teórico y Estado del Arte", "Diseño Metodológico y Muestra", "Preparación para Sustentación", "Otro tema (especificar abajo)"],
+            "Bioestadística / Análisis de Datos": ["Estadística Descriptiva y Tablas", "Pruebas de Hipótesis (Chi-cuadrado, T-Student)", "Manejo de SPSS / Excel / R", "Otro tema (especificar abajo)"]
+        };
+
+        function actualizarTemasTutoria() {
+            const materia = document.getElementById('materia-tutoria').value;
+            const selectTema = document.getElementById('tema-select-tutoria');
+            const temas = temasPorMateria[materia] || ["Refuerzo general"];
+            
+            selectTema.innerHTML = "";
+            temas.forEach(t => {
+                const option = document.createElement("option");
+                option.value = t;
+                option.textContent = t;
+                selectTema.appendChild(option);
+            });
         }
 
         const referentesPorArea = {
@@ -522,7 +566,7 @@
                 const tipo = document.getElementById('tipo-trabajo').value;
                 const tema = document.getElementById('tema-trabajo').value.trim() || "No especificado";
                 const detalle = document.getElementById('detalle-trabajo').value.trim() || "Sin detalles adicionales";
-                mensajeWA = `Hola GRADUANDO 📝, necesito cotizar un trabajo académico:\n\n*Servicio:* ${tipo}\n*Tema/Materia:* ${tema}\n*Detalles:* ${detalle}`;
+                mensajeWA = `Hola GRADUANDO 📝, quiero cotizar un trabajo académico:\n\n*Servicio:* ${tipo}\n*Tema/Materia:* ${tema}\n*Detalles:* ${detalle}`;
             } else if (servicio === 'ciencias') {
                 const materia = document.getElementById('materia-ciencias').value;
                 const tema = document.getElementById('tema-ciencias').value.trim() || "No especificado";
@@ -530,9 +574,11 @@
                 mensajeWA = `Hola GRADUANDO 🧮, necesito ayuda con ejercicios de Ciencias Básicas:\n\n*Asignatura:* ${materia}\n*Temas:* ${tema}\n*Fecha de entrega:* ${fecha}`;
             } else if (servicio === 'tutorias') {
                 const materia = document.getElementById('materia-tutoria').value;
-                const tema = document.getElementById('tema-tutoria').value.trim() || "Refuerzo general";
+                const temaEscogido = document.getElementById('tema-select-tutoria').value;
+                const detalleExtra = document.getElementById('tema-tutoria').value.trim();
                 const horario = document.getElementById('horario-tutoria').value.trim() || "Flexible";
-                mensajeWA = `Hola GRADUANDO 💻, quiero agendar una tutoría virtual:\n\n*Materia:* ${materia}\n*Temas a repasar:* ${tema}\n*Horario preferido:* ${horario}`;
+                
+                mensajeWA = `Hola GRADUANDO 💻, quiero agendar una tutoría virtual:\n\n*Materia:* ${materia}\n*Tema seleccionado:* ${temaEscogido}${detalleExtra ? `\n*Detalle adicional:* ${detalleExtra}` : ''}\n*Horario preferido:* ${horario}`;
             }
 
             const urlWA = `https://wa.me{WHATSAPP_NUMBER}?text=${encodeURIComponent(mensajeWA)}`;
