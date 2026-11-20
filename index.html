@@ -3,285 +3,541 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GRADUANDO: Expertos en investigación académica. Encuentra tu tema ideal, estructura tu anteproyecto y recibe respaldo metodológico en todas las normas.">
-    <title>GRADUANDO | Expertos en Investigación Académica y Tesis</title>
+    <title>GRADUANDO | Expertos en Investigación y Asesoría Académica</title>
     <style>
-        :root { --primary: #0f4c81; --secondary: #00a896; --accent: #f4a261; --bg-light: #f8fafc; --text-dark: #1e293b; --white: #ffffff; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
-        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
-        header { background: linear-gradient(135deg, var(--primary), #163a5f); color: var(--white); padding: 2.5rem 1rem; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        .brand-title { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 0.8rem; flex-wrap: wrap; }
-        .brand-icon { width: 50px; height: 50px; fill: var(--accent); }
-        header h1 { font-size: 2.8rem; letter-spacing: 3px; font-weight: 800; }
-        header p { font-size: 1.08rem; opacity: 0.95; max-width: 760px; margin: 0 auto; line-height: 1.65; }
-        .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
-        .card { background: var(--white); border-radius: 12px; padding: 2rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); margin-bottom: 2rem; border-top: 5px solid var(--secondary); }
-        h2 { color: var(--primary); margin-bottom: 1.5rem; font-size: 1.5rem; }
-        .form-group { margin-bottom: 1.5rem; }
-        label { display: block; font-weight: 600; margin-bottom: 0.5rem; }
-        select, input[type="text"] { width: 100%; padding: 0.85rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; }
-        select:focus, input[type="text"]:focus { outline: none; border-color: var(--secondary); }
-        optgroup { font-weight: bold; color: var(--primary); }
-        .btn { background-color: var(--secondary); color: var(--white); border: none; padding: 1rem 2rem; font-size: 1.1rem; font-weight: bold; border-radius: 8px; cursor: pointer; width: 100%; transition: 0.3s; }
-        .btn:hover { background-color: #028090; }
-        #resultado-container { display: none; border-top: 5px solid var(--primary); }
-        .propuesta-box { background-color: #f1f5f9; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--secondary); margin-bottom: 1.5rem; }
-        .propuesta-box h3 { color: var(--primary); margin-bottom: 0.5rem; margin-top: 1.4rem; }
-        .propuesta-box h3:first-child { margin-top: 0; }
-        .propuesta-box ul, .propuesta-box ol { margin-left: 1.5rem; margin-top: 0.4rem; }
-        .propuesta-box li { margin-bottom: 0.6rem; }
-        .search-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 0.8rem; }
-        .search-badge { display: inline-block; background-color: var(--primary); color: white; text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; transition: 0.2s; }
-        .search-badge:hover { background-color: var(--secondary); }
-        .cta-box { background: linear-gradient(135deg, #fff8f1, #ffedd5); border: 1px solid var(--accent); padding: 1.5rem; border-radius: 8px; text-align: center; }
-        .btn-whatsapp { display: inline-block; background-color: #25D366; color: white; text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: bold; margin-top: 1rem; }
-        .btn-whatsapp:hover { background-color: #128C7E; }
-        footer { text-align: center; padding: 2rem; color: #64748b; font-size: 0.9rem; }
+        :root {
+            --primary: #0f4c81;
+            --secondary: #00a896;
+            --accent: #f4a261;
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), #163a5f);
+            color: var(--white);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.6rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        header p {
+            font-size: 1.05rem;
+            opacity: 0.95;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 920px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Selector de Servicios (Pestañas) */
+        .services-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 1.8rem;
+        }
+
+        .service-tab {
+            background: var(--white);
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--primary);
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .service-tab:hover {
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .service-tab.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+            box-shadow: 0 6px 12px rgba(15, 76, 129, 0.2);
+        }
+
+        .service-tab span {
+            display: block;
+            font-size: 1.5rem;
+            margin-bottom: 4px;
+        }
+
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            border-top: 5px solid var(--secondary);
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.45rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.3rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.45rem;
+            color: var(--text-dark);
+        }
+
+        select, input[type="text"], input[type="date"], textarea {
+            width: 100%;
+            padding: 0.85rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        select:focus, input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        optgroup {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .btn {
+            background-color: var(--secondary);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.05rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        .btn:hover {
+            background-color: #028090;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 0.9rem 1.8rem;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.05rem;
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+
+        #resultado-container {
+            display: none;
+            border-top: 5px solid var(--primary);
+        }
+
+        .propuesta-box {
+            background-color: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .propuesta-box h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .propuesta-item {
+            margin-bottom: 0.8rem;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #fff8f1, #ffedd5);
+            border: 1px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
+
     <header>
-        <div class="brand-title">
-            <svg class="brand-icon" viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
-            <h1>GRADUANDO</h1>
-            <svg class="brand-icon" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/></svg>
-        </div>
+        <h1>🎓 GRADUANDO 📚</h1>
         <p>¿Bloqueado con tu tesis? En GRADUANDO transformamos tus ideas en un proyecto de grado ganador. 🎓📚 Somos expertos en investigación académica. Encuentra tu tema ideal, estructura tu anteproyecto y recibe el respaldo metodológico que necesitas para graduarte sin estrés.</p>
     </header>
+
     <div class="container">
-        <div class="card">
-            <h2>1. Configura tu Perfil de Investigación</h2>
-
-            <div class="form-group">
-                <label for="carrera">Selecciona tu Programa / Carrera:</label>
-                <select id="carrera">
-                    <option value="">-- Elige tu carrera --</option>
-                    <optgroup label="🩺 Ciencias de la Salud">
-                        <option value="Medicina">Medicina</option>
-                        <option value="Enfermería">Enfermería</option>
-                        <option value="Instrumentación Quirúrgica">Instrumentación Quirúrgica</option>
-                        <option value="Fisioterapia">Fisioterapia</option>
-                        <option value="Bacteriología y Laboratorio Clínico">Bacteriología y Laboratorio Clínico</option>
-                        <option value="Odontología">Odontología</option>
-                        <option value="Nutrición y Dietética">Nutrición y Dietética</option>
-                        <option value="Fonoaudiología">Fonoaudiología</option>
-                        <option value="Terapia Respiratoria">Terapia Respiratoria</option>
-                        <option value="Regencia de Farmacia">Regencia de Farmacia</option>
-                        <option value="Psicología Clínica y de la Salud">Psicología Clínica y de la Salud</option>
-                        <option value="Seguridad y Salud en el Trabajo (SST)">Seguridad y Salud en el Trabajo (SST)</option>
-                    </optgroup>
-                    <optgroup label="⚙️ Ingenierías y Tecnología">
-                        <option value="Ingeniería Civil">Ingeniería Civil</option>
-                        <option value="Ingeniería de Sistemas / Software">Ingeniería de Sistemas / Software</option>
-                        <option value="Ingeniería Industrial">Ingeniería Industrial</option>
-                        <option value="Ingeniería Ambiental">Ingeniería Ambiental</option>
-                    </optgroup>
-                    <optgroup label="⚖️ Ciencias Sociales, Jurídicas y Administrativas">
-                        <option value="Derecho">Derecho</option>
-                        <option value="Administración de Empresas">Administración de Empresas</option>
-                        <option value="Contaduría Pública">Contaduría Pública</option>
-                        <option value="Trabajo Social">Trabajo Social</option>
-                        <option value="Educación / Licenciaturas">Educación / Licenciaturas</option>
-                    </optgroup>
-                </select>
+        <!-- Menú de 4 Servicios -->
+        <div class="services-nav">
+            <div class="service-tab active" onclick="cambiarTab('tesis', this)">
+                <span>🎓</span>
+                Tesis y Proyectos
             </div>
-
-            <div class="form-group">
-                <label for="enfoque">Escribe el tema, patología o variable principal:</label>
-                <input type="text" id="enfoque" placeholder="Ej. ACV, cirugía segura, diabetes, infección hospitalaria, rehabilitación, riesgo laboral...">
+            <div class="service-tab" onclick="cambiarTab('trabajos', this)">
+                <span>📝</span>
+                Ensayos y Normas
             </div>
-
-            <div class="form-group">
-                <label for="tipo-estudio">Enfoque metodológico preferido:</label>
-                <select id="tipo-estudio">
-                    <option value="Revisión Sistemática o de Literatura">Revisión Sistemática o de Literatura (Sin trabajo de campo)</option>
-                    <option value="Estudio Observacional Retrospectivo">Estudio Observacional / Análisis de Bases de Datos</option>
-                    <option value="Estudio Cuantitativo Descriptivo">Estudio Cuantitativo / Aplicación de Instrumentos</option>
-                    <option value="Estudio Cualitativo">Estudio Cualitativo / Análisis Fenomenológico</option>
-                </select>
+            <div class="service-tab" onclick="cambiarTab('ciencias', this)">
+                <span>🧮</span>
+                Ciencias Básicas
             </div>
-
-            <button type="button" class="btn" id="btn-generar">Generar Títulos Alineados y Referentes Científicos</button>
-        </div>
-
-        <div class="card" id="resultado-container">
-            <h2>2. Propuesta Metodológica Recomendada</h2>
-            <div id="contenido-propuesta"></div>
-
-            <div class="cta-box">
-                <h3>¿Necesitas desarrollar este proyecto completo bajo la normativa de tu universidad?</h3>
-                <p>Nuestro equipo de investigadores en <strong>GRADUANDO</strong> domina <strong>todas las normas de citación y estilo</strong> (APA, Vancouver, IEEE, ICONTEC, Chicago, Harvard y lineamientos institucionales) para entregarte tu anteproyecto o tesis lista para sustentar.</p>
-                <a href="https://wa.me" target="_blank" class="btn-whatsapp">
-                    📲 Hablar con un Asesor Experto por WhatsApp
-                </a>
+            <div class="service-tab" onclick="cambiarTab('tutorias', this)">
+                <span>💻</span>
+                Tutorías Virtuales
             </div>
         </div>
-    </div>
+        <!-- PANEL 1: PROYECTOS DE GRADO Y TESIS -->
+        <div id="panel-tesis" class="tab-panel active">
+            <div class="card">
+                <h2>1. Configura tu Perfil de Investigación</h2>
+                
+                <div class="form-group">
+                    <label for="carrera">Selecciona tu Programa / Carrera:</label>
+                    <select id="carrera">
+                        <option value="">-- Elige tu carrera --</option>
+                        <optgroup label="🩺 Ciencias de la Salud">
+                            <option value="Medicina">Medicina</option>
+                            <option value="Enfermería">Enfermería</option>
+                            <option value="Instrumentación Quirúrgica">Instrumentación Quirúrgica</option>
+                            <option value="Fisioterapia">Fisioterapia</option>
+                            <option value="Bacteriología y Laboratorio Clínico">Bacteriología y Laboratorio Clínico</option>
+                            <option value="Odontología">Odontología</option>
+                            <option value="Nutrición y Dietética">Nutrición y Dietética</option>
+                            <option value="Fonoaudiología">Fonoaudiología</option>
+                            <option value="Terapia Respiratoria">Terapia Respiratoria</option>
+                            <option value="Regencia de Farmacia">Regencia de Farmacia</option>
+                            <option value="Psicología Clínica y de la Salud">Psicología Clínica y de la Salud</option>
+                            <option value="Seguridad y Salud en el Trabajo (SST)">Seguridad y Salud en el Trabajo (SST)</option>
+                        </optgroup>
+                        <optgroup label="⚙️ Ingenierías y Tecnología">
+                            <option value="Ingeniería Civil">Ingeniería Civil</option>
+                            <option value="Ingeniería de Sistemas / Software">Ingeniería de Sistemas / Software</option>
+                            <option value="Ingeniería Industrial">Ingeniería Industrial</option>
+                            <option value="Ingeniería Ambiental">Ingeniería Ambiental</option>
+                        </optgroup>
+                        <optgroup label="⚖️ Ciencias Sociales, Jurídicas y Administrativas">
+                            <option value="Derecho">Derecho</option>
+                            <option value="Administración de Empresas">Administración de Empresas</option>
+                            <option value="Contaduría Pública">Contaduría Pública</option>
+                            <option value="Trabajo Social">Trabajo Social</option>
+                            <option value="Educación / Licenciaturas">Educación / Licenciaturas</option>
+                        </optgroup>
+                    </select>
+                </div>
 
+                <div class="form-group">
+                    <label for="enfoque">Escribe el tema, patología o variable principal:</label>
+                    <input type="text" id="enfoque" placeholder="Ej. ACV, cirugía segura, diabetes, infección hospitalaria, rehabilitación, riesgo laboral...">
+                </div>
+
+                <div class="form-group">
+                    <label for="tipo-estudio">Enfoque metodológico preferido:</label>
+                    <select id="tipo-estudio">
+                        <option value="Revisión Sistemática / Literatura">Revisión Sistemática o de Literatura (Sin trabajo de campo)</option>
+                        <option value="Estudio Observacional / Descriptivo">Estudio Observacional / Análisis de Bases de Datos</option>
+                        <option value="Estudio Cuantitativo / Correlacional">Estudio Cuantitativo / Encuestas</option>
+                        <option value="Estudio Cualitativo">Estudio Cualitativo / Fenomenológico</option>
+                    </select>
+                </div>
+
+                <button class="btn" onclick="generarPropuesta()">Generar Sugerencia de Título y Referentes</button>
+            </div>
+
+            <!-- Resultado Generado -->
+            <div class="card" id="resultado-container">
+                <h2>2. Propuesta de Investigación Sugerida</h2>
+                <div class="propuesta-box" id="propuesta-contenido"></div>
+                <div class="cta-box">
+                    <p><strong>¿Te gustó esta propuesta o necesitas que redactemos el planteamiento del problema, marco teórico y metodología?</strong></p>
+                    <a id="btn-wa-tesis" href="#" target="_blank" class="btn-whatsapp">📲 Solicitar Asesoría por WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANEL 2: ENSAYOS, TRABAJOS CORTOS Y NORMAS -->
+        <div id="panel-trabajos" class="tab-panel">
+            <div class="card">
+                <h2>📝 Ensayos, Trabajos Académicos y Aplicación de Normas</h2>
+                <div class="form-group">
+                    <label for="tipo-trabajo">¿Qué tipo de trabajo necesitas?</label>
+                    <select id="tipo-trabajo">
+                        <option value="Ensayo Argumentativo / Crítico">Ensayo Argumentativo / Crítico</option>
+                        <option value="Corrección y Ajuste de Tesis">Corrección y Ajuste de Tesis / Anteproyecto</option>
+                        <option value="Aplicación de Normas (APA 7, IEEE, Vancouver, Icontec)">Aplicación de Normas (APA 7, IEEE, Vancouver, Icontec)</option>
+                        <option value="Resúmenes, Relatorías o Artículos">Resúmenes, Relatorías o Artículos</option>
+                        <option value="Diapositivas y Sustentación">Presentación en Diapositivas para Sustentación</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tema-trabajo">Materia o tema del trabajo:</label>
+                    <input type="text" id="tema-trabajo" placeholder="Ej. Ética médica, normas APA 7 a tesis de 60 páginas, ensayo sobre economía...">
+                </div>
+                <div class="form-group">
+                    <label for="detalle-trabajo">Detalles adicionales (extensión, normas, fecha de entrega):</label>
+                    <textarea id="detalle-trabajo" rows="3" placeholder="Indica número de páginas, norma exigida o fecha límite..."></textarea>
+                </div>
+                <button class="btn-whatsapp" onclick="enviarWhatsAppDirecto('trabajos')">📲 Cotizar Trabajo por WhatsApp</button>
+            </div>
+        </div>
+
+        <!-- PANEL 3: EJERCICIOS DE CIENCIAS BÁSICAS -->
+        <div id="panel-ciencias" class="tab-panel">
+            <div class="card">
+                <h2>🧮 Resolución de Ejercicios y Talleres de Ciencias Básicas</h2>
+                <div class="form-group">
+                    <label for="materia-ciencias">Selecciona la asignatura:</label>
+                    <select id="materia-ciencias">
+                        <option value="Cálculo Diferencial (Cálculo 1)">Cálculo Diferencial (Cálculo 1)</option>
+                        <option value="Cálculo Integral (Cálculo 2)">Cálculo Integral (Cálculo 2)</option>
+                        <option value="Cálculo Multivariado / Vectorial (Cálculo 3)">Cálculo Multivariado / Vectorial (Cálculo 3)</option>
+                        <option value="Ecuaciones Diferenciales Ordinarias (EDO)">Ecuaciones Diferenciales Ordinarias (EDO)</option>
+                        <option value="Álgebra Básica / Trigonometría">Álgebra Básica / Trigonometría</option>
+                        <option value="Álgebra Lineal">Álgebra Lineal</option>
+                        <option value="Estadística Descriptiva / Inferencial">Estadística Descriptiva / Inferencial</option>
+                        <option value="Física / Química General">Física / Química General</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tema-ciencias">Temas específicos del taller o parcial:</label>
+                    <input type="text" id="tema-ciencias" placeholder="Ej. Límites, derivadas, integrales por partes, matrices, transformada de Laplace...">
+                </div>
+                <div class="form-group">
+                    <label for="fecha-ciencias">Fecha y hora de entrega:</label>
+                    <input type="text" id="fecha-ciencias" placeholder="Ej. Para hoy a las 6:00 PM / Mañana...">
+                </div>
+                <button class="btn-whatsapp" onclick="enviarWhatsAppDirecto('ciencias')">📲 Enviar Taller por WhatsApp</button>
+            </div>
+        </div>
+
+        <!-- PANEL 4: TUTORÍAS Y CLASES VIRTUALES -->
+        <div id="panel-tutorias" class="tab-panel">
+            <div class="card">
+                <h2>💻 Tutorías y Clases Virtuales Personalizadas</h2>
+                <div class="form-group">
+                    <label for="materia-tutoria">Materia o área de refuerzo:</label>
+                    <select id="materia-tutoria">
+                        <option value="Cálculo 1, 2 o 3">Cálculo 1, 2 o 3</option>
+                        <option value="Ecuaciones Diferenciales (EDO)">Ecuaciones Diferenciales (EDO)</option>
+                        <option value="Álgebra / Álgebra Lineal">Álgebra / Álgebra Lineal</option>
+                        <option value="Metodología de la Investigación / Tesis">Metodología de la Investigación / Tesis</option>
+                        <option value="Bioestadística / Análisis de Datos">Bioestadística / Análisis de Datos</option>
+                        <option value="Otra asignatura universitaria">Otra asignatura universitaria</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tema-tutoria">¿Qué temas quieres repasar o preparar?</label>
     <footer>
-        <p>© 2026 GRADUANDO - Firma Especializada en Asesoría Académica y Metodología de Investigación.</p>
+        <p>© 2026 GRADUANDO - Expertos en Investigación Académica y Asesoría Universitaria | Todos los derechos reservados.</p>
     </footer>
+
     <script>
-        const bancoTematico = {
-            "acv": {
-                subtemas: [
-                    "Accidente Cerebrovascular (ACV) isquémico agudo y ventana terapéutica trombolítica",
-                    "Mortalidad intrahospitalaria y factores pronósticos asociados al ACV",
-                    "Secuelas neurológicas y rehabilitación funcional temprana en pacientes post-ACV"
-                ],
-                autores: [
-                    "<strong>Powers, W. J. et al. (AHA/ASA Guidelines):</strong> Guías clínicas internacionales de la American Heart Association para el manejo temprano del ACV isquémico agudo.",
-                    "<strong>Feigin, V. L. et al. (Global Burden of Disease - The Lancet Neurology):</strong> Referente mundial en epidemiología, incidencia y mortalidad por enfermedad cerebrovascular.",
-                    "<strong>Ministerio de Salud y Protección Social de Colombia (GPC - ACV):</strong> Guía de Práctica Clínica nacional para diagnóstico, tratamiento y rehabilitación del ataque cerebrovascular."
-                ]
+        const WHATSAPP_NUMBER = "573104714499";
+
+        function cambiarTab(tabId, element) {
+            document.querySelectorAll('.tab-panel').forEach(panel => {
+                panel.classList.remove('active');
+            });
+            document.querySelectorAll('.service-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.getElementById('panel-' + tabId).classList.add('active');
+            element.classList.add('active');
+        }
+
+        const referentesPorArea = {
+            "Medicina": {
+                autores: "Hernández-Sampieri et al. (Metodología), Argimon Pallàs & Jiménez Villa (Investigación Clínica), OMS.",
+                referencia: "Argimon Pallàs, J. M., & Jiménez Villa, J. (2019). Métodos de investigación clínica y epidemiológica (5.ª ed.). Elsevier."
             },
-            "cirugia": {
-                subtemas: [
-                    "Adherencia a la Lista de Verificación de Cirugía Segura y prevención de eventos adversos",
-                    "Factores de riesgo asociados a la Infección del Sitio Operatorio (ISO) en procedimientos quirúrgicos",
-                    "Seguridad del paciente en quirófano: protocolos de conteo de instrumental y control de esterilización"
-                ],
-                autores: [
-                    "<strong>Haynes, A. B. & Gawande, A. A. (New England Journal of Medicine):</strong> Estudio fundamental sobre el impacto de la Lista de Verificación de la Seguridad de la Cirugía de la OMS.",
-                    "<strong>Association of periOperative Registered Nurses (AORN):</strong> Estándares basados en la evidencia para técnica aséptica y seguridad perioperatoria.",
-                    "<strong>Organización Mundial de la Salud (OMS):</strong> Directrices globales para la prevención de la infección del sitio quirúrgico."
-                ]
+            "Enfermería": {
+                autores: "Nola Pender (Promoción de la Salud), Dorothea Orem (Autocuidado), Polit & Beck (Investigación en Enfermería).",
+                referencia: "Polit, D. F., & Beck, C. T. (2018). Investigación en enfermería: Fundamentos para el uso de la evidencia (9.ª ed.). Wolters Kluwer."
             },
-            "diabetes": {
-                subtemas: [
-                    "Control glucémico y factores asociados a complicaciones microvasculares en Diabetes Mellitus tipo 2",
-                    "Adherencia al tratamiento farmacológico y autocuidado en pacientes diabéticos",
-                    "Prevención y abordaje integral del pie diabético en atención primaria en salud"
-                ],
-                autores: [
-                    "<strong>American Diabetes Association (ADA - Standards of Care in Diabetes):</strong> Consenso anual internacional de diagnóstico, metas glucémicas y manejo clínico.",
-                    "<strong>International Diabetes Federation (IDF Diabetes Atlas):</strong> Referente epidemiológico global sobre prevalencia y mortalidad por diabetes.",
-                    "<strong>Dorothea Orem (Teoría del Déficit de Autocuidado):</strong> Marco teórico clave para evaluar la agencia de autocuidado en enfermedades crónicas."
-                ]
+            "Instrumentación Quirúrgica": {
+                autores: "Atul Gawande (Seguridad Quirúrgica - OMS), Fuller (Instrumentación Quirúrgica), AORN.",
+                referencia: "Fuller, J. K. (2020). Instrumentación quirúrgica: Principios y práctica (7.ª ed.). Editorial Médica Panamericana."
+            },
+            "Fisioterapia": {
+                autores: "Kisner & Colby (Ejercicio Terapéutico), Kapandji (Fisiología Articular), World Physiotherapy.",
+                referencia: "Kisner, C., & Colby, L. A. (2018). Ejercicio terapéutico: Fundamentos y técnicas (7.ª ed.). Paidotribo."
+            },
+            "Psicología Clínica y de la Salud": {
+                autores: "Aaron Beck (Terapia Cognitiva), Albert Bandura (Autoeficacia), Asociación Americana de Psicología (APA).",
+                referencia: "American Psychological Association. (2020). Publication manual of the American Psychological Association (7th ed.)."
+            },
+            "Seguridad y Salud en el Trabajo (SST)": {
+                autores: "OIT (Organización Internacional del Trabajo), Heinrich (Prevención de Accidentes), Decreto 1072 de 2015.",
+                referencia: "Organización Internacional del Trabajo [OIT]. (2021). Seguridad y salud en el trabajo: Guía metodológica para la gestión del riesgo."
+            },
+            "Ingeniería": {
+                autores: "Roberto Hernández-Sampieri, Pressman (Ingeniería), Norma Técnica Colombiana / IEEE.",
+                referencia: "Hernández-Sampieri, R., & Mendoza, C. P. (2018). Metodología de la investigación: Las rutas cuantitativa, cualitativa y mixta. McGraw-Hill."
+            },
+            "Derecho": {
+                autores: "Robert Alexy (Teoría de los Derechos), Luigi Ferrajoli (Garantismo), Corte Constitucional de Colombia.",
+                referencia: "Alexy, R. (2019). Teoría de los derechos fundamentales (2.ª ed.). Centro de Estudios Políticos y Constitucionales."
+            },
+            "Administración y Contaduría": {
+                autores: "Michael Porter (Estrategia), Idalberto Chiavenato (Gestión), NIIF.",
+                referencia: "Chiavenato, I. (2019). Introducción a la teoría general de la administración (10.ª ed.). McGraw-Hill."
+            },
+            "General": {
+                autores: "Roberto Hernández-Sampieri, Carlos Méndez Álvarez, César Augusto Bernal (Metodología de la Investigación).",
+                referencia: "Bernal, C. A. (2016). Metodología de la investigación: Administración, economía, humanidades y ciencias sociales (4.ª ed.). Pearson."
             }
         };
-
-        const referentesGenerales = {
-            "Medicina": [
-                "<strong>Guyatt, G. & Sackett, D. (Evidence-Based Medicine):</strong> Fundamentos metodológicos para la evaluación crítica de la evidencia clínica.",
-                "<strong>Organización Mundial de la Salud (OMS):</strong> Informes epidemiológicos globales y guías de práctica clínica.",
-                "<strong>Ministerio de Salud y Protección Social (Colombia):</strong> Guías de Práctica Clínica (GPC) y protocolos nacionales de vigilancia en salud pública."
-            ],
-            "Enfermería": [
-                "<strong>NANDA International, NOC y NIC:</strong> Taxonomía estandarizada para diagnósticos, resultados e intervenciones de enfermería.",
-                "<strong>Dorothea Orem / Callista Roy:</strong> Modelos conceptuales de autocuidado y adaptación aplicados a la práctica clínica.",
-                "<strong>Organización Panamericana de la Salud (OPS):</strong> Lineamientos regionales sobre seguridad del paciente y calidad del cuidado."
-            ],
-            "Instrumentación Quirúrgica": [
-                "<strong>OMS - Alianza Mundial para la Seguridad del Paciente:</strong> Manual de aplicación de la Lista de Verificación de la Seguridad de la Cirugía.",
-                "<strong>AORN (Association of periOperative Registered Nurses):</strong> Guías de práctica recomendada para el entorno quirúrgico.",
-                "<strong>Fuller, J. R. (Instrumentación Quirúrgica: Principios y Práctica):</strong> Referente técnico y metodológico del quehacer en quirófano."
-            ],
-            "Fisioterapia": [
-                "<strong>OMS (CIF - Clasificación Internacional del Funcionamiento):</strong> Marco estandarizado para medir discapacidad y recuperación funcional.",
-                "<strong>World Physiotherapy:</strong> Directrices internacionales basadas en la evidencia para intervención terapéutica.",
-                "<strong>Kisner, C. & Colby, L. A. (Ejercicio Terapéutico):</strong> Referente clínico en prescripción del movimiento y rehabilitación."
-            ],
-            "General": [
-                "<strong>Hernández-Sampieri, R. & Mendoza, C. (Metodología de la Investigación):</strong> Referente estándar para diseños cuantitativos, cualitativos y mixtos.",
-                "<strong>PRISMA Statement (Page, M. J. et al.):</strong> Directrices internacionales para la elaboración rigurosa de revisiones sistemáticas.",
-                "<strong>Bases de datos indexadas (PubMed, Scopus, SciELO):</strong> Repositorios científicos de alta evidencia para el estado del arte."
-            ]
-        };
-        document.getElementById('btn-generar').addEventListener('click', function() {
+        function generarPropuesta() {
             const carrera = document.getElementById('carrera').value;
-            const temaRaw = document.getElementById('enfoque').value.trim();
+            const enfoqueInput = document.getElementById('enfoque').value.trim();
             const tipoEstudio = document.getElementById('tipo-estudio').value;
 
             if (!carrera) {
-                alert("Por favor, selecciona tu programa o carrera.");
-                return;
-            }
-            if (!temaRaw) {
-                alert("Por favor, escribe el tema, patología o variable principal que deseas investigar.");
+                alert("Por favor, selecciona tu Programa o Carrera primero.");
                 return;
             }
 
-            const temaLower = temaRaw.toLowerCase();
-            let subtemas = [];
-            let autoresSeleccionados = [];
+            const tema = enfoqueInput !== "" ? enfoqueInput : "factores asociados y calidad de atención en " + carrera;
+            let tituloSugerido = "";
+            let objetivoGeneral = "";
 
-            if (temaLower.includes("acv") || temaLower.includes("cerebrovascular") || temaLower.includes("ictus")) {
-                subtemas = bancoTematico["acv"].subtemas;
-                autoresSeleccionados = bancoTematico["acv"].autores;
-            } else if (temaLower.includes("cirug") || temaLower.includes("quirurg") || temaLower.includes("quirofano") || temaLower.includes("operatorio")) {
-                subtemas = bancoTematico["cirugia"].subtemas;
-                autoresSeleccionados = bancoTematico["cirugia"].autores;
-            } else if (temaLower.includes("diabet") || temaLower.includes("glucem") || temaLower.includes("insulina")) {
-                subtemas = bancoTematico["diabetes"].subtemas;
-                autoresSeleccionados = bancoTematico["diabetes"].autores;
+            if (tipoEstudio.includes("Revisión")) {
+                tituloSugerido = `Evidencia científica sobre ${tema} en el ámbito de ${carrera}: Una revisión sistemática de la literatura (2020-2026)`;
+                objetivoGeneral = `Analizar la evidencia científica disponible en bases de datos indexadas sobre ${tema} desde la perspectiva de ${carrera}.`;
+            } else if (tipoEstudio.includes("Observacional")) {
+                tituloSugerido = `Caracterización clínica y epidemiológica de ${tema} en pacientes atendidos en instituciones de salud: Un estudio observacional`;
+                objetivoGeneral = `Determinar las características principales y factores asociados a ${tema} mediante el análisis de registros institucionales.`;
+            } else if (tipoEstudio.includes("Cuantitativo")) {
+                tituloSugerido = `Relación entre los factores determinantes y el impacto de ${tema} en el área de ${carrera}: Estudio cuantitativo correlacional`;
+                objetivoGeneral = `Evaluar la relación estadística entre las variables asociadas a ${tema} en la población de estudio seleccionada.`;
             } else {
-                subtemas = [
-                    `Factores de riesgo, prevalencia y comportamiento epidemiológico de ${temaRaw}`,
-                    `Estrategias de diagnóstico, manejo y prevención de complicaciones asociadas a ${temaRaw}`,
-                    `Impacto clínico, calidad de vida y desenlaces funcionales en pacientes o población con ${temaRaw}`
-                ];
-                autoresSeleccionados = referentesGenerales[carrera] || referentesGenerales["General"];
+                tituloSugerido = `Percepciones, experiencias y abordaje profesional frente a ${tema} desde la práctica de ${carrera}: Un estudio cualitativo`;
+                objetivoGeneral = `Comprender las experiencias y significados construidos en torno a ${tema} desde la perspectiva de los actores involucrados.`;
             }
 
-            const t1 = `${subtemas[0]} desde el abordaje de ${carrera}: ${tipoEstudio} (2021-2026).`;
-            const t2 = `${subtemas[1]}: evidencia científica y retos actuales en ${carrera}.`;
-            const t3 = `${subtemas[2]} en el contexto institucional colombiano: un análisis desde ${carrera}.`;
-
-            const pregunta = `¿Cuál es la evidencia científica y los factores determinantes asociados a ${subtemas[0].toLowerCase()} desde la perspectiva de ${carrera}?`;
-            const objetivoGeneral = `Analizar los factores asociados y las estrategias de abordaje en torno a ${subtemas[0].toLowerCase()} dentro del campo de ${carrera} mediante un ${tipoEstudio.toLowerCase()}.`;
-
-            const esp1 = `Identificar la incidencia, caracterización y variables principales relacionadas con ${temaRaw} en la literatura científica actualizada.`;
-            const esp2 = `Determinar los factores clínicos, metodológicos o contextuales que inciden en la evolución y manejo de ${temaRaw}.`;
-            const esp3 = `Formular lineamientos basados en la evidencia para fortalecer la intervención de ${carrera} frente a ${temaRaw}.`;
-
-            const queryCodificada = encodeURIComponent(temaRaw + " " + carrera);
-            const queryTemaSolo = encodeURIComponent(temaRaw);
-
-            let htmlAutores = "";
-            for (let i = 0; i < autoresSeleccionados.length; i++) {
-                htmlAutores += "<li>" + autoresSeleccionados[i] + "</li>";
+            let refData = referentesPorArea["General"];
+            if (referentesPorArea[carrera]) {
+                refData = referentesPorArea[carrera];
+            } else if (carrera.includes("Ingeniería")) {
+                refData = referentesPorArea["Ingeniería"];
+            } else if (carrera.includes("Administración") || carrera.includes("Contaduría")) {
+                refData = referentesPorArea["Administración y Contaduría"];
             }
 
-            document.getElementById('contenido-propuesta').innerHTML = `
-                <div class="propuesta-box">
-                    <h3>📌 3 Opciones de Títulos Alineados con "${temaRaw}"</h3>
-                    <ol>
-                        <li><strong>${t1}</strong></li>
-                        <li><strong>${t2}</strong></li>
-                        <li><strong>${t3}</strong></li>
-                    </ol>
-
-                    <h3>❓ Pregunta Problema (Basada en la Opción 1)</h3>
-                    <p>${pregunta}</p>
-
-                    <h3>🎯 Objetivo General</h3>
-                    <p>${objetivoGeneral}</p>
-
-                    <h3>📋 Objetivos Específicos Sugeridos</h3>
-                    <ul>
-                        <li>${esp1}</li>
-                        <li>${esp2}</li>
-                        <li>${esp3}</li>
-                    </ul>
-
-                    <h3>📚 Referentes Teóricos y Autores Precisos del Área</h3>
-                    <ul>${htmlAutores}</ul>
-
-                    <h3>🔎 Explorar Artículos y Autores Reales en Bases de Datos sobre "${temaRaw}"</h3>
-                    <p>Consulta literatura científica indexada directamente sobre tu tema en tiempo real:</p>
-                    <div class="search-links">
-                        <a href="https://google.es{queryCodificada}" target="_blank" class="search-badge">🎓 Buscar en Google Académico</a>
-                        <a href="https://nih.gov{queryTemaSolo}" target="_blank" class="search-badge">🩺 Buscar en PubMed (Salud)</a>
-                        <a href="https://scielo.org{queryCodificada}&lang=es" target="_blank" class="search-badge">🌎 Buscar en SciELO</a>
-                    </div>
-                </div>
+            const contenidoHTML = `
+                <h3>📌 Título Sugerido:</h3>
+                <p class="propuesta-item"><strong>"${tituloSugerido}"</strong></p>
+                <div class="propuesta-item"><strong>🎯 Objetivo General:</strong> ${objetivoGeneral}</div>
+                <div class="propuesta-item"><strong>🔬 Diseño Metodológico:</strong> ${tipoEstudio} | <strong>Programa:</strong> ${carrera}</div>
+                <div class="propuesta-item"><strong>📚 Autores y Teóricos Clave Sugeridos:</strong> ${refData.autores}</div>
+                <div class="propuesta-item"><strong>📖 Referencia Base (Norma APA 7):</strong> <em>${refData.referencia}</em></div>
             `;
 
-            const contenedor = document.getElementById('resultado-container');
-            contenedor.style.display = 'block';
-            contenedor.scrollIntoView({ behavior: 'smooth' });
-        });
+            document.getElementById('propuesta-contenido').innerHTML = contenidoHTML;
+            document.getElementById('resultado-container').style.display = 'block';
+
+            const mensajeWA = `Hola GRADUANDO 🎓📚, me interesa recibir asesoría para mi proyecto de grado.\n\n*Carrera:* ${carrera}\n*Enfoque:* ${tipoEstudio}\n*Título generado:* "${tituloSugerido}"`;
+            const urlWA = `https://wa.me{WHATSAPP_NUMBER}?text=${encodeURIComponent(mensajeWA)}`;
+            
+            document.getElementById('btn-wa-tesis').href = urlWA;
+            document.getElementById('resultado-container').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function enviarWhatsAppDirecto(servicio) {
+            let mensajeWA = "";
+
+            if (servicio === 'trabajos') {
+                const tipo = document.getElementById('tipo-trabajo').value;
+                const tema = document.getElementById('tema-trabajo').value.trim() || "No especificado";
+                const detalle = document.getElementById('detalle-trabajo').value.trim() || "Sin detalles adicionales";
+                mensajeWA = `Hola GRADUANDO 📝, necesito cotizar un trabajo académico:\n\n*Servicio:* ${tipo}\n*Tema/Materia:* ${tema}\n*Detalles:* ${detalle}`;
+            } else if (servicio === 'ciencias') {
+                const materia = document.getElementById('materia-ciencias').value;
+                const tema = document.getElementById('tema-ciencias').value.trim() || "No especificado";
+                const fecha = document.getElementById('fecha-ciencias').value.trim() || "Por definir";
+                mensajeWA = `Hola GRADUANDO 🧮, necesito ayuda con ejercicios de Ciencias Básicas:\n\n*Asignatura:* ${materia}\n*Temas:* ${tema}\n*Fecha de entrega:* ${fecha}`;
+            } else if (servicio === 'tutorias') {
+                const materia = document.getElementById('materia-tutoria').value;
+                const tema = document.getElementById('tema-tutoria').value.trim() || "Refuerzo general";
+                const horario = document.getElementById('horario-tutoria').value.trim() || "Flexible";
+                mensajeWA = `Hola GRADUANDO 💻, quiero agendar una tutoría virtual:\n\n*Materia:* ${materia}\n*Temas a repasar:* ${tema}\n*Horario preferido:* ${horario}`;
+            }
+
+            const urlWA = `https://wa.me{WHATSAPP_NUMBER}?text=${encodeURIComponent(mensajeWA)}`;
+            window.open(urlWA, '_blank');
+        }
     </script>
 </body>
 </html>
