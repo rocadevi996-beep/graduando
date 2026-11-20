@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GRADUANDO: Generador con IA de temas de tesis, objetivos, planteamiento y referentes reales en Ciencias de la Salud y otras áreas.">
-    <title>GRADUANDO | Generador IA de Anteproyectos de Tesis</title>
+    <meta name="description" content="GRADUANDO: Expertos en investigación académica. Sugerencias de títulos, objetivos y referentes reales para trabajos de grado.">
+    <title>GRADUANDO | Expertos en Investigación Académica y Tesis</title>
     <style>
         :root { --primary: #0f4c81; --secondary: #00a896; --accent: #f4a261; --bg-light: #f8fafc; --text-dark: #1e293b; --white: #ffffff; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
@@ -13,26 +13,23 @@
         .brand-title { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 0.6rem; flex-wrap: wrap; }
         .brand-icon { width: 50px; height: 50px; fill: var(--accent); }
         header h1 { font-size: 2.8rem; letter-spacing: 3px; font-weight: 800; }
-        header p { font-size: 1.1rem; opacity: 0.92; max-width: 650px; margin: 0 auto; }
+        header p { font-size: 1.1rem; opacity: 0.92; max-width: 680px; margin: 0 auto; }
         .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
         .card { background: var(--white); border-radius: 12px; padding: 2rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); margin-bottom: 2rem; border-top: 5px solid var(--secondary); }
         h2 { color: var(--primary); margin-bottom: 1.5rem; font-size: 1.5rem; }
         .form-group { margin-bottom: 1.5rem; }
         label { display: block; font-weight: 600; margin-bottom: 0.5rem; }
-        select, input[type="text"], input[type="password"] { width: 100%; padding: 0.85rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; }
-        select:focus, input:focus { outline: none; border-color: var(--secondary); }
+        select, input[type="text"] { width: 100%; padding: 0.85rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; }
+        select:focus, input[type="text"]:focus { outline: none; border-color: var(--secondary); }
         optgroup { font-weight: bold; color: var(--primary); }
-        .api-box { background-color: #eff6ff; border: 1px dashed #3b82f6; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; }
-        .api-box small { display: block; color: #475569; margin-top: 0.4rem; }
         .btn { background-color: var(--secondary); color: var(--white); border: none; padding: 1rem 2rem; font-size: 1.1rem; font-weight: bold; border-radius: 8px; cursor: pointer; width: 100%; transition: 0.3s; }
         .btn:hover { background-color: #028090; }
-        .btn:disabled { background-color: #94a3b8; cursor: not-allowed; }
         #resultado-container { display: none; border-top: 5px solid var(--primary); }
         .propuesta-box { background-color: #f1f5f9; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--secondary); margin-bottom: 1.5rem; }
-        .propuesta-box h3 { color: var(--primary); margin-bottom: 0.4rem; margin-top: 1.2rem; }
+        .propuesta-box h3 { color: var(--primary); margin-bottom: 0.5rem; margin-top: 1.3rem; }
         .propuesta-box h3:first-child { margin-top: 0; }
-        .propuesta-box ul { margin-left: 1.5rem; margin-top: 0.4rem; }
-        .propuesta-box li { margin-bottom: 0.4rem; }
+        .propuesta-box ul, .propuesta-box ol { margin-left: 1.5rem; margin-top: 0.4rem; }
+        .propuesta-box li { margin-bottom: 0.5rem; }
         .cta-box { background: linear-gradient(135deg, #fff8f1, #ffedd5); border: 1px solid var(--accent); padding: 1.5rem; border-radius: 8px; text-align: center; }
         .btn-whatsapp { display: inline-block; background-color: #25D366; color: white; text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: bold; margin-top: 1rem; }
         .btn-whatsapp:hover { background-color: #128C7E; }
@@ -46,17 +43,11 @@
             <h1>GRADUANDO</h1>
             <svg class="brand-icon" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/></svg>
         </div>
-        <p>Plataforma con Inteligencia Artificial para generación de ideas de investigación, objetivos y referentes reales</p>
+        <p>Expertos en investigación académica: orientación metodológica, sugerencias de títulos y referentes científicos para tu trabajo de grado</p>
     </header>
     <div class="container">
         <div class="card">
-            <h2>1. Configura tu Perfil Académico</h2>
-
-            <div class="api-box">
-                <label for="api-key">🔑 Clave API de Gemini (Modo Seguro):</label>
-                <input type="password" id="api-key" placeholder="Pega aquí tu API Key de Google AI Studio">
-                <small>Tu clave se guarda únicamente en este navegador y no queda expuesta en GitHub.</small>
-            </div>
+            <h2>1. Configura tu Perfil de Investigación</h2>
 
             <div class="form-group">
                 <label for="carrera">Selecciona tu Programa / Carrera:</label>
@@ -94,135 +85,154 @@
 
             <div class="form-group">
                 <label for="enfoque">Tema específico, patología o población de interés:</label>
-                <input type="text" id="enfoque" placeholder="Ej. Infección de sitio operatorio en cirugía abdominal, rehabilitación post-ACV, riesgo biomecánico...">
+                <input type="text" id="enfoque" placeholder="Ej. Infección de sitio operatorio, rehabilitación post-ACV, riesgo biomecánico, diabetes tipo 2...">
             </div>
 
             <div class="form-group">
-                <label for="tipo-estudio">Tipo de investigación preferida:</label>
+                <label for="tipo-estudio">Enfoque metodológico preferido:</label>
                 <select id="tipo-estudio">
-                    <option value="Revisión Sistemática / Literatura">Revisión Sistemática o de Literatura (Sin trabajo de campo)</option>
-                    <option value="Estudio Observacional / Descriptivo">Estudio Observacional / Análisis de Bases de Datos</option>
-                    <option value="Estudio Cuantitativo / Correlacional">Estudio Cuantitativo / Encuestas</option>
-                    <option value="Estudio Cualitativo">Estudio Cualitativo / Entrevistas</option>
+                    <option value="Revisión Sistemática o de Literatura">Revisión Sistemática o de Literatura (Sin trabajo de campo)</option>
+                    <option value="Estudio Observacional Retrospectivo">Estudio Observacional / Análisis de Bases de Datos</option>
+                    <option value="Estudio Cuantitativo Descriptivo">Estudio Cuantitativo / Aplicación de Instrumentos</option>
+                    <option value="Estudio Cualitativo">Estudio Cualitativo / Análisis Fenomenológico</option>
                 </select>
             </div>
 
-            <button type="button" class="btn" id="btn-generar">✨ Redactar Anteproyecto Único con IA</button>
+            <button type="button" class="btn" id="btn-generar">Generar Sugerencias de Títulos y Referentes</button>
         </div>
 
         <div class="card" id="resultado-container">
-            <h2>2. Propuesta Generada por GRADUANDO IA</h2>
+            <h2>2. Propuesta Metodológica Recomendada</h2>
             <div id="contenido-propuesta"></div>
 
             <div class="cta-box">
                 <h3>¿Necesitas desarrollar este anteproyecto completo con normas APA 7 o Vancouver?</h3>
-                <p>En <strong>GRADUANDO</strong> te acompañamos desde la búsqueda de antecedentes y matriz de datos hasta el documento final listo para sustentar.</p>
+                <p>Nuestro equipo de investigadores en <strong>GRADUANDO</strong> te acompaña desde la búsqueda de antecedentes y matriz de resultados hasta el documento final listo para sustentar.</p>
                 <a href="https://wa.me" target="_blank" class="btn-whatsapp">
-                    📲 Solicitar Asesoría Personalizada por WhatsApp
+                    📲 Hablar con un Asesor Experto por WhatsApp
                 </a>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>© 2026 GRADUANDO - Asesoría Académica y Metodológica de Investigación.</p>
+        <p>© 2026 GRADUANDO - Firma Especializada en Asesoría Académica y Metodología de Investigación.</p>
     </footer>
-
     <script>
-        const apiKeyInput = document.getElementById('api-key');
-        if (localStorage.getItem('graduando_gemini_key')) {
-            apiKeyInput.value = localStorage.getItem('graduando_gemini_key');
-        }
+        const referentesPorArea = {
+            "Medicina": [
+                "<strong>Organización Mundial de la Salud (OMS, 2023):</strong> Guías clínicas globales, vigilancia epidemiológica y protocolos de atención basada en la evidencia.",
+                "<strong>Guyatt, G. & Sackett, D. (Medicina Basada en la Evidencia):</strong> Fundamentos metodológicos para la evaluación crítica de estudios clínicos y revisiones sistemáticas.",
+                "<strong>Ministerio de Salud y Protección Social de Colombia (Guías de Práctica Clínica - GPC):</strong> Lineamientos nacionales de diagnóstico, manejo y desenlaces clínicos."
+            ],
+            "Enfermería": [
+                "<strong>Dorothea Orem (Teoría del Déficit de Autocuidado):</strong> Modelo conceptual clave para evaluar la capacidad de autocuidado y el rol educativo de enfermería.",
+                "<strong>NANDA International, NOC y NIC (2024):</strong> Taxonomía estandarizada para diagnósticos, resultados esperados e intervenciones clínicas de enfermería.",
+                "<strong>Organización Panamericana de la Salud (OPS):</strong> Protocolos de seguridad del paciente y prevención de eventos adversos intrahospitalarios."
+            ],
+            "Instrumentación Quirúrgica": [
+                "<strong>Organización Mundial de la Salud (OMS - Alianza Mundial para la Seguridad del Paciente):</strong> Manual de aplicación de la Lista de Verificación de la Seguridad de la Cirugía.",
+                "<strong>Association of periOperative Registered Nurses (AORN):</strong> Estándares internacionales de técnica aséptica, conteo quirúrgico y prevención de infección del sitio operatorio.",
+                "<strong>Fuller, J. R. (Instrumentación Quirúrgica: Principios y Práctica):</strong> Referente fundamental en protocolos intraoperatorios y gestión del entorno quirúrgico."
+            ],
+            "Fisioterapia": [
+                "<strong>Organización Mundial de la Salud (CIF - Clasificación Internacional del Funcionamiento):</strong> Marco estándar para evaluar deficiencias, limitaciones en la actividad y restricción en la participación.",
+                "<strong>World Physiotherapy (Confederación Mundial de Fisioterapia):</strong> Directrices basadas en la evidencia para rehabilitación funcional y prescripción del ejercicio terapéutico.",
+                "<strong>Kisner, C. & Colby, L. A. (Ejercicio Terapéutico: Fundamentos y Técnicas):</strong> Referente clínico en dosificación de cargas, movilidad y recuperación neuromuscular."
+            ],
+            "Bacteriología y Laboratorio Clínico": [
+                "<strong>Clinical and Laboratory Standards Institute (CLSI):</strong> Estándares internacionales para pruebas de susceptibilidad antimicrobiana y control de calidad analítico.",
+                "<strong>Instituto Nacional de Salud (INS - Colombia):</strong> Protocolos de vigilancia en salud pública y control microbiológico.",
+                "<strong>Koneman, E. W. (Diagnóstico Microbiológico):</strong> Referente clásico en identificación bacteriana y correlación clínica de laboratorio."
+            ],
+            "Odontología": [
+                "<strong>FDI World Dental Federation:</strong> Consensos internacionales sobre salud bucodental, prevención y odontología mínimamente invasiva.",
+                "<strong>Lindhe, J. (Periodontología Clínica e Implantología Odontológica):</strong> Referente científico en patología periodontal y rehabilitación oral.",
+                "<strong>Ministerio de Salud (IV Estudio Nacional de Salud Bucal - ENSAB):</strong> Datos epidemiológicos de referencia en Colombia."
+            ],
+            "Nutrición y Dietética": [
+                "<strong>Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO) y OMS:</strong> Guías de requerimientos nutricionales y seguridad alimentaria.",
+                "<strong>Mahan, L. K. & Raymond, J. L. (Krause Dietoterapia):</strong> Referente clínico en evaluación nutricional y manejo dietoterapéutico por patologías.",
+                "<strong>Asociación Americana de Dietética (Academy of Nutrition and Dietetics):</strong> Proceso de Atención Nutricional (PAN)."
+            ],
+            "Psicología Clínica y de la Salud": [
+                "<strong>Asociación Americana de Psiquiatría (APA - DSM-5-TR):</strong> Manual diagnóstico y estadístico de los trastornos mentales.",
+                "<strong>Aaron T. Beck (Terapia Cognitivo-Conductual):</strong> Marco teórico y escalas validadas (BDI, BAI) para evaluación e intervención clínica.",
+                "<strong>Lazarus, R. & Folkman, S. (Teoría del Estrés y Afrontamiento):</strong> Modelo clave para analizar respuestas psicológicas ante enfermedades crónicas."
+            ],
+            "Seguridad y Salud en el Trabajo (SST)": [
+                "<strong>Organización Internacional del Trabajo (OIT):</strong> Convenios y directrices internacionales sobre sistemas de gestión de seguridad y salud laboral.",
+                "<strong>Decreto 1072 de 2015 y Resolución 0312 de 2019 (Colombia):</strong> Marco normativo obligatorio para el diseño y evaluación del SG-SST.",
+                "<strong>Guías de Atención Integral Basadas en la Evidencia (GATI-SO):</strong> Referentes nacionales para desórdenes musculoesqueléticos y factores de riesgo ocupacional."
+            ],
+            "General": [
+                "<strong>Hernández-Sampieri, R. & Mendoza, C. (Metodología de la Investigación):</strong> Referente metodológico estándar para el diseño de rutas cuantitativas, cualitativas y mixtas.",
+                "<strong>Arias, F. G. (El Proyecto de Investigación):</strong> Guía estructural para la formulación del problema, objetivos y operacionalización de variables.",
+                "<strong>Bases de datos científicas indexadas (Scopus, PubMed, SciELO):</strong> Fuentes primarias para la construcción del estado del arte y antecedentes (2021-2026)."
+            ]
+        };
 
-        document.getElementById('btn-generar').addEventListener('click', async function() {
-            const apiKey = apiKeyInput.value.trim();
+        document.getElementById('btn-generar').addEventListener('click', function() {
             const carrera = document.getElementById('carrera').value;
-            const enfoque = document.getElementById('enfoque').value.trim();
+            let enfoque = document.getElementById('enfoque').value.trim();
             const tipoEstudio = document.getElementById('tipo-estudio').value;
-            const btn = this;
 
-            if (!apiKey) {
-                alert("Por favor, pega tu API Key de Gemini para activar la Inteligencia Artificial.");
-                return;
-            }
-            if (!carrera || !enfoque) {
-                alert("Por favor, selecciona tu carrera y escribe un tema o área de interés.");
+            if (!carrera) {
+                alert("Por favor, selecciona tu programa o carrera.");
                 return;
             }
 
-            localStorage.setItem('graduando_gemini_key', apiKey);
-            btn.disabled = true;
-            btn.textContent = "⏳ Redactando anteproyecto y buscando referentes reales...";
-
-            const prompt = `Actúa como un director experto en metodología de la investigación universitaria y asesor senior de la firma GRADUANDO.
-Genera una propuesta de anteproyecto única, rigurosa y original para un estudiante con este perfil:
-- Carrera: ${carrera}
-- Tema o área de interés: ${enfoque}
-- Tipo de estudio: ${tipoEstudio}
-
-Responde ÚNICAMENTE con código HTML limpio (sin etiquetas \`\`\`html ni markdown) usando exactamente esta estructura:
-<div class="propuesta-box">
-    <h3>📌 Título Sugerido</h3>
-    <p><strong>[Escribe aquí un título académico preciso, delimitado y acorde al tipo de estudio]</strong></p>
-    
-    <h3>📝 Planteamiento del Problema (Síntesis)</h3>
-    <p>[Redacta un párrafo sólido de 4 a 5 líneas contextualizando la problemática, su relevancia en el área y el vacío de conocimiento]</p>
-    
-    <h3>❓ Pregunta Problema</h3>
-    <p>[Escribe la pregunta de investigación coherente con el título]</p>
-    
-    <h3>🎯 Objetivo General</h3>
-    <p>[Inicia con un verbo en infinitivo según la Taxonomía de Bloom]</p>
-    
-    <h3>📋 Objetivos Específicos</h3>
-    <ul>
-        <li>[Objetivo específico 1: diagnóstico o caracterización]</li>
-        <li>[Objetivo específico 2: análisis o relación de variables]</li>
-        <li>[Objetivo específico 3: evaluación o propuesta]</li>
-    </ul>
-
-    <h3>📚 Referentes Teóricos y Autores Clave Reales</h3>
-    <ul>
-        <li><strong>[Autor(es) reales o institución reconocida, Año]:</strong> [Breve explicación de su teoría, guía clínica, escala o aporte directamente aplicable a este tema]</li>
-        <li><strong>[Autor(es) reales o institución reconocida, Año]:</strong> [Breve explicación de su aporte metodológico o conceptual]</li>
-        <li><strong>[Autor(es) reales o institución reconocida, Año]:</strong> [Breve explicación de su aporte]</li>
-    </ul>
-</div>
-Regla estricta: Cita únicamente autores, teorías, escalas o guías científicas reales y verificables de esa disciplina. No inventes referencias.`;
-
-            try {
-                const response = await fetch('https://googleapis.com', {
-                    method: 'POST',
-                    headers: { 
-                        'Content-Type': 'application/json',
-                        'x-goog-api-key': apiKey
-                    },
-                    body: JSON.stringify({
-                        contents: [{ parts: [{ text: prompt }] }],
-                        generationConfig: { temperature: 0.4 }
-                    })
-                });
-
-                const data = await response.json();
-
-                if (data.error) {
-                    throw new Error(data.error.message);
-                }
-
-                let htmlGenerado = data.candidates[0].content.parts[0].text;
-                htmlGenerado = htmlGenerado.replace(/```html/g, '').replace(/```/g, '').trim();
-
-                document.getElementById('contenido-propuesta').innerHTML = htmlGenerado;
-                const contenedor = document.getElementById('resultado-container');
-                contenedor.style.display = 'block';
-                contenedor.scrollIntoView({ behavior: 'smooth' });
-
-            } catch (error) {
-                alert("Detalle del error: " + error.message);
-            } finally {
-                btn.disabled = false;
-                btn.textContent = "✨ Redactar Anteproyecto Único con IA";
+            if (!enfoque) {
+                enfoque = "población clínica y comunitaria en el contexto colombiano";
             }
+
+            const t1 = `Factores asociados y comportamiento clínico de ${enfoque} desde el abordaje de ${carrera}: ${tipoEstudio} (2021-2026).`;
+            const t2 = `Impacto de las estrategias de intervención en ${enfoque} dentro del campo de ${carrera}: evidencia científica reciente.`;
+            const t3 = `Análisis integral de ${enfoque} y su relación con los desenlaces profesionales en ${carrera}.`;
+
+            const pregunta = `¿Cuáles son los principales factores, evidencias y estrategias de abordaje relacionados con ${enfoque} en el área de ${carrera} mediante un ${tipoEstudio.toLowerCase()}?`;
+            const objetivoGeneral = `Analizar los factores determinantes y las estrategias de intervención asociadas a ${enfoque} en el ámbito de ${carrera} a través de un ${tipoEstudio.toLowerCase()}.`;
+
+            const esp1 = `Caracterizar el comportamiento epidemiológico y las variables principales relacionadas con ${enfoque} en la literatura científica reciente.`;
+            const esp2 = `Identificar los factores de riesgo, barreras o determinantes que influyen en el manejo de ${enfoque} desde la perspectiva de ${carrera}.`;
+            const esp3 = `Establecer recomendaciones prácticas basadas en la evidencia para optimizar los resultados en el abordaje de ${enfoque}.`;
+
+            const listaReferentes = referentesPorArea[carrera] || referentesPorArea["General"];
+            let htmlReferentes = "";
+            for (let i = 0; i < listaReferentes.length; i++) {
+                htmlReferentes += "<li>" + listaReferentes[i] + "</li>";
+            }
+
+            document.getElementById('contenido-propuesta').innerHTML = `
+                <div class="propuesta-box">
+                    <h3>📌 Sugerencias de Títulos Académicos (Elige una opción)</h3>
+                    <ol>
+                        <li><strong>${t1}</strong></li>
+                        <li><strong>${t2}</strong></li>
+                        <li><strong>${t3}</strong></li>
+                    </ol>
+
+                    <h3>❓ Pregunta Problema</h3>
+                    <p>${pregunta}</p>
+
+                    <h3>🎯 Objetivo General</h3>
+                    <p>${objetivoGeneral}</p>
+
+                    <h3>📋 Objetivos Específicos Sugeridos</h3>
+                    <ul>
+                        <li>${esp1}</li>
+                        <li>${esp2}</li>
+                        <li>${esp3}</li>
+                    </ul>
+
+                    <h3>📚 Referentes Teóricos, Guías y Autores Reales Recomendados</h3>
+                    <ul>${htmlReferentes}</ul>
+                </div>
+            `;
+
+            const contenedor = document.getElementById('resultado-container');
+            contenedor.style.display = 'block';
+            contenedor.scrollIntoView({ behavior: 'smooth' });
         });
     </script>
 </body>
