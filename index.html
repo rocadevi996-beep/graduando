@@ -54,7 +54,7 @@
 
             <div class="api-box">
                 <label for="api-key">🔑 Clave API de Gemini (Modo Seguro):</label>
-                <input type="password" id="api-key" placeholder="Pega aquí tu API Key de Google AI Studio (AIzaSy...)">
+                <input type="password" id="api-key" placeholder="Pega aquí tu API Key de Google AI Studio">
                 <small>Tu clave se guarda únicamente en este navegador y no queda expuesta en GitHub.</small>
             </div>
 
@@ -129,7 +129,6 @@
     </footer>
 
     <script>
-        // Cargar clave guardada en el navegador si existe
         const apiKeyInput = document.getElementById('api-key');
         if (localStorage.getItem('graduando_gemini_key')) {
             apiKeyInput.value = localStorage.getItem('graduando_gemini_key');
@@ -192,9 +191,12 @@ Responde ÚNICAMENTE con código HTML limpio (sin etiquetas \`\`\`html ni markdo
 Regla estricta: Cita únicamente autores, teorías, escalas o guías científicas reales y verificables de esa disciplina. No inventes referencias.`;
 
             try {
-                const response = await fetch(`https://googleapis.com{apiKey}`, {
+                const response = await fetch('https://googleapis.com', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'x-goog-api-key': apiKey
+                    },
                     body: JSON.stringify({
                         contents: [{ parts: [{ text: prompt }] }],
                         generationConfig: { temperature: 0.4 }
@@ -216,7 +218,7 @@ Regla estricta: Cita únicamente autores, teorías, escalas o guías científica
                 contenedor.scrollIntoView({ behavior: 'smooth' });
 
             } catch (error) {
-                alert("Error al conectar con Gemini: " + error.message);
+                alert("Detalle del error: " + error.message);
             } finally {
                 btn.disabled = false;
                 btn.textContent = "✨ Redactar Anteproyecto Único con IA";
