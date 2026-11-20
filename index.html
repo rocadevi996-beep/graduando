@@ -193,6 +193,13 @@
             background-color: #128C7E;
         }
 
+        .wa-direct-note {
+            text-align: center;
+            margin-top: 0.65rem;
+            font-size: 0.92rem;
+            color: #475569;
+        }
+
         #resultado-container {
             display: none;
             border-top: 5px solid var(--primary);
@@ -212,7 +219,7 @@
         }
 
         .propuesta-item {
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.9rem;
         }
 
         .cta-box {
@@ -225,10 +232,38 @@
 
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem 1rem;
             color: #64748b;
-            font-size: 0.9rem;
+            font-size: 0.92rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 2rem;
         }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0.55rem 1.1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+        }
+
+        .social-btn:hover { opacity: 0.88; }
+        .fb { background-color: #1877F2; }
+        .ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .yt { background-color: #FF0000; }
     </style>
 </head>
 <body>
@@ -311,7 +346,7 @@
                     </select>
                 </div>
 
-                <button class="btn" onclick="generarPropuesta()">Generar Sugerencia de Título y Referentes</button>
+                <button class="btn" id="btn-generar" onclick="generarPropuesta()">Generar Propuesta de Título y Referentes</button>
             </div>
 
             <div class="card" id="resultado-container">
@@ -320,6 +355,7 @@
                 <div class="cta-box">
                     <p><strong>¿Te gustó esta propuesta o necesitas que redactemos el planteamiento del problema, marco teórico y metodología?</strong></p>
                     <a id="btn-wa-tesis" href="#" target="_blank" class="btn-whatsapp">📲 Solicitar Asesoría por WhatsApp</a>
+                    <p class="wa-direct-note">O escríbenos directamente al WhatsApp: <strong>+57 310 471 4499</strong></p>
                 </div>
             </div>
         </div>
@@ -347,6 +383,7 @@
                     <textarea id="detalle-trabajo" rows="3" placeholder="Indica número de páginas, norma exigida o fecha límite..."></textarea>
                 </div>
                 <button class="btn-whatsapp" onclick="enviarWhatsAppDirecto('trabajos')">📲 Cotizar Trabajo por WhatsApp</button>
+                <p class="wa-direct-note">Línea directa WhatsApp: <strong>+57 310 471 4499</strong></p>
             </div>
         </div>
         <!-- PANEL 3: EJERCICIOS DE CIENCIAS BÁSICAS -->
@@ -375,6 +412,7 @@
                     <input type="text" id="fecha-ciencias" placeholder="Ej. Para hoy a las 6:00 PM / Mañana...">
                 </div>
                 <button class="btn-whatsapp" onclick="enviarWhatsAppDirecto('ciencias')">📲 Enviar Taller por WhatsApp</button>
+                <p class="wa-direct-note">Línea directa WhatsApp: <strong>+57 310 471 4499</strong></p>
             </div>
         </div>
 
@@ -419,12 +457,20 @@
                 </div>
 
                 <button class="btn-whatsapp" onclick="enviarWhatsAppDirecto('tutorias')">📲 Agendar Clase por WhatsApp</button>
+                <p class="wa-direct-note">Línea directa WhatsApp: <strong>+57 310 471 4499</strong></p>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>© 2026 GRADUANDO - Expertos en Investigación Académica y Asesoría Universitaria | Todos los derechos reservados.</p>
+        <p><strong>GRADUANDO</strong> - Expertos en Investigación Académica y Asesoría Universitaria</p>
+        <p style="margin-top: 4px;">WhatsApp de atención directa: <strong>+57 310 471 4499</strong></p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank" class="social-btn fb">📘 Facebook</a>
+            <a href="https://instagram.com" target="_blank" class="social-btn ig">📸 Instagram</a>
+            <a href="https://youtube.com" target="_blank" class="social-btn yt">▶️ YouTube</a>
+        </div>
+        <p>© 2026 GRADUANDO | Todos los derechos reservados.</p>
     </footer>
     <script>
         const WHATSAPP_NUMBER = "573104714499";
@@ -461,101 +507,144 @@
             });
         }
 
-        const referentesPorArea = {
-            "Medicina": {
-                autores: "Hernández-Sampieri et al. (Metodología), Argimon Pallàs & Jiménez Villa (Investigación Clínica), OMS.",
-                referencia: "Argimon Pallàs, J. M., & Jiménez Villa, J. (2019). Métodos de investigación clínica y epidemiológica (5.ª ed.). Elsevier."
-            },
-            "Enfermería": {
-                autores: "Nola Pender (Promoción de la Salud), Dorothea Orem (Autocuidado), Polit & Beck (Investigación en Enfermería).",
-                referencia: "Polit, D. F., & Beck, C. T. (2018). Investigación en enfermería: Fundamentos para el uso de la evidencia (9.ª ed.). Wolters Kluwer."
-            },
-            "Instrumentación Quirúrgica": {
-                autores: "Atul Gawande (Seguridad Quirúrgica - OMS), Fuller (Instrumentación Quirúrgica), AORN.",
-                referencia: "Fuller, J. K. (2020). Instrumentación quirúrgica: Principios y práctica (7.ª ed.). Editorial Médica Panamericana."
-            },
-            "Fisioterapia": {
-                autores: "Kisner & Colby (Ejercicio Terapéutico), Kapandji (Fisiología Articular), World Physiotherapy.",
-                referencia: "Kisner, C., & Colby, L. A. (2018). Ejercicio terapéutico: Fundamentos y técnicas (7.ª ed.). Paidotribo."
-            },
-            "Psicología Clínica y de la Salud": {
-                autores: "Aaron Beck (Terapia Cognitiva), Albert Bandura (Autoeficacia), Asociación Americana de Psicología (APA).",
-                referencia: "American Psychological Association. (2020). Publication manual of the American Psychological Association (7th ed.)."
-            },
-            "Seguridad y Salud en el Trabajo (SST)": {
-                autores: "OIT (Organización Internacional del Trabajo), Heinrich (Prevención de Accidentes), Decreto 1072 de 2015.",
-                referencia: "Organización Internacional del Trabajo [OIT]. (2021). Seguridad y salud en el trabajo: Guía metodológica para la gestión del riesgo."
-            },
-            "Ingeniería": {
-                autores: "Roberto Hernández-Sampieri, Pressman (Ingeniería), Norma Técnica Colombiana / IEEE.",
-                referencia: "Hernández-Sampieri, R., & Mendoza, C. P. (2018). Metodología de la investigación: Las rutas cuantitativa, cualitativa y mixta. McGraw-Hill."
-            },
-            "Derecho": {
-                autores: "Robert Alexy (Teoría de los Derechos), Luigi Ferrajoli (Garantismo), Corte Constitucional de Colombia.",
-                referencia: "Alexy, R. (2019). Teoría de los derechos fundamentales (2.ª ed.). Centro de Estudios Políticos y Constitucionales."
-            },
-            "Administración y Contaduría": {
-                autores: "Michael Porter (Estrategia), Idalberto Chiavenato (Gestión), NIIF.",
-                referencia: "Chiavenato, I. (2019). Introducción a la teoría general de la administración (10.ª ed.). McGraw-Hill."
-            },
-            "General": {
-                autores: "Roberto Hernández-Sampieri, Carlos Méndez Álvarez, César Augusto Bernal (Metodología de la Investigación).",
-                referencia: "Bernal, C. A. (2016). Metodología de la investigación: Administración, economía, humanidades y ciencias sociales (4.ª ed.). Pearson."
+        async function buscarReferentesReales(queryTexto) {
+            try {
+                const url = `https://openalex.org{encodeURIComponent(queryTexto)}&per-page=2&sort=cited_by_count:desc`;
+                const response = await fetch(url);
+                if (!response.ok) return null;
+                const data = await response.json();
+                if (data.results && data.results.length > 0) {
+                    const autoresSet = new Set();
+                    const citasAPA = [];
+
+                    data.results.forEach(work => {
+                        const year = work.publication_year || "s.f.";
+                        const title = work.title || "Estudio científico";
+                        const source = work.primary_location?.source?.display_name || "Revista Científica Indexada";
+                        const authorsList = (work.authorships || []).slice(0, 3).map(a => a.author.display_name);
+                        
+                        authorsList.forEach(name => autoresSet.add(name));
+                        const authorsStr = authorsList.length > 0 ? authorsList.join(", ") : "Autores institucionales";
+                        citasAPA.push(`${authorsStr} (${year}). ${title}. <em>${source}</em>.`);
+                    });
+
+                    return {
+                        autores: Array.from(autoresSet).slice(0, 5).join(", "),
+                        referencias: citasAPA
+                    };
+                }
+            } catch (e) {
+                return null;
             }
-        };
-        function generarPropuesta() {
+            return null;
+        }
+        function construirPropuestaContinua(carrera, enfoqueInput, tipoEstudio) {
+            const tema = enfoqueInput !== "" ? enfoqueInput : `los factores clínicos y asistenciales asociados a la atención integral en ${carrera}`;
+            
+            const plantillasPorTipo = {
+                "Revisión Sistemática / Literatura": [
+                    `Evidencia científica disponible sobre ${tema} y su impacto en la práctica profesional de ${carrera} durante el periodo 2020-2026`,
+                    `Análisis sistemático de los avances terapéuticos y protocolos asociados a ${tema} desde la perspectiva de ${carrera}`,
+                    `Determinantes y desenlaces clínicos relacionados con ${tema} reportados en la literatura científica reciente para ${carrera}`
+                ],
+                "Estudio Observacional / Descriptivo": [
+                    `Caracterización clínica y epidemiológica de ${tema} en pacientes atendidos en instituciones hospitalarias de tercer nivel`,
+                    `Comportamiento sociodemográfico y factores asociados a ${tema} mediante el análisis retrospectivo de registros institucionales`,
+                    `Perfil epidemiológico y evolución clínica de pacientes con ${tema} abordados desde el servicio de ${carrera}`
+                ],
+                "Estudio Cuantitativo / Correlacional": [
+                    `Relación entre los factores de riesgo modificables y la incidencia de ${tema} en población adulta atendida en consulta externa`,
+                    `Asociación estadística entre la adherencia a protocolos institucionales y los desenlaces clínicos frente a ${tema} en ${carrera}`,
+                    `Impacto de las estrategias de intervención temprana sobre los indicadores de recuperación en pacientes con ${tema}`
+                ],
+                "Estudio Cualitativo": [
+                    `Experiencias, percepciones y significados construidos por el equipo de ${carrera} frente al abordaje integral de ${tema}`,
+                    `Vivencias y barreras asistenciales percibidas por pacientes y cuidadores durante el manejo clínico de ${tema}`,
+                    `Representaciones sociales y prácticas profesionales en torno a la atención humanizada de ${tema} desde ${carrera}`
+                ]
+            };
+
+            const opciones = plantillasPorTipo[tipoEstudio] || plantillasPorTipo["Revisión Sistemática / Literatura"];
+            const indiceAleatorio = Math.floor(Math.random() * opciones.length);
+            const titulo = opciones[indiceAleatorio];
+
+            let objetivo = "";
+            let pregunta = "";
+
+            if (tipoEstudio.includes("Revisión")) {
+                objetivo = `Analizar la evidencia científica publicada entre 2020 y 2026 sobre ${tema} con el fin de consolidar criterios actualizados para la práctica en ${carrera}.`;
+                pregunta = `¿Cuál es el estado actual de la evidencia científica respecto al abordaje y los desenlaces asociados a ${tema} en ${carrera}?`;
+            } else if (tipoEstudio.includes("Observacional")) {
+                objetivo = `Describir las características clínicas, sociodemográficas y los principales factores asociados a ${tema} en la población de estudio seleccionada.`;
+                pregunta = `¿Cuáles son las características clínicas y epidemiológicas predominantes en los casos documentados de ${tema}?`;
+            } else if (tipoEstudio.includes("Cuantitativo")) {
+                objetivo = `Determinar el grado de correlación estadística entre las variables determinantes y los resultados observados frente a ${tema}.`;
+                pregunta = `¿Qué relación estadística existe entre los factores asociados y el comportamiento clínico de ${tema} en la muestra evaluada?`;
+            } else {
+                objetivo = `Comprender las experiencias, percepciones y dinámicas profesionales que configuran el abordaje de ${tema} desde la perspectiva de los participantes.`;
+                pregunta = `¿Cómo perciben y experimentan los actores involucrados el proceso de atención y manejo frente a ${tema}?`;
+            }
+
+            return { titulo, objetivo, pregunta };
+        }
+
+        async function generarPropuesta() {
             const carrera = document.getElementById('carrera').value;
             const enfoqueInput = document.getElementById('enfoque').value.trim();
             const tipoEstudio = document.getElementById('tipo-estudio').value;
+            const btnGenerar = document.getElementById('btn-generar');
 
             if (!carrera) {
                 alert("Por favor, selecciona tu Programa o Carrera primero.");
                 return;
             }
 
-            const tema = enfoqueInput !== "" ? enfoqueInput : "factores asociados y calidad de atención en " + carrera;
-            let tituloSugerido = "";
-            let objetivoGeneral = "";
+            btnGenerar.disabled = true;
+            btnGenerar.textContent = "Estructurando propuesta y buscando referentes...";
 
-            if (tipoEstudio.includes("Revisión")) {
-                tituloSugerido = `Evidencia científica sobre ${tema} en el ámbito de ${carrera}: Una revisión sistemática de la literatura (2020-2026)`;
-                objetivoGeneral = `Analizar la evidencia científica disponible en bases de datos indexadas sobre ${tema} desde la perspectiva de ${carrera}.`;
-            } else if (tipoEstudio.includes("Observacional")) {
-                tituloSugerido = `Caracterización clínica y epidemiológica de ${tema} en pacientes atendidos en instituciones de salud: Un estudio observacional`;
-                objetivoGeneral = `Determinar las características principales y factores asociados a ${tema} mediante el análisis de registros institucionales.`;
-            } else if (tipoEstudio.includes("Cuantitativo")) {
-                tituloSugerido = `Relación entre los factores determinantes y el impacto de ${tema} en el área de ${carrera}: Estudio cuantitativo correlacional`;
-                objetivoGeneral = `Evaluar la relación estadística entre las variables asociadas a ${tema} en la población de estudio seleccionada.`;
-            } else {
-                tituloSugerido = `Percepciones, experiencias y abordaje profesional frente a ${tema} desde la práctica de ${carrera}: Un estudio cualitativo`;
-                objetivoGeneral = `Comprender las experiencias y significados construidos en torno a ${tema} desde la perspectiva de los actores involucrados.`;
-            }
+            const propuesta = construirPropuestaContinua(carrera, enfoqueInput, tipoEstudio);
+            const consultaBusqueda = enfoqueInput !== "" ? `${enfoqueInput} ${carrera}` : carrera;
+            const referentesReales = await buscarReferentesReales(consultaBusqueda);
 
-            let refData = referentesPorArea["General"];
-            if (referentesPorArea[carrera]) {
-                refData = referentesPorArea[carrera];
-            } else if (carrera.includes("Ingeniería")) {
-                refData = referentesPorArea["Ingeniería"];
-            } else if (carrera.includes("Administración") || carrera.includes("Contaduría")) {
-                refData = referentesPorArea["Administración y Contaduría"];
+            let bloqueAutores = "Hernández-Sampieri et al., Argimon Pallàs, Organización Mundial de la Salud (OMS)";
+            let bloqueReferencias = `<li>Hernández-Sampieri, R., & Mendoza, C. P. (2018). <em>Metodología de la investigación: Las rutas cuantitativa, cualitativa y mixta</em>. McGraw-Hill.</li>`;
+
+            if (referentesReales && referentesReales.referencias.length > 0) {
+                bloqueAutores = referentesReales.autores;
+                bloqueReferencias = referentesReales.referencias.map(ref => `<li style="margin-bottom:6px;">${ref}</li>`).join("");
             }
 
             const contenidoHTML = `
-                <h3>📌 Título Sugerido:</h3>
-                <p class="propuesta-item"><strong>"${tituloSugerido}"</strong></p>
-                <div class="propuesta-item"><strong>🎯 Objetivo General:</strong> ${objetivoGeneral}</div>
-                <div class="propuesta-item"><strong>🔬 Diseño Metodológico:</strong> ${tipoEstudio} | <strong>Programa:</strong> ${carrera}</div>
-                <div class="propuesta-item"><strong>📚 Autores y Teóricos Clave Sugeridos:</strong> ${refData.autores}</div>
-                <div class="propuesta-item"><strong>📖 Referencia Base (Norma APA 7):</strong> <em>${refData.referencia}</em></div>
+                <h3>📌 Título Profesional Sugerido</h3>
+                <p class="propuesta-item" style="font-size:1.08rem; color:#0f4c81;"><strong>"${propuesta.titulo}"</strong></p>
+                
+                <div class="propuesta-item">
+                    <strong>❓ Pregunta Problema:</strong> ${propuesta.pregunta}
+                </div>
+                <div class="propuesta-item">
+                    <strong>🎯 Objetivo General:</strong> ${propuesta.objetivo}
+                </div>
+                <div class="propuesta-item">
+                    <strong>🔬 Ruta Metodológica:</strong> ${tipoEstudio} (${carrera})
+                </div>
+                <div class="propuesta-item">
+                    <strong>📚 Autores y Referentes Identificados:</strong> ${bloqueAutores}
+                </div>
+                <div class="propuesta-item">
+                    <strong>📖 Referencias Bibliográficas Base (Norma APA 7):</strong>
+                    <ul style="margin-left: 1.2rem; margin-top: 0.4rem;">${bloqueReferencias}</ul>
+                </div>
             `;
 
             document.getElementById('propuesta-contenido').innerHTML = contenidoHTML;
             document.getElementById('resultado-container').style.display = 'block';
 
-            const mensajeWA = `Hola GRADUANDO 🎓📚, me interesa recibir asesoría para mi proyecto de grado.\n\n*Carrera:* ${carrera}\n*Enfoque:* ${tipoEstudio}\n*Título generado:* "${tituloSugerido}"`;
-            const urlWA = `https://wa.me{WHATSAPP_NUMBER}?text=${encodeURIComponent(mensajeWA)}`;
+            const mensajeWA = `Hola GRADUANDO, me interesa recibir asesoría para mi proyecto de grado.\n\n*Carrera:* ${carrera}\n*Enfoque:* ${tipoEstudio}\n*Título propuesto:* "${propuesta.titulo}"`;
+            const urlWA = `https://whatsapp.com{WHATSAPP_NUMBER}&text=${encodeURIComponent(mensajeWA)}`;
             
             document.getElementById('btn-wa-tesis').href = urlWA;
+            btnGenerar.disabled = false;
+            btnGenerar.textContent = "Generar Otra Propuesta de Título y Referentes";
             document.getElementById('resultado-container').scrollIntoView({ behavior: 'smooth' });
         }
 
@@ -566,23 +655,23 @@
                 const tipo = document.getElementById('tipo-trabajo').value;
                 const tema = document.getElementById('tema-trabajo').value.trim() || "No especificado";
                 const detalle = document.getElementById('detalle-trabajo').value.trim() || "Sin detalles adicionales";
-                mensajeWA = `Hola GRADUANDO 📝, quiero cotizar un trabajo académico:\n\n*Servicio:* ${tipo}\n*Tema/Materia:* ${tema}\n*Detalles:* ${detalle}`;
+                mensajeWA = `Hola GRADUANDO, quiero cotizar un trabajo académico:\n\n*Servicio:* ${tipo}\n*Tema/Materia:* ${tema}\n*Detalles:* ${detalle}`;
             } else if (servicio === 'ciencias') {
                 const materia = document.getElementById('materia-ciencias').value;
                 const tema = document.getElementById('tema-ciencias').value.trim() || "No especificado";
                 const fecha = document.getElementById('fecha-ciencias').value.trim() || "Por definir";
-                mensajeWA = `Hola GRADUANDO 🧮, necesito ayuda con ejercicios de Ciencias Básicas:\n\n*Asignatura:* ${materia}\n*Temas:* ${tema}\n*Fecha de entrega:* ${fecha}`;
+                mensajeWA = `Hola GRADUANDO, necesito ayuda con ejercicios de Ciencias Básicas:\n\n*Asignatura:* ${materia}\n*Temas:* ${tema}\n*Fecha de entrega:* ${fecha}`;
             } else if (servicio === 'tutorias') {
                 const materia = document.getElementById('materia-tutoria').value;
                 const temaEscogido = document.getElementById('tema-select-tutoria').value;
                 const detalleExtra = document.getElementById('tema-tutoria').value.trim();
                 const horario = document.getElementById('horario-tutoria').value.trim() || "Flexible";
                 
-                mensajeWA = `Hola GRADUANDO 💻, quiero agendar una tutoría virtual:\n\n*Materia:* ${materia}\n*Tema seleccionado:* ${temaEscogido}${detalleExtra ? `\n*Detalle adicional:* ${detalleExtra}` : ''}\n*Horario preferido:* ${horario}`;
+                mensajeWA = `Hola GRADUANDO, quiero agendar una tutoría virtual:\n\n*Materia:* ${materia}\n*Tema seleccionado:* ${temaEscogido}${detalleExtra ? `\n*Detalle adicional:* ${detalleExtra}` : ''}\n*Horario preferido:* ${horario}`;
             }
 
-            const urlWA = `https://wa.me{WHATSAPP_NUMBER}?text=${encodeURIComponent(mensajeWA)}`;
-            window.open(urlWA, '_blank');
+            const urlWA = `https://whatsapp.com{WHATSAPP_NUMBER}&text=${encodeURIComponent(mensajeWA)}`;
+            window.location.href = urlWA;
         }
     </script>
 </body>
