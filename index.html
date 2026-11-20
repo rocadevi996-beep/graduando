@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GRADUANDO: Expertos en investigación académica. Sugerencias de títulos, objetivos y referentes reales para trabajos de grado.">
+    <meta name="description" content="GRADUANDO: Expertos en investigación académica. Encuentra tu tema ideal, estructura tu anteproyecto y recibe respaldo metodológico en todas las normas.">
     <title>GRADUANDO | Expertos en Investigación Académica y Tesis</title>
     <style>
         :root { --primary: #0f4c81; --secondary: #00a896; --accent: #f4a261; --bg-light: #f8fafc; --text-dark: #1e293b; --white: #ffffff; }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
         body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
         header { background: linear-gradient(135deg, var(--primary), #163a5f); color: var(--white); padding: 2.5rem 1rem; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        .brand-title { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 0.6rem; flex-wrap: wrap; }
+        .brand-title { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 0.8rem; flex-wrap: wrap; }
         .brand-icon { width: 50px; height: 50px; fill: var(--accent); }
         header h1 { font-size: 2.8rem; letter-spacing: 3px; font-weight: 800; }
-        header p { font-size: 1.1rem; opacity: 0.92; max-width: 680px; margin: 0 auto; }
+        header p { font-size: 1.08rem; opacity: 0.95; max-width: 760px; margin: 0 auto; line-height: 1.65; }
         .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
         .card { background: var(--white); border-radius: 12px; padding: 2rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); margin-bottom: 2rem; border-top: 5px solid var(--secondary); }
         h2 { color: var(--primary); margin-bottom: 1.5rem; font-size: 1.5rem; }
@@ -26,10 +26,13 @@
         .btn:hover { background-color: #028090; }
         #resultado-container { display: none; border-top: 5px solid var(--primary); }
         .propuesta-box { background-color: #f1f5f9; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--secondary); margin-bottom: 1.5rem; }
-        .propuesta-box h3 { color: var(--primary); margin-bottom: 0.5rem; margin-top: 1.3rem; }
+        .propuesta-box h3 { color: var(--primary); margin-bottom: 0.5rem; margin-top: 1.4rem; }
         .propuesta-box h3:first-child { margin-top: 0; }
         .propuesta-box ul, .propuesta-box ol { margin-left: 1.5rem; margin-top: 0.4rem; }
-        .propuesta-box li { margin-bottom: 0.5rem; }
+        .propuesta-box li { margin-bottom: 0.6rem; }
+        .search-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 0.8rem; }
+        .search-badge { display: inline-block; background-color: var(--primary); color: white; text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; transition: 0.2s; }
+        .search-badge:hover { background-color: var(--secondary); }
         .cta-box { background: linear-gradient(135deg, #fff8f1, #ffedd5); border: 1px solid var(--accent); padding: 1.5rem; border-radius: 8px; text-align: center; }
         .btn-whatsapp { display: inline-block; background-color: #25D366; color: white; text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: bold; margin-top: 1rem; }
         .btn-whatsapp:hover { background-color: #128C7E; }
@@ -43,8 +46,7 @@
             <h1>GRADUANDO</h1>
             <svg class="brand-icon" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"/></svg>
         </div>
-        <p>¿Bloqueado con tu tesis? En GRADUANDO transformamos tus ideas en un proyecto de grado ganador. 🎓📚
-Somos expertos en investigación académica. Encuentra tu tema ideal, estructura tu anteproyecto y recibe el respaldo metodológico que necesitas para graduarte sin estrés.</p>
+        <p>¿Bloqueado con tu tesis? En GRADUANDO transformamos tus ideas en un proyecto de grado ganador. 🎓📚 Somos expertos en investigación académica. Encuentra tu tema ideal, estructura tu anteproyecto y recibe el respaldo metodológico que necesitas para graduarte sin estrés.</p>
     </header>
     <div class="container">
         <div class="card">
@@ -85,8 +87,8 @@ Somos expertos en investigación académica. Encuentra tu tema ideal, estructura
             </div>
 
             <div class="form-group">
-                <label for="enfoque">Tema específico, patología o población de interés:</label>
-                <input type="text" id="enfoque" placeholder="Ej. Infección de sitio operatorio, rehabilitación post-ACV, riesgo biomecánico, diabetes tipo 2...">
+                <label for="enfoque">Escribe el tema, patología o variable principal:</label>
+                <input type="text" id="enfoque" placeholder="Ej. ACV, cirugía segura, diabetes, infección hospitalaria, rehabilitación, riesgo laboral...">
             </div>
 
             <div class="form-group">
@@ -99,7 +101,7 @@ Somos expertos en investigación académica. Encuentra tu tema ideal, estructura
                 </select>
             </div>
 
-            <button type="button" class="btn" id="btn-generar">Generar Sugerencias de Títulos y Referentes</button>
+            <button type="button" class="btn" id="btn-generar">Generar Títulos Alineados y Referentes Científicos</button>
         </div>
 
         <div class="card" id="resultado-container">
@@ -107,8 +109,8 @@ Somos expertos en investigación académica. Encuentra tu tema ideal, estructura
             <div id="contenido-propuesta"></div>
 
             <div class="cta-box">
-                <h3>¿Necesitas desarrollar este anteproyecto completo con normas APA 7 o Vancouver?</h3>
-                <p>Nuestro equipo de investigadores en <strong>GRADUANDO</strong> te acompaña desde la búsqueda de antecedentes y matriz de resultados hasta el documento final listo para sustentar.</p>
+                <h3>¿Necesitas desarrollar este proyecto completo bajo la normativa de tu universidad?</h3>
+                <p>Nuestro equipo de investigadores en <strong>GRADUANDO</strong> domina <strong>todas las normas de citación y estilo</strong> (APA, Vancouver, IEEE, ICONTEC, Chicago, Harvard y lineamientos institucionales) para entregarte tu anteproyecto o tesis lista para sustentar.</p>
                 <a href="https://wa.me" target="_blank" class="btn-whatsapp">
                     📲 Hablar con un Asesor Experto por WhatsApp
                 </a>
@@ -120,100 +122,137 @@ Somos expertos en investigación académica. Encuentra tu tema ideal, estructura
         <p>© 2026 GRADUANDO - Firma Especializada en Asesoría Académica y Metodología de Investigación.</p>
     </footer>
     <script>
-        const referentesPorArea = {
-            "Medicina": [
-                "<strong>Organización Mundial de la Salud (OMS, 2023):</strong> Guías clínicas globales, vigilancia epidemiológica y protocolos de atención basada en la evidencia.",
-                "<strong>Guyatt, G. & Sackett, D. (Medicina Basada en la Evidencia):</strong> Fundamentos metodológicos para la evaluación crítica de estudios clínicos y revisiones sistemáticas.",
-                "<strong>Ministerio de Salud y Protección Social de Colombia (Guías de Práctica Clínica - GPC):</strong> Lineamientos nacionales de diagnóstico, manejo y desenlaces clínicos."
-            ],
-            "Enfermería": [
-                "<strong>Dorothea Orem (Teoría del Déficit de Autocuidado):</strong> Modelo conceptual clave para evaluar la capacidad de autocuidado y el rol educativo de enfermería.",
-                "<strong>NANDA International, NOC y NIC (2024):</strong> Taxonomía estandarizada para diagnósticos, resultados esperados e intervenciones clínicas de enfermería.",
-                "<strong>Organización Panamericana de la Salud (OPS):</strong> Protocolos de seguridad del paciente y prevención de eventos adversos intrahospitalarios."
-            ],
-            "Instrumentación Quirúrgica": [
-                "<strong>Organización Mundial de la Salud (OMS - Alianza Mundial para la Seguridad del Paciente):</strong> Manual de aplicación de la Lista de Verificación de la Seguridad de la Cirugía.",
-                "<strong>Association of periOperative Registered Nurses (AORN):</strong> Estándares internacionales de técnica aséptica, conteo quirúrgico y prevención de infección del sitio operatorio.",
-                "<strong>Fuller, J. R. (Instrumentación Quirúrgica: Principios y Práctica):</strong> Referente fundamental en protocolos intraoperatorios y gestión del entorno quirúrgico."
-            ],
-            "Fisioterapia": [
-                "<strong>Organización Mundial de la Salud (CIF - Clasificación Internacional del Funcionamiento):</strong> Marco estándar para evaluar deficiencias, limitaciones en la actividad y restricción en la participación.",
-                "<strong>World Physiotherapy (Confederación Mundial de Fisioterapia):</strong> Directrices basadas en la evidencia para rehabilitación funcional y prescripción del ejercicio terapéutico.",
-                "<strong>Kisner, C. & Colby, L. A. (Ejercicio Terapéutico: Fundamentos y Técnicas):</strong> Referente clínico en dosificación de cargas, movilidad y recuperación neuromuscular."
-            ],
-            "Bacteriología y Laboratorio Clínico": [
-                "<strong>Clinical and Laboratory Standards Institute (CLSI):</strong> Estándares internacionales para pruebas de susceptibilidad antimicrobiana y control de calidad analítico.",
-                "<strong>Instituto Nacional de Salud (INS - Colombia):</strong> Protocolos de vigilancia en salud pública y control microbiológico.",
-                "<strong>Koneman, E. W. (Diagnóstico Microbiológico):</strong> Referente clásico en identificación bacteriana y correlación clínica de laboratorio."
-            ],
-            "Odontología": [
-                "<strong>FDI World Dental Federation:</strong> Consensos internacionales sobre salud bucodental, prevención y odontología mínimamente invasiva.",
-                "<strong>Lindhe, J. (Periodontología Clínica e Implantología Odontológica):</strong> Referente científico en patología periodontal y rehabilitación oral.",
-                "<strong>Ministerio de Salud (IV Estudio Nacional de Salud Bucal - ENSAB):</strong> Datos epidemiológicos de referencia en Colombia."
-            ],
-            "Nutrición y Dietética": [
-                "<strong>Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO) y OMS:</strong> Guías de requerimientos nutricionales y seguridad alimentaria.",
-                "<strong>Mahan, L. K. & Raymond, J. L. (Krause Dietoterapia):</strong> Referente clínico en evaluación nutricional y manejo dietoterapéutico por patologías.",
-                "<strong>Asociación Americana de Dietética (Academy of Nutrition and Dietetics):</strong> Proceso de Atención Nutricional (PAN)."
-            ],
-            "Psicología Clínica y de la Salud": [
-                "<strong>Asociación Americana de Psiquiatría (APA - DSM-5-TR):</strong> Manual diagnóstico y estadístico de los trastornos mentales.",
-                "<strong>Aaron T. Beck (Terapia Cognitivo-Conductual):</strong> Marco teórico y escalas validadas (BDI, BAI) para evaluación e intervención clínica.",
-                "<strong>Lazarus, R. & Folkman, S. (Teoría del Estrés y Afrontamiento):</strong> Modelo clave para analizar respuestas psicológicas ante enfermedades crónicas."
-            ],
-            "Seguridad y Salud en el Trabajo (SST)": [
-                "<strong>Organización Internacional del Trabajo (OIT):</strong> Convenios y directrices internacionales sobre sistemas de gestión de seguridad y salud laboral.",
-                "<strong>Decreto 1072 de 2015 y Resolución 0312 de 2019 (Colombia):</strong> Marco normativo obligatorio para el diseño y evaluación del SG-SST.",
-                "<strong>Guías de Atención Integral Basadas en la Evidencia (GATI-SO):</strong> Referentes nacionales para desórdenes musculoesqueléticos y factores de riesgo ocupacional."
-            ],
-            "General": [
-                "<strong>Hernández-Sampieri, R. & Mendoza, C. (Metodología de la Investigación):</strong> Referente metodológico estándar para el diseño de rutas cuantitativas, cualitativas y mixtas.",
-                "<strong>Arias, F. G. (El Proyecto de Investigación):</strong> Guía estructural para la formulación del problema, objetivos y operacionalización de variables.",
-                "<strong>Bases de datos científicas indexadas (Scopus, PubMed, SciELO):</strong> Fuentes primarias para la construcción del estado del arte y antecedentes (2021-2026)."
-            ]
+        const bancoTematico = {
+            "acv": {
+                subtemas: [
+                    "Accidente Cerebrovascular (ACV) isquémico agudo y ventana terapéutica trombolítica",
+                    "Mortalidad intrahospitalaria y factores pronósticos asociados al ACV",
+                    "Secuelas neurológicas y rehabilitación funcional temprana en pacientes post-ACV"
+                ],
+                autores: [
+                    "<strong>Powers, W. J. et al. (AHA/ASA Guidelines):</strong> Guías clínicas internacionales de la American Heart Association para el manejo temprano del ACV isquémico agudo.",
+                    "<strong>Feigin, V. L. et al. (Global Burden of Disease - The Lancet Neurology):</strong> Referente mundial en epidemiología, incidencia y mortalidad por enfermedad cerebrovascular.",
+                    "<strong>Ministerio de Salud y Protección Social de Colombia (GPC - ACV):</strong> Guía de Práctica Clínica nacional para diagnóstico, tratamiento y rehabilitación del ataque cerebrovascular."
+                ]
+            },
+            "cirugia": {
+                subtemas: [
+                    "Adherencia a la Lista de Verificación de Cirugía Segura y prevención de eventos adversos",
+                    "Factores de riesgo asociados a la Infección del Sitio Operatorio (ISO) en procedimientos quirúrgicos",
+                    "Seguridad del paciente en quirófano: protocolos de conteo de instrumental y control de esterilización"
+                ],
+                autores: [
+                    "<strong>Haynes, A. B. & Gawande, A. A. (New England Journal of Medicine):</strong> Estudio fundamental sobre el impacto de la Lista de Verificación de la Seguridad de la Cirugía de la OMS.",
+                    "<strong>Association of periOperative Registered Nurses (AORN):</strong> Estándares basados en la evidencia para técnica aséptica y seguridad perioperatoria.",
+                    "<strong>Organización Mundial de la Salud (OMS):</strong> Directrices globales para la prevención de la infección del sitio quirúrgico."
+                ]
+            },
+            "diabetes": {
+                subtemas: [
+                    "Control glucémico y factores asociados a complicaciones microvasculares en Diabetes Mellitus tipo 2",
+                    "Adherencia al tratamiento farmacológico y autocuidado en pacientes diabéticos",
+                    "Prevención y abordaje integral del pie diabético en atención primaria en salud"
+                ],
+                autores: [
+                    "<strong>American Diabetes Association (ADA - Standards of Care in Diabetes):</strong> Consenso anual internacional de diagnóstico, metas glucémicas y manejo clínico.",
+                    "<strong>International Diabetes Federation (IDF Diabetes Atlas):</strong> Referente epidemiológico global sobre prevalencia y mortalidad por diabetes.",
+                    "<strong>Dorothea Orem (Teoría del Déficit de Autocuidado):</strong> Marco teórico clave para evaluar la agencia de autocuidado en enfermedades crónicas."
+                ]
+            }
         };
 
+        const referentesGenerales = {
+            "Medicina": [
+                "<strong>Guyatt, G. & Sackett, D. (Evidence-Based Medicine):</strong> Fundamentos metodológicos para la evaluación crítica de la evidencia clínica.",
+                "<strong>Organización Mundial de la Salud (OMS):</strong> Informes epidemiológicos globales y guías de práctica clínica.",
+                "<strong>Ministerio de Salud y Protección Social (Colombia):</strong> Guías de Práctica Clínica (GPC) y protocolos nacionales de vigilancia en salud pública."
+            ],
+            "Enfermería": [
+                "<strong>NANDA International, NOC y NIC:</strong> Taxonomía estandarizada para diagnósticos, resultados e intervenciones de enfermería.",
+                "<strong>Dorothea Orem / Callista Roy:</strong> Modelos conceptuales de autocuidado y adaptación aplicados a la práctica clínica.",
+                "<strong>Organización Panamericana de la Salud (OPS):</strong> Lineamientos regionales sobre seguridad del paciente y calidad del cuidado."
+            ],
+            "Instrumentación Quirúrgica": [
+                "<strong>OMS - Alianza Mundial para la Seguridad del Paciente:</strong> Manual de aplicación de la Lista de Verificación de la Seguridad de la Cirugía.",
+                "<strong>AORN (Association of periOperative Registered Nurses):</strong> Guías de práctica recomendada para el entorno quirúrgico.",
+                "<strong>Fuller, J. R. (Instrumentación Quirúrgica: Principios y Práctica):</strong> Referente técnico y metodológico del quehacer en quirófano."
+            ],
+            "Fisioterapia": [
+                "<strong>OMS (CIF - Clasificación Internacional del Funcionamiento):</strong> Marco estandarizado para medir discapacidad y recuperación funcional.",
+                "<strong>World Physiotherapy:</strong> Directrices internacionales basadas en la evidencia para intervención terapéutica.",
+                "<strong>Kisner, C. & Colby, L. A. (Ejercicio Terapéutico):</strong> Referente clínico en prescripción del movimiento y rehabilitación."
+            ],
+            "General": [
+                "<strong>Hernández-Sampieri, R. & Mendoza, C. (Metodología de la Investigación):</strong> Referente estándar para diseños cuantitativos, cualitativos y mixtos.",
+                "<strong>PRISMA Statement (Page, M. J. et al.):</strong> Directrices internacionales para la elaboración rigurosa de revisiones sistemáticas.",
+                "<strong>Bases de datos indexadas (PubMed, Scopus, SciELO):</strong> Repositorios científicos de alta evidencia para el estado del arte."
+            ]
+        };
         document.getElementById('btn-generar').addEventListener('click', function() {
             const carrera = document.getElementById('carrera').value;
-            let enfoque = document.getElementById('enfoque').value.trim();
+            const temaRaw = document.getElementById('enfoque').value.trim();
             const tipoEstudio = document.getElementById('tipo-estudio').value;
 
             if (!carrera) {
                 alert("Por favor, selecciona tu programa o carrera.");
                 return;
             }
-
-            if (!enfoque) {
-                enfoque = "población clínica y comunitaria en el contexto colombiano";
+            if (!temaRaw) {
+                alert("Por favor, escribe el tema, patología o variable principal que deseas investigar.");
+                return;
             }
 
-            const t1 = `Factores asociados y comportamiento clínico de ${enfoque} desde el abordaje de ${carrera}: ${tipoEstudio} (2021-2026).`;
-            const t2 = `Impacto de las estrategias de intervención en ${enfoque} dentro del campo de ${carrera}: evidencia científica reciente.`;
-            const t3 = `Análisis integral de ${enfoque} y su relación con los desenlaces profesionales en ${carrera}.`;
+            const temaLower = temaRaw.toLowerCase();
+            let subtemas = [];
+            let autoresSeleccionados = [];
 
-            const pregunta = `¿Cuáles son los principales factores, evidencias y estrategias de abordaje relacionados con ${enfoque} en el área de ${carrera} mediante un ${tipoEstudio.toLowerCase()}?`;
-            const objetivoGeneral = `Analizar los factores determinantes y las estrategias de intervención asociadas a ${enfoque} en el ámbito de ${carrera} a través de un ${tipoEstudio.toLowerCase()}.`;
+            if (temaLower.includes("acv") || temaLower.includes("cerebrovascular") || temaLower.includes("ictus")) {
+                subtemas = bancoTematico["acv"].subtemas;
+                autoresSeleccionados = bancoTematico["acv"].autores;
+            } else if (temaLower.includes("cirug") || temaLower.includes("quirurg") || temaLower.includes("quirofano") || temaLower.includes("operatorio")) {
+                subtemas = bancoTematico["cirugia"].subtemas;
+                autoresSeleccionados = bancoTematico["cirugia"].autores;
+            } else if (temaLower.includes("diabet") || temaLower.includes("glucem") || temaLower.includes("insulina")) {
+                subtemas = bancoTematico["diabetes"].subtemas;
+                autoresSeleccionados = bancoTematico["diabetes"].autores;
+            } else {
+                subtemas = [
+                    `Factores de riesgo, prevalencia y comportamiento epidemiológico de ${temaRaw}`,
+                    `Estrategias de diagnóstico, manejo y prevención de complicaciones asociadas a ${temaRaw}`,
+                    `Impacto clínico, calidad de vida y desenlaces funcionales en pacientes o población con ${temaRaw}`
+                ];
+                autoresSeleccionados = referentesGenerales[carrera] || referentesGenerales["General"];
+            }
 
-            const esp1 = `Caracterizar el comportamiento epidemiológico y las variables principales relacionadas con ${enfoque} en la literatura científica reciente.`;
-            const esp2 = `Identificar los factores de riesgo, barreras o determinantes que influyen en el manejo de ${enfoque} desde la perspectiva de ${carrera}.`;
-            const esp3 = `Establecer recomendaciones prácticas basadas en la evidencia para optimizar los resultados en el abordaje de ${enfoque}.`;
+            const t1 = `${subtemas[0]} desde el abordaje de ${carrera}: ${tipoEstudio} (2021-2026).`;
+            const t2 = `${subtemas[1]}: evidencia científica y retos actuales en ${carrera}.`;
+            const t3 = `${subtemas[2]} en el contexto institucional colombiano: un análisis desde ${carrera}.`;
 
-            const listaReferentes = referentesPorArea[carrera] || referentesPorArea["General"];
-            let htmlReferentes = "";
-            for (let i = 0; i < listaReferentes.length; i++) {
-                htmlReferentes += "<li>" + listaReferentes[i] + "</li>";
+            const pregunta = `¿Cuál es la evidencia científica y los factores determinantes asociados a ${subtemas[0].toLowerCase()} desde la perspectiva de ${carrera}?`;
+            const objetivoGeneral = `Analizar los factores asociados y las estrategias de abordaje en torno a ${subtemas[0].toLowerCase()} dentro del campo de ${carrera} mediante un ${tipoEstudio.toLowerCase()}.`;
+
+            const esp1 = `Identificar la incidencia, caracterización y variables principales relacionadas con ${temaRaw} en la literatura científica actualizada.`;
+            const esp2 = `Determinar los factores clínicos, metodológicos o contextuales que inciden en la evolución y manejo de ${temaRaw}.`;
+            const esp3 = `Formular lineamientos basados en la evidencia para fortalecer la intervención de ${carrera} frente a ${temaRaw}.`;
+
+            const queryCodificada = encodeURIComponent(temaRaw + " " + carrera);
+            const queryTemaSolo = encodeURIComponent(temaRaw);
+
+            let htmlAutores = "";
+            for (let i = 0; i < autoresSeleccionados.length; i++) {
+                htmlAutores += "<li>" + autoresSeleccionados[i] + "</li>";
             }
 
             document.getElementById('contenido-propuesta').innerHTML = `
                 <div class="propuesta-box">
-                    <h3>📌 Sugerencias de Títulos Académicos (Elige una opción)</h3>
+                    <h3>📌 3 Opciones de Títulos Alineados con "${temaRaw}"</h3>
                     <ol>
                         <li><strong>${t1}</strong></li>
                         <li><strong>${t2}</strong></li>
                         <li><strong>${t3}</strong></li>
                     </ol>
 
-                    <h3>❓ Pregunta Problema</h3>
+                    <h3>❓ Pregunta Problema (Basada en la Opción 1)</h3>
                     <p>${pregunta}</p>
 
                     <h3>🎯 Objetivo General</h3>
@@ -226,8 +265,16 @@ Somos expertos en investigación académica. Encuentra tu tema ideal, estructura
                         <li>${esp3}</li>
                     </ul>
 
-                    <h3>📚 Referentes Teóricos, Guías y Autores Reales Recomendados</h3>
-                    <ul>${htmlReferentes}</ul>
+                    <h3>📚 Referentes Teóricos y Autores Precisos del Área</h3>
+                    <ul>${htmlAutores}</ul>
+
+                    <h3>🔎 Explorar Artículos y Autores Reales en Bases de Datos sobre "${temaRaw}"</h3>
+                    <p>Consulta literatura científica indexada directamente sobre tu tema en tiempo real:</p>
+                    <div class="search-links">
+                        <a href="https://google.es{queryCodificada}" target="_blank" class="search-badge">🎓 Buscar en Google Académico</a>
+                        <a href="https://nih.gov{queryTemaSolo}" target="_blank" class="search-badge">🩺 Buscar en PubMed (Salud)</a>
+                        <a href="https://scielo.org{queryCodificada}&lang=es" target="_blank" class="search-badge">🌎 Buscar en SciELO</a>
+                    </div>
                 </div>
             `;
 
