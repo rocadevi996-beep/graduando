@@ -366,13 +366,13 @@
             </div>
         </div>
 
-        <!-- PANEL 2: ENSAYOS, TRABAJOS CORTOS Y NORMAS -->
+                <!-- PANEL 2: ENSAYOS, TRABAJOS CORTOS Y NORMAS -->
         <div id="panel-trabajos" class="tab-panel">
             <div class="card">
                 <h2>📝 Ensayos, Trabajos Académicos y Aplicación de Normas</h2>
                 <div class="form-group">
                     <label for="tipo-trabajo">¿Qué tipo de trabajo necesitas?</label>
-                    <select id="tipo-trabajo">
+                    <select id="tipo-trabajo" onchange="actualizarEnlaceWA('trabajos')">
                         <option value="Ensayo Argumentativo / Crítico">Ensayo Argumentativo / Crítico</option>
                         <option value="Corrección y Ajuste de Tesis">Corrección y Ajuste de Tesis / Anteproyecto</option>
                         <option value="Aplicación de Normas (APA 7, IEEE, Vancouver, Icontec)">Aplicación de Normas (APA 7, IEEE, Vancouver, Icontec)</option>
@@ -382,23 +382,29 @@
                 </div>
                 <div class="form-group">
                     <label for="tema-trabajo">Materia o tema del trabajo:</label>
-                    <input type="text" id="tema-trabajo" placeholder="Ej. Ética médica, normas APA 7 a tesis de 60 páginas, ensayo sobre economía...">
+                    <input type="text" id="tema-trabajo" oninput="actualizarEnlaceWA('trabajos')" placeholder="Ej. Ética médica, normas APA 7 a tesis de 60 páginas...">
                 </div>
                 <div class="form-group">
                     <label for="detalle-trabajo">Detalles adicionales (extensión, normas, fecha de entrega):</label>
-                    <textarea id="detalle-trabajo" rows="3" placeholder="Indica número de páginas, norma exigida o fecha límite..."></textarea>
+                    <textarea id="detalle-trabajo" rows="3" oninput="actualizarEnlaceWA('trabajos')" placeholder="Indica número de páginas, norma exigida o fecha límite..."></textarea>
                 </div>
-                <button class="btn-whatsapp" onclick="enviarWhatsAppDirecto('trabajos')">📲 Cotizar Trabajo por WhatsApp</button>
+                <div class="form-group">
+                    <label for="archivo-trabajo">📎 Adjuntar guía, rúbrica o documento (PDF, Word, Imagen):</label>
+                    <input type="file" id="archivo-trabajo" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" onchange="actualizarEnlaceWA('trabajos')" style="padding: 0.6rem; border: 2px dashed #00a896; border-radius: 8px; width: 100%; background: #f8fafc;">
+                    <small style="color: #64748b; display: block; margin-top: 4px;">Al abrirse WhatsApp, solo debes adjuntar este mismo archivo en el chat.</small>
+                </div>
+                <a id="link-wa-trabajos" href="https://wa.me" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">📲 Enviar Solicitud y Archivo por WhatsApp</a>
                 <p class="wa-direct-note">Línea directa WhatsApp: <strong>+57 310 471 4499</strong></p>
             </div>
         </div>
+
         <!-- PANEL 3: EJERCICIOS DE CIENCIAS BÁSICAS -->
         <div id="panel-ciencias" class="tab-panel">
             <div class="card">
                 <h2>🧮 Resolución de Ejercicios y Talleres de Ciencias Básicas</h2>
                 <div class="form-group">
                     <label for="materia-ciencias">Selecciona la asignatura:</label>
-                    <select id="materia-ciencias">
+                    <select id="materia-ciencias" onchange="actualizarEnlaceWA('ciencias')">
                         <option value="Cálculo Diferencial (Cálculo 1)">Cálculo Diferencial (Cálculo 1)</option>
                         <option value="Cálculo Integral (Cálculo 2)">Cálculo Integral (Cálculo 2)</option>
                         <option value="Cálculo Multivariado / Vectorial (Cálculo 3)">Cálculo Multivariado / Vectorial (Cálculo 3)</option>
@@ -411,16 +417,22 @@
                 </div>
                 <div class="form-group">
                     <label for="tema-ciencias">Temas específicos del taller o parcial:</label>
-                    <input type="text" id="tema-ciencias" placeholder="Ej. Límites, derivadas, integrales por partes, matrices, transformada de Laplace...">
+                    <input type="text" id="tema-ciencias" oninput="actualizarEnlaceWA('ciencias')" placeholder="Ej. Límites, derivadas, integrales por partes, matrices...">
                 </div>
                 <div class="form-group">
                     <label for="fecha-ciencias">Fecha y hora de entrega:</label>
-                    <input type="text" id="fecha-ciencias" placeholder="Ej. Para hoy a las 6:00 PM / Mañana...">
+                    <input type="text" id="fecha-ciencias" oninput="actualizarEnlaceWA('ciencias')" placeholder="Ej. Para hoy a las 6:00 PM / Mañana...">
                 </div>
-                <button class="btn-whatsapp" onclick="enviarWhatsAppDirecto('ciencias')">📲 Enviar Taller por WhatsApp</button>
+                <div class="form-group">
+                    <label for="archivo-ciencias">📎 Adjuntar taller o foto de los ejercicios (PDF, Word, Imagen):</label>
+                    <input type="file" id="archivo-ciencias" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" onchange="actualizarEnlaceWA('ciencias')" style="padding: 0.6rem; border: 2px dashed #00a896; border-radius: 8px; width: 100%; background: #f8fafc;">
+                    <small style="color: #64748b; display: block; margin-top: 4px;">Al abrirse WhatsApp, solo debes adjuntar este mismo archivo en el chat.</small>
+                </div>
+                <a id="link-wa-ciencias" href="https://wa.me" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">📲 Enviar Taller y Archivo por WhatsApp</a>
                 <p class="wa-direct-note">Línea directa WhatsApp: <strong>+57 310 471 4499</strong></p>
             </div>
         </div>
+
 
         <!-- PANEL 4: TUTORÍAS Y CLASES VIRTUALES -->
         <div id="panel-tutorias" class="tab-panel">
@@ -462,7 +474,7 @@
                     <input type="text" id="horario-tutoria" placeholder="Ej. Hoy en la tarde, noches después de las 7 PM...">
                 </div>
 
-                <button class="btn-whatsapp" onclick="enviarWhatsAppDirecto('tutorias')">📲 Agendar Clase por WhatsApp</button>
+               <a id="link-wa-tutorias" href="https://wa.me" target="_blank" rel="noopener noreferrer" onclick="actualizarEnlaceWA('tutorias')" class="btn-whatsapp">📲 Agendar Clase por WhatsApp</a>
                 <p class="wa-direct-note">Línea directa WhatsApp: <strong>+57 310 471 4499</strong></p>
             </div>
         </div>
@@ -688,31 +700,40 @@
             document.getElementById('resultado-container').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function enviarWhatsAppDirecto(servicio) {
+            function actualizarEnlaceWA(servicio) {
             let mensajeWA = "";
 
             if (servicio === 'trabajos') {
                 const tipo = document.getElementById('tipo-trabajo').value;
                 const tema = document.getElementById('tema-trabajo').value.trim() || "No especificado";
                 const detalle = document.getElementById('detalle-trabajo').value.trim() || "Sin detalles adicionales";
-                mensajeWA = `Hola GRADUANDO, quiero cotizar un trabajo académico:\n\n*Servicio:* ${tipo}\n*Tema/Materia:* ${tema}\n*Detalles:* ${detalle}`;
-            } else if (servicio === 'ciencias') {
+                const archivoInput = document.getElementById('archivo-trabajo');
+                const nombreArchivo = archivoInput.files.length > 0 ? archivoInput.files[0].name : "Ninguno";
+                
+                mensajeWA = `Hola GRADUANDO, quiero cotizar un trabajo academico. Servicio: ${tipo}. Tema: ${tema}. Detalles: ${detalle}. Archivo adjunto a enviar: ${nombreArchivo}`;
+                document.getElementById('link-wa-trabajos').href = `https://wa.me{WHATSAPP_NUMBER}?text=${encodeURIComponent(mensajeWA)}`;
+            } 
+            else if (servicio === 'ciencias') {
                 const materia = document.getElementById('materia-ciencias').value;
                 const tema = document.getElementById('tema-ciencias').value.trim() || "No especificado";
                 const fecha = document.getElementById('fecha-ciencias').value.trim() || "Por definir";
-                mensajeWA = `Hola GRADUANDO, necesito ayuda con ejercicios de Ciencias Básicas:\n\n*Asignatura:* ${materia}\n*Temas:* ${tema}\n*Fecha de entrega:* ${fecha}`;
-            } else if (servicio === 'tutorias') {
+                const archivoInput = document.getElementById('archivo-ciencias');
+                const nombreArchivo = archivoInput.files.length > 0 ? archivoInput.files[0].name : "Ninguno";
+
+                mensajeWA = `Hola GRADUANDO, necesito ayuda con Ciencias Basicas. Asignatura: ${materia}. Temas: ${tema}. Entrega: ${fecha}. Archivo adjunto a enviar: ${nombreArchivo}`;
+                document.getElementById('link-wa-ciencias').href = `https://wa.me{WHATSAPP_NUMBER}?text=${encodeURIComponent(mensajeWA)}`;
+            } 
+            else if (servicio === 'tutorias') {
                 const materia = document.getElementById('materia-tutoria').value;
                 const temaEscogido = document.getElementById('tema-select-tutoria').value;
                 const detalleExtra = document.getElementById('tema-tutoria').value.trim();
                 const horario = document.getElementById('horario-tutoria').value.trim() || "Flexible";
                 
-                mensajeWA = `Hola GRADUANDO, quiero agendar una tutoría virtual:\n\n*Materia:* ${materia}\n*Tema seleccionado:* ${temaEscogido}${detalleExtra ? `\n*Detalle adicional:* ${detalleExtra}` : ''}\n*Horario preferido:* ${horario}`;
+                mensajeWA = `Hola GRADUANDO, quiero agendar una tutoria virtual. Materia: ${materia}. Tema: ${temaEscogido}${detalleExtra ? `. Detalle: ${detalleExtra}` : ''}. Horario: ${horario}`;
+                document.getElementById('link-wa-tutorias').href = `https://wa.me{WHATSAPP_NUMBER}?text=${encodeURIComponent(mensajeWA)}`;
             }
-
-            const urlWA = `https://whatsapp.com{WHATSAPP_NUMBER}&text=${encodeURIComponent(mensajeWA)}`;
-            window.location.href = urlWA;
         }
+
     </script>
 </body>
 </html>
