@@ -1,739 +1,728 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GRADUANDO | Expertos en Investigación y Asesoría Académica</title>
-    <meta name="description" content="GRADUANDO: Expertos en asesoría de tesis, anteproyectos de grado, ensayos universitarios, normas APA 7, talleres de cálculo, álgebra lineal y tutorías virtuales en Colombia.">
-    <meta name="keywords" content="asesoría de tesis, proyectos de grado, anteproyectos, temas de tesis, normas APA 7, ensayos universitarios, tutorías cálculo, ecuaciones diferenciales, álgebra lineal, GRADUANDO">
-    <meta name="author" content="GRADUANDO">
-    <meta name="robots" content="index, follow">
-    <meta name="google-site-verification" content="d2FbASn_SQWieaSxFDdVLow-oMmK7q4PWzXRHTTCxcg" />
-
-    <style>
-        :root {
-            --primary: #0f4c81;
-            --secondary: #00a896;
-            --accent: #f4a261;
-            --bg-light: #f8fafc;
-            --text-dark: #1e293b;
-            --white: #ffffff;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary), #163a5f);
-            color: var(--white);
-            padding: 2.5rem 1rem;
-            text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-        }
-
-        header h1 {
-            font-size: 2.6rem;
-            letter-spacing: 2px;
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        header p {
-            font-size: 1.05rem;
-            opacity: 0.95;
-            max-width: 720px;
-            margin: 0 auto;
-        }
-
-        .container {
-            max-width: 920px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .services-nav {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 12px;
-            margin-bottom: 1.8rem;
-        }
-
-        .service-tab {
-            background: var(--white);
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 1rem;
-            text-align: center;
-            cursor: pointer;
-            font-weight: 700;
-            color: var(--primary);
-            transition: all 0.25s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
-        }
-
-        .service-tab:hover {
-            border-color: var(--secondary);
-            transform: translateY(-2px);
-        }
-
-        .service-tab.active {
-            background: var(--primary);
-            color: var(--white);
-            border-color: var(--primary);
-            box-shadow: 0 6px 12px rgba(15, 76, 129, 0.2);
-        }
-
-        .service-tab span {
-            display: block;
-            font-size: 1.5rem;
-            margin-bottom: 4px;
-        }
-
-        .tab-panel {
-            display: none;
-        }
-
-        .tab-panel.active {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
-            margin-bottom: 2rem;
-            border-top: 5px solid var(--secondary);
-        }
-
-        h2 {
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            font-size: 1.45rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.3rem;
-        }
-
-        label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.45rem;
-            color: var(--text-dark);
-        }
-
-        select, input[type="text"], textarea {
-            width: 100%;
-            padding: 0.85rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        select:focus, input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--secondary);
-        }
-
-        optgroup {
-            font-weight: bold;
-            color: var(--primary);
-        }
-
-        .btn {
-            background-color: var(--secondary);
-            color: var(--white);
-            border: none;
-            padding: 1rem 2rem;
-            font-size: 1.05rem;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #028090;
-        }
-
-        .btn-whatsapp {
-            display: inline-block;
-            background-color: #25D366;
-            color: white;
-            text-decoration: none;
-            padding: 0.9rem 1.8rem;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.05rem;
-            margin-top: 1rem;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            text-align: center;
-            transition: background 0.3s;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #128C7E;
-        }
-
-        .wa-direct-note {
-            text-align: center;
-            margin-top: 0.65rem;
-            font-size: 0.92rem;
-            color: #475569;
-        }
-
-        #resultado-container {
-            display: none;
-            border-top: 5px solid var(--primary);
-        }
-
-        .propuesta-box {
-            background-color: #f1f5f9;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .propuesta-box h3 {
-            color: var(--primary);
-            margin-bottom: 0.8rem;
-        }
-
-        .propuesta-item {
-            margin-bottom: 0.9rem;
-        }
-
-        .cta-box {
-            background: linear-gradient(135deg, #fff8f1, #ffedd5);
-            border: 1px solid var(--accent);
-            padding: 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2.5rem 1rem;
-            color: #64748b;
-            font-size: 0.92rem;
-            border-top: 1px solid #e2e8f0;
-            margin-top: 2rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin: 1rem 0;
-        }
-
-        .social-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 0.55rem 1.1rem;
-            border-radius: 6px;
-            text-decoration: none;
-            color: white;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: opacity 0.2s;
-        }
-
-        .social-btn:hover { opacity: 0.88; }
-        .fb { background-color: #1877F2; }
-        .ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-        .yt { background-color: #FF0000; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="GRADUANDO: asesoría metodológica, proyectos de investigación, trabajos académicos, ciencias básicas y tutorías virtuales en Colombia.">
+<meta name="theme-color" content="#102b46">
+<title>GRADUANDO | Investigación, asesoría y acompañamiento académico</title>
+<style>
+:root{--navy:#102b46;--blue:#174f78;--teal:#13a89e;--gold:#f0b35b;--ink:#203044;--muted:#64748b;--paper:#f5f8fb;--white:#fff;--line:#e2e8f0;--shadow:0 18px 50px rgba(16,43,70,.09)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+a{color:inherit}
+button,input,select,textarea{font:inherit}
+.wrap{width:min(1160px,92%);margin:auto}
+header{background:var(--navy);color:white;position:relative;overflow:hidden}
+nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 0}
+.brand{font-size:1.35rem;font-weight:900;letter-spacing:2px}
+.brand span{color:#67d6ca}
+.navlinks{display:flex;gap:22px;flex-wrap:wrap}
+.navlinks a{font-size:.92rem;text-decoration:none;color:#e4edf5}
+.navlinks a:hover{color:#7ee1d6}
+.hero{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:48px;padding:66px 0 82px}
+.eyebrow{color:#7ee1d6;text-transform:uppercase;letter-spacing:2px;font-weight:800;font-size:.78rem}
+.hero h1{font-size:clamp(2.4rem,5vw,4.4rem);line-height:1.08;margin:14px 0 20px;letter-spacing:-1.5px}
+.hero p{color:#d2deea;font-size:1.08rem;max-width:650px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:13px 20px;border:0;border-radius:10px;background:var(--teal);color:white;text-decoration:none;font-weight:800;cursor:pointer;transition:.2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(.96)}
+.btn-outline{background:transparent;border:1px solid #91a9bd;color:white}
+.hero-visual{min-height:360px;border-radius:26px;overflow:hidden;position:relative;background:linear-gradient(145deg,rgba(12,39,64,.08),rgba(12,39,64,.72)),url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1200&q=85') center/cover;box-shadow:0 25px 60px rgba(0,0,0,.25)}
+.visual-label{position:absolute;left:24px;right:24px;bottom:24px;padding:20px;border-radius:16px;background:rgba(10,34,56,.82);backdrop-filter:blur(8px)}
+.visual-label strong{display:block;font-size:1.2rem}
+.visual-label span{color:#d2e2ee;font-size:.92rem}
+.trustbar{background:white;border-bottom:1px solid var(--line)}
+.trustgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:20px 0;text-align:center}
+.trustgrid strong{display:block;color:var(--blue);font-size:1.04rem}
+.trustgrid span{font-size:.85rem;color:var(--muted)}
+section{padding:70px 0}
+.section-head{text-align:center;max-width:760px;margin:0 auto 34px}
+.section-head .eyebrow{color:var(--teal)}
+h2{font-size:clamp(1.8rem,3vw,2.55rem);line-height:1.18;color:var(--navy);margin:8px 0 12px}
+.section-head p{color:var(--muted);margin:0}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.service{background:white;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
+.service .ico{font-size:1.8rem}
+.service h3{color:var(--navy);margin:12px 0 7px}
+.service p{font-size:.94rem;color:var(--muted);margin:0}
+.panel{background:white;border:1px solid var(--line);border-radius:20px;padding:clamp(20px,4vw,38px);box-shadow:var(--shadow);margin-bottom:22px}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.tab{border:1px solid var(--line);background:white;color:var(--blue);border-radius:10px;padding:11px 15px;font-weight:800;cursor:pointer}
+.tab.active{background:var(--navy);color:white;border-color:var(--navy)}
+.tabcontent{display:none}
+.tabcontent.active{display:block}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:750;color:var(--navy);font-size:.92rem;margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;border:1px solid #cbd5e1;border-radius:10px;padding:12px 13px;background:#fff;color:var(--ink)}
+.field textarea{min-height:94px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid rgba(19,168,158,.15);border-color:var(--teal)}
+.hint{font-size:.83rem;color:var(--muted);margin-top:5px}
+.wide{width:100%}
+.result{display:none;background:#f1f7fa;border:1px solid #d9e7ee;border-left:5px solid var(--teal);border-radius:12px;padding:22px;margin-top:22px}
+.result h3{margin:0 0 10px;color:var(--navy)}
+.result p{margin:8px 0}
+.refs{padding-left:20px}
+.refs li{margin:10px 0;overflow-wrap:anywhere}
+.small{font-size:.86rem;color:var(--muted)}
+.projects{background:#edf3f7}
+.project-tools{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:26px}
+.project-tools input,.project-tools select{padding:11px 13px;border:1px solid #cbd5e1;border-radius:10px;background:white;min-width:210px}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.project-card{background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.project-thumb{height:145px;background:linear-gradient(135deg,#174f78,#13a89e);display:grid;place-items:center;color:white;font-size:2.5rem}
+.project-body{padding:20px}
+.project-body .tag{font-size:.75rem;font-weight:800;color:#087e78;text-transform:uppercase;letter-spacing:.7px}
+.project-body h3{margin:7px 0;color:var(--navy);font-size:1.1rem}
+.project-body p{color:var(--muted);font-size:.92rem;margin:0}
+.empty{grid-column:1/-1;text-align:center;padding:35px;background:white;border:1px dashed #b8c8d5;border-radius:16px;color:var(--muted)}
+.video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.video-card{background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.video-card iframe{width:100%;aspect-ratio:16/9;border:0;display:block}
+.video-card div{padding:18px}
+.video-card h3{margin:0 0 6px;color:var(--navy)}
+.video-card p{margin:0;color:var(--muted);font-size:.9rem}
+.faq{max-width:850px;margin:auto}
+.faq details{background:white;border:1px solid var(--line);border-radius:12px;padding:17px 20px;margin:10px 0}
+.faq summary{font-weight:800;color:var(--navy);cursor:pointer}
+.faq p{color:var(--muted);margin-bottom:0}
+footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
+.footgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
+.footgrid h3{color:white}
+.footgrid a{display:block;text-decoration:none;color:#c1d1df;margin:6px 0}
+.copyright{border-top:1px solid #294158;margin-top:30px;padding-top:20px;text-align:center;font-size:.85rem;color:#9fb1c1}
+.floating-wa{position:fixed;right:22px;bottom:22px;background:#20c76a;color:#fff;text-decoration:none;border-radius:50px;padding:13px 18px;font-weight:900;box-shadow:0 8px 25px #0b203455;z-index:10}
+@media(max-width:900px){
+ .hero{grid-template-columns:1fr;padding:48px 0 60px}
+ .hero-visual{min-height:290px}
+ .services{grid-template-columns:repeat(2,1fr)}
+ .project-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:620px){
+ .navlinks{display:none}
+ .trustgrid{grid-template-columns:1fr}
+ .services,.grid2,.project-grid,.video-grid,.footgrid{grid-template-columns:1fr}
+ .hero{gap:25px}
+ .hero-visual{min-height:250px}
+ section{padding:52px 0}
+ .floating-wa{right:12px;bottom:12px}
+}
+</style>
 </head>
 <body>
-
-    <header>
-        <h1>🎓 GRADUANDO 📚</h1>
-        <p>¿Bloqueado con tu tesis? En GRADUANDO transformamos tus ideas en un proyecto de grado ganador. 🎓📚 Somos expertos en investigación académica. Encuentra tu tema ideal, estructura tu anteproyecto y recibe el respaldo metodológico que necesitas para graduarte sin estrés.</p>
-    </header>
-
-    <div class="container">
-        <div class="services-nav">
-            <div class="service-tab active" onclick="cambiarTab('tesis', this)">
-                <span>🎓</span>
-                Tesis y Proyectos
-            </div>
-            <div class="service-tab" onclick="cambiarTab('trabajos', this)">
-                <span>📝</span>
-                Ensayos y Normas
-            </div>
-            <div class="service-tab" onclick="cambiarTab('ciencias', this)">
-                <span>🧮</span>
-                Ciencias Básicas
-            </div>
-            <div class="service-tab" onclick="cambiarTab('tutorias', this)">
-                <span>💻</span>
-                Tutorías Virtuales
-            </div>
-        </div>
-        <!-- PANEL 1: PROYECTOS DE GRADO Y TESIS -->
-        <div id="panel-tesis" class="tab-panel active">
-            <div class="card">
-                <h2>1. Configura tu Perfil de Investigación</h2>
-                
-                <div class="form-group">
-                    <label for="carrera">Selecciona tu Programa / Carrera:</label>
-                    <select id="carrera">
-                        <option value="">-- Elige tu carrera --</option>
-                        <optgroup label="🩺 Ciencias de la Salud">
-                            <option value="Medicina">Medicina</option>
-                            <option value="Enfermería">Enfermería</option>
-                            <option value="Instrumentación Quirúrgica">Instrumentación Quirúrgica</option>
-                            <option value="Fisioterapia">Fisioterapia</option>
-                            <option value="Bacteriología y Laboratorio Clínico">Bacteriología y Laboratorio Clínico</option>
-                            <option value="Odontología">Odontología</option>
-                            <option value="Nutrición y Dietética">Nutrición y Dietética</option>
-                            <option value="Fonoaudiología">Fonoaudiología</option>
-                            <option value="Terapia Respiratoria">Terapia Respiratoria</option>
-                            <option value="Regencia de Farmacia">Regencia de Farmacia</option>
-                            <option value="Psicología Clínica y de la Salud">Psicología Clínica y de la Salud</option>
-                            <option value="Seguridad y Salud en el Trabajo (SST)">Seguridad y Salud en el Trabajo (SST)</option>
-                        </optgroup>
-                        <optgroup label="⚙️ Ingenierías y Tecnología">
-                            <option value="Ingeniería Civil">Ingeniería Civil</option>
-                            <option value="Ingeniería de Sistemas / Software">Ingeniería de Sistemas / Software</option>
-                            <option value="Ingeniería Industrial">Ingeniería Industrial</option>
-                            <option value="Ingeniería Ambiental">Ingeniería Ambiental</option>
-                        </optgroup>
-                        <optgroup label="⚖️ Ciencias Sociales, Jurídicas y Administrativas">
-                            <option value="Derecho">Derecho</option>
-                            <option value="Administración de Empresas">Administración de Empresas</option>
-                            <option value="Contaduría Pública">Contaduría Pública</option>
-                            <option value="Trabajo Social">Trabajo Social</option>
-                            <option value="Educación / Licenciaturas">Educación / Licenciaturas</option>
-                        </optgroup>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="enfoque">Escribe el tema, patología o variable principal:</label>
-                    <input type="text" id="enfoque" placeholder="Ej. ACV, cirugía segura, diabetes, infección hospitalaria, rehabilitación, riesgo laboral...">
-                </div>
-
-                <div class="form-group">
-                    <label for="tipo-estudio">Enfoque metodológico preferido:</label>
-                    <select id="tipo-estudio">
-                        <option value="Revisión Sistemática / Literatura">Revisión Sistemática o de Literatura (Sin trabajo de campo)</option>
-                        <option value="Estudio Observacional / Descriptivo">Estudio Observacional / Análisis de Bases de Datos</option>
-                        <option value="Estudio Cuantitativo / Correlacional">Estudio Cuantitativo / Encuestas</option>
-                        <option value="Estudio Cualitativo">Estudio Cualitativo / Fenomenológico</option>
-                    </select>
-                </div>
-
-                <button class="btn" id="btn-generar" onclick="generarPropuesta()">Generar Propuesta de Título y Referentes</button>
-            </div>
-
-            <div class="card" id="resultado-container">
-                <h2>2. Propuesta de Investigación Sugerida</h2>
-                <div class="propuesta-box" id="propuesta-contenido"></div>
-                <div class="cta-box">
-                    <p><strong>¿Te gustó esta propuesta o necesitas que redactemos el planteamiento del problema, marco teórico y metodología?</strong></p>
-                    <a id="btn-wa-tesis" href="#" target="_blank" class="btn-whatsapp">📲 Solicitar Asesoría por WhatsApp</a>
-                    <p class="wa-direct-note">O escríbenos directamente al WhatsApp: <strong>+57 310 471 4499</strong></p>
-                </div>
-            </div>
-        </div>
-
-                <!-- PANEL 2: ENSAYOS, TRABAJOS CORTOS Y NORMAS -->
-        <div id="panel-trabajos" class="tab-panel">
-            <div class="card">
-                <h2>📝 Ensayos, Trabajos Académicos y Aplicación de Normas</h2>
-                <div class="form-group">
-                    <label for="tipo-trabajo">¿Qué tipo de trabajo necesitas?</label>
-                    <select id="tipo-trabajo" onchange="actualizarEnlaceWA('trabajos')">
-                        <option value="Ensayo Argumentativo / Crítico">Ensayo Argumentativo / Crítico</option>
-                        <option value="Corrección y Ajuste de Tesis">Corrección y Ajuste de Tesis / Anteproyecto</option>
-                        <option value="Aplicación de Normas (APA 7, IEEE, Vancouver, Icontec)">Aplicación de Normas (APA 7, IEEE, Vancouver, Icontec)</option>
-                        <option value="Resúmenes, Relatorías o Artículos">Resúmenes, Relatorías o Artículos</option>
-                        <option value="Diapositivas y Sustentación">Presentación en Diapositivas para Sustentación</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="tema-trabajo">Materia o tema del trabajo:</label>
-                    <input type="text" id="tema-trabajo" oninput="actualizarEnlaceWA('trabajos')" placeholder="Ej. Ética médica, normas APA 7 a tesis de 60 páginas...">
-                </div>
-                <div class="form-group">
-                    <label for="detalle-trabajo">Detalles adicionales (extensión, normas, fecha de entrega):</label>
-                    <textarea id="detalle-trabajo" rows="3" oninput="actualizarEnlaceWA('trabajos')" placeholder="Indica número de páginas, norma exigida o fecha límite..."></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="archivo-trabajo">📎 Adjuntar guía, rúbrica o documento (PDF, Word, Imagen):</label>
-                    <input type="file" id="archivo-trabajo" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" onchange="actualizarEnlaceWA('trabajos')" style="padding: 0.6rem; border: 2px dashed #00a896; border-radius: 8px; width: 100%; background: #f8fafc;">
-                    <small style="color: #64748b; display: block; margin-top: 4px;">Al abrirse WhatsApp, solo debes adjuntar este mismo archivo en el chat.</small>
-                </div>
-                <a id="link-wa-trabajos" href="https://wa.me" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">📲 Enviar Solicitud y Archivo por WhatsApp</a>
-                <p class="wa-direct-note">Línea directa WhatsApp: <strong>+57 310 471 4499</strong></p>
-            </div>
-        </div>
-
-        <!-- PANEL 3: EJERCICIOS DE CIENCIAS BÁSICAS -->
-        <div id="panel-ciencias" class="tab-panel">
-            <div class="card">
-                <h2>🧮 Resolución de Ejercicios y Talleres de Ciencias Básicas</h2>
-                <div class="form-group">
-                    <label for="materia-ciencias">Selecciona la asignatura:</label>
-                    <select id="materia-ciencias" onchange="actualizarEnlaceWA('ciencias')">
-                        <option value="Cálculo Diferencial (Cálculo 1)">Cálculo Diferencial (Cálculo 1)</option>
-                        <option value="Cálculo Integral (Cálculo 2)">Cálculo Integral (Cálculo 2)</option>
-                        <option value="Cálculo Multivariado / Vectorial (Cálculo 3)">Cálculo Multivariado / Vectorial (Cálculo 3)</option>
-                        <option value="Ecuaciones Diferenciales Ordinarias (EDO)">Ecuaciones Diferenciales Ordinarias (EDO)</option>
-                        <option value="Álgebra Básica / Trigonometría">Álgebra Básica / Trigonometría</option>
-                        <option value="Álgebra Lineal">Álgebra Lineal</option>
-                        <option value="Estadística Descriptiva / Inferencial">Estadística Descriptiva / Inferencial</option>
-                        <option value="Física / Química General">Física / Química General</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="tema-ciencias">Temas específicos del taller o parcial:</label>
-                    <input type="text" id="tema-ciencias" oninput="actualizarEnlaceWA('ciencias')" placeholder="Ej. Límites, derivadas, integrales por partes, matrices...">
-                </div>
-                <div class="form-group">
-                    <label for="fecha-ciencias">Fecha y hora de entrega:</label>
-                    <input type="text" id="fecha-ciencias" oninput="actualizarEnlaceWA('ciencias')" placeholder="Ej. Para hoy a las 6:00 PM / Mañana...">
-                </div>
-                <div class="form-group">
-                    <label for="archivo-ciencias">📎 Adjuntar taller o foto de los ejercicios (PDF, Word, Imagen):</label>
-                    <input type="file" id="archivo-ciencias" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" onchange="actualizarEnlaceWA('ciencias')" style="padding: 0.6rem; border: 2px dashed #00a896; border-radius: 8px; width: 100%; background: #f8fafc;">
-                    <small style="color: #64748b; display: block; margin-top: 4px;">Al abrirse WhatsApp, solo debes adjuntar este mismo archivo en el chat.</small>
-                </div>
-                <a id="link-wa-ciencias" href="https://wa.me" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">📲 Enviar Taller y Archivo por WhatsApp</a>
-                <p class="wa-direct-note">Línea directa WhatsApp: <strong>+57 310 471 4499</strong></p>
-            </div>
-        </div>
-
-
-        <!-- PANEL 4: TUTORÍAS Y CLASES VIRTUALES -->
-        <div id="panel-tutorias" class="tab-panel">
-            <div class="card">
-                <h2>💻 Tutorías y Clases Virtuales Personalizadas</h2>
-                
-                <div class="form-group">
-                    <label for="materia-tutoria">1. Selecciona la materia o área de refuerzo:</label>
-                    <select id="materia-tutoria" onchange="actualizarTemasTutoria()">
-                        <option value="Cálculo Diferencial (Cálculo 1)">Cálculo Diferencial (Cálculo 1)</option>
-                        <option value="Cálculo Integral (Cálculo 2)">Cálculo Integral (Cálculo 2)</option>
-                        <option value="Cálculo Multivariado (Cálculo 3)">Cálculo Multivariado (Cálculo 3)</option>
-                        <option value="Ecuaciones Diferenciales (EDO)">Ecuaciones Diferenciales (EDO)</option>
-                        <option value="Álgebra y Trigonometría">Álgebra y Trigonometría</option>
-                        <option value="Álgebra Lineal">Álgebra Lineal</option>
-                        <option value="Metodología de la Investigación / Tesis">Metodología de la Investigación / Tesis</option>
-                        <option value="Bioestadística / Análisis de Datos">Bioestadística / Análisis de Datos</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="tema-select-tutoria">2. Escoge el tema específico a repasar:</label>
-                    <select id="tema-select-tutoria">
-                        <option value="Funciones, Límites y Continuidad">Funciones, Límites y Continuidad</option>
-                        <option value="Reglas de Derivación y Regla de la Cadena">Reglas de Derivación y Regla de la Cadena</option>
-                        <option value="Optimización y Razones de Cambio">Optimización y Razones de Cambio</option>
-                        <option value="Gráficas y Análisis de Funciones">Gráficas y Análisis de Funciones</option>
-                        <option value="Otro tema (especificar abajo)">Otro tema (especificar abajo)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="tema-tutoria">3. Detalle adicional o tema específico (Opcional):</label>
-                    <input type="text" id="tema-tutoria" placeholder="Ej. Preparación para parcial del viernes, taller específico...">
-                </div>
-
-                <div class="form-group">
-                    <label for="horario-tutoria">4. Disponibilidad horaria preferida:</label>
-                    <input type="text" id="horario-tutoria" placeholder="Ej. Hoy en la tarde, noches después de las 7 PM...">
-                </div>
-
-               <a id="link-wa-tutorias" href="https://wa.me" target="_blank" rel="noopener noreferrer" onclick="actualizarEnlaceWA('tutorias')" class="btn-whatsapp">📲 Agendar Clase por WhatsApp</a>
-                <p class="wa-direct-note">Línea directa WhatsApp: <strong>+57 310 471 4499</strong></p>
-            </div>
-        </div>
+<header>
+ <div class="wrap">
+  <nav>
+   <div class="brand">GRADUANDO<span>.</span></div>
+   <div class="navlinks">
+    <a href="#servicios">Servicios</a>
+    <a href="#herramientas">Solicitar asesoría</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#recursos">Recursos</a>
+    <a href="#contacto">Contacto</a>
+   </div>
+  </nav>
+  <div class="hero">
+   <div>
+    <div class="eyebrow">Acompañamiento académico especializado</div>
+    <h1>Tu proyecto académico merece una gran dirección.</h1>
+    <p>Convertimos ideas en proyectos estructurados. Te acompañamos con orientación metodológica, investigación, análisis académico y tutorías personalizadas.</p>
+    <div class="hero-actions">
+     <a class="btn" href="#herramientas">Solicitar asesoría <span>↗</span></a>
+     <a class="btn btn-outline" href="#proyectos">Conocer proyectos</a>
     </div>
-    <!-- BLOQUE DE PREGUNTAS FRECUENTES (SEO) -->
-    <section style="max-width: 920px; margin: 0 auto 2rem auto; padding: 0 1rem;">
-        <div style="background: #ffffff; border-radius: 12px; padding: 2rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); border-top: 5px solid #0f4c81;">
-            <h2 style="color: #0f4c81; margin-bottom: 1.2rem; font-size: 1.45rem;">❓ Preguntas Frecuentes sobre Tesis y Asesoría Académica</h2>
-            
-            <details style="margin-bottom: 1rem; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem; background: #f8fafc;">
-                <summary style="font-weight: 700; color: #0f4c81; cursor: pointer;">¿Cómo hacer un anteproyecto de grado paso a paso?</summary>
-                <p style="margin-top: 0.7rem; color: #334155; font-size: 0.96rem;">
-                    Para estructurar un anteproyecto de grado exitoso debes definir un título claro y delimitado, plantear el problema de investigación con cifras reales (en estructura de embudo), formular una pregunta problema, establecer un objetivo general y tres objetivos específicos realizables, construir el marco referencial (antecedentes, marco teórico y conceptual) y diseñar la metodología. En <strong>GRADUANDO</strong> te acompañamos como expertos en investigación para redactar y validar cada capítulo según los lineamientos de tu universidad en Colombia.
-                </p>
-            </details>
+   </div>
+   <div class="hero-visual" role="img" aria-label="Estudiantes universitarios trabajando en un proyecto académico">
+    <div class="visual-label">
+     <strong>Ideas claras. Investigación rigurosa. Resultados sólidos.</strong>
+     <span>GRADUANDO · Asesoría académica en Colombia</span>
+    </div>
+   </div>
+  </div>
+ </div>
+</header>
 
-            <details style="margin-bottom: 1rem; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem; background: #f8fafc;">
-                <summary style="font-weight: 700; color: #0f4c81; cursor: pointer;">¿Cómo funciona el servicio de asesoría de tesis en Colombia?</summary>
-                <p style="margin-top: 0.7rem; color: #334155; font-size: 0.96rem;">
-                    Brindamos asesoría metodológica y temática 100% personalizada para estudiantes de pregrado, especialización y maestría en toda Colombia (Ciencias de la Salud, Ingenierías, Derecho, Administración y Educación). Te ayudamos desde la elección del tema y la búsqueda de referentes científicos verificables hasta la redacción final, análisis estadístico de datos, correcciones de jurado y preparación de diapositivas para sustentación.
-                </p>
-            </details>
+<div class="trustbar">
+ <div class="wrap trustgrid">
+  <div><strong>Orientación personalizada</strong><span>Soluciones según tu disciplina y necesidad</span></div>
+  <div><strong>Fuentes académicas</strong><span>Referentes y literatura verificable</span></div>
+  <div><strong>Acompañamiento virtual</strong><span>Atención en Colombia</span></div>
+ </div>
+</div>
 
-            <details style="margin-bottom: 1rem; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem; background: #f8fafc;">
-                <summary style="font-weight: 700; color: #0f4c81; cursor: pointer;">¿Realizan aplicación de normas APA 7, Vancouver o IEEE y corrección de trabajos?</summary>
-                <p style="margin-top: 0.7rem; color: #334155; font-size: 0.96rem;">
-                    Sí. Ajustamos rigurosamente tus tesis, monografías, ensayos y artículos académicos bajo los estándares de <strong>Normas APA 7.ª edición</strong>, Vancouver, IEEE o Icontec, verificando citación, listas de referencias, tablas, figuras y coherencia en la redacción académica.
-                </p>
-            </details>
+<section id="servicios">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="eyebrow">Qué hacemos</div>
+   <h2>Servicios académicos</h2>
+   <p>Apoyo organizado por áreas para que encuentres la orientación que necesitas.</p>
+  </div>
+  <div class="services">
+   <article class="service"><div class="ico">🎓</div><h3>Tesis y proyectos</h3><p>Delimitación del tema, pregunta de investigación, objetivos, metodología y revisión de literatura.</p></article>
+   <article class="service"><div class="ico">📝</div><h3>Trabajos y normas</h3><p>Corrección, estructura, citación y aplicación de APA 7, Vancouver, IEEE e ICONTEC.</p></article>
+   <article class="service"><div class="ico">📐</div><h3>Ciencias básicas</h3><p>Orientación en cálculo, álgebra, estadística, física y resolución explicada de ejercicios.</p></article>
+   <article class="service"><div class="ico">💻</div><h3>Tutorías virtuales</h3><p>Sesiones personalizadas para reforzar conceptos y preparar evaluaciones.</p></article>
+  </div>
+ </div>
+</section>
 
-            <details style="border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem; background: #f8fafc;">
-                <summary style="font-weight: 700; color: #0f4c81; cursor: pointer;">¿Ofrecen tutorías virtuales y ayuda con talleres de Cálculo y Álgebra?</summary>
-                <p style="margin-top: 0.7rem; color: #334155; font-size: 0.96rem;">
-                    Por supuesto. Contamos con clases virtuales personalizadas y apoyo en resolución de ejercicios universitarios de Ciencias Básicas, incluyendo Cálculo Diferencial, Cálculo Integral, Cálculo Multivariado, Ecuaciones Diferenciales (EDO), Álgebra Lineal, Estadística y Bioestadística. Escríbenos directamente al WhatsApp <strong>+57 310 471 4499</strong> para agendar tu sesión.
-                </p>
-            </details>
-        </div>
-    </section>
+<section id="herramientas" style="background:#fff">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="eyebrow">Atención directa</div>
+   <h2>Cuéntanos qué necesitas</h2>
+   <p>Completa el formulario correspondiente. Se abrirá WhatsApp con tu solicitud organizada para que puedas enviarla.</p>
+  </div>
+  <div class="panel">
+   <div class="tabs">
+    <button class="tab active" data-tab="tesis">🎓 Tesis y proyectos</button>
+    <button class="tab" data-tab="trabajos">📝 Trabajos académicos</button>
+    <button class="tab" data-tab="ciencias">📐 Ciencias básicas</button>
+    <button class="tab" data-tab="tutorias">💻 Tutorías</button>
+   </div>
 
-    <footer>
-        <p><strong>GRADUANDO</strong> - Expertos en Investigación Académica y Asesoría Universitaria</p>
-        <p style="margin-top: 4px;">WhatsApp de atención directa: <strong>+57 310 471 4499</strong></p>
-        <div class="social-links">
-            <a href="https://facebook.com" target="_blank" class="social-btn fb">📘 Facebook</a>
-            <a href="https://instagram.com" target="_blank" class="social-btn ig">📸 Instagram</a>
-            <a href="https://youtube.com" target="_blank" class="social-btn yt">▶️ YouTube</a>
-        </div>
-        <p>© 2026 GRADUANDO | Todos los derechos reservados.</p>
-    </footer>
-    <script>
-        const WHATSAPP_NUMBER = "573104714499";
+   <div id="tesis" class="tabcontent active">
+    <div class="grid2">
+     <div class="field">
+      <label for="carrera">Programa o carrera</label>
+      <select id="carrera">
+       <option value="">Selecciona tu carrera</option>
+       <optgroup label="Ciencias de la salud">
+        <option>Medicina</option><option>Enfermería</option><option>Instrumentación Quirúrgica</option><option>Fisioterapia</option><option>Bacteriología</option><option>Odontología</option><option>Nutrición y Dietética</option><option>Psicología</option><option>Seguridad y Salud en el Trabajo</option>
+       </optgroup>
+       <optgroup label="Ingeniería y tecnología">
+        <option>Ingeniería Civil</option><option>Ingeniería de Sistemas</option><option>Ingeniería Industrial</option><option>Ingeniería Ambiental</option>
+       </optgroup>
+       <optgroup label="Sociales, jurídicas y administrativas">
+        <option>Derecho</option><option>Administración de Empresas</option><option>Contaduría Pública</option><option>Trabajo Social</option><option>Educación</option><option>Economía</option>
+       </optgroup>
+       <option>Otra disciplina</option>
+      </select>
+     </div>
+     <div class="field">
+      <label for="enfoque">Tema o problema de interés</label>
+      <input id="enfoque" placeholder="Ej. seguridad del paciente en cirugía robótica">
+     </div>
+     <div class="field">
+      <label for="tipo-estudio">Enfoque metodológico</label>
+      <select id="tipo-estudio">
+       <option>Revisión de literatura</option>
+       <option>Revisión sistemática</option>
+       <option>Estudio cuantitativo / correlacional</option>
+       <option>Estudio observacional / descriptivo</option>
+       <option>Estudio cualitativo</option>
+       <option>Estudio mixto</option>
+      </select>
+     </div>
+     <div class="field">
+      <label for="contexto">Población, lugar o periodo (opcional)</label>
+      <input id="contexto" placeholder="Ej. personal de enfermería, Colombia, 2024–2026">
+     </div>
+    </div>
+    <button class="btn wide" id="generar">Generar propuesta temática y referentes</button>
+    <div class="result" id="resultado">
+     <h3>Propuesta inicial</h3>
+     <div id="propuesta-contenido"></div>
+     <button class="btn wide" id="wa-tesis" style="margin-top:16px">Enviar propuesta por WhatsApp</button>
+     <p class="small">Los títulos son sugerencias iniciales que deben delimitarse con el alcance real del proyecto. Las referencias se consultan en OpenAlex y deben verificarse antes de incorporarlas al documento.</p>
+    </div>
+   </div>
 
-        function cambiarTab(tabId, element) {
-            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.service-tab').forEach(t => t.classList.remove('active'));
-            document.getElementById('panel-' + tabId).classList.add('active');
-            element.classList.add('active');
-        }
+   <div id="trabajos" class="tabcontent">
+    <div class="grid2">
+     <div class="field">
+      <label for="tipo-trabajo">Tipo de servicio</label>
+      <select id="tipo-trabajo">
+       <option>Ensayo argumentativo o crítico</option>
+       <option>Corrección de tesis o anteproyecto</option>
+       <option>Aplicación de normas APA 7, IEEE, Vancouver o ICONTEC</option>
+       <option>Resumen, relatoría o artículo</option>
+       <option>Diapositivas y preparación de sustentación</option>
+       <option>Análisis de datos o resultados</option>
+      </select>
+     </div>
+     <div class="field">
+      <label for="tema-trabajo">Materia o tema</label>
+      <input id="tema-trabajo" placeholder="Tema central del trabajo">
+     </div>
+    </div>
+    <div class="field">
+     <label for="detalle-trabajo">Extensión, requisitos y fecha de entrega</label>
+     <textarea id="detalle-trabajo" placeholder="Describe las instrucciones, número de páginas, normas y fecha límite"></textarea>
+    </div>
+    <div class="field">
+     <label for="archivo-trabajo">Adjuntar guía o documento (opcional)</label>
+     <input type="file" id="archivo-trabajo" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+     <p class="hint">WhatsApp no adjunta automáticamente archivos seleccionados en esta página. Al abrir el chat, tendrás que adjuntarlos manualmente.</p>
+    </div>
+    <button class="btn wide" id="wa-trabajos">Enviar solicitud por WhatsApp</button>
+   </div>
 
-        const temasPorMateria = {
-            "Cálculo Diferencial (Cálculo 1)": ["Funciones, Límites y Continuidad", "Reglas de Derivación y Regla de la Cadena", "Optimización y Razones de Cambio", "Gráficas y Análisis de Funciones", "Otro tema (especificar abajo)"],
-            "Cálculo Integral (Cálculo 2)": ["Integrales Indefinidas y Sustitución", "Integración por Partes y Fracciones Parciales", "Áreas bajo la curva y Volúmenes de Revolución", "Series y Sucesiones", "Otro tema (especificar abajo)"],
-            "Cálculo Multivariado (Cálculo 3)": ["Derivadas Parciales y Gradiente", "Optimización con Multiplicadores de Lagrange", "Integrales Dobles y Triples", "Cálculo Vectorial", "Otro tema (especificar abajo)"],
-            "Ecuaciones Diferenciales (EDO)": ["EDO de Primer Orden (Separables, Lineales, Exactas)", "EDO de Orden Superior (Homogéneas y No Homogéneas)", "Transformada de Laplace", "Sistemas de Ecuaciones Diferenciales", "Otro tema (especificar abajo)"],
-            "Álgebra y Trigonometría": ["Factorización y Ecuaciones", "Funciones Exponenciales y Logarítmicas", "Identidades y Ecuaciones Trigonométricas", "Otro tema (especificar abajo)"],
-            "Álgebra Lineal": ["Sistemas de Ecuaciones y Matrices (Gauss-Jordan)", "Determinantes e Inversa de una Matriz", "Espacios Vectoriales y Subespacios", "Valores y Vectores Propios (Eigenvalores)", "Otro tema (especificar abajo)"],
-            "Metodología de la Investigación / Tesis": ["Planteamiento del Problema y Objetivos", "Marco Teórico y Estado del Arte", "Diseño Metodológico y Muestra", "Preparación para Sustentación", "Otro tema (especificar abajo)"],
-            "Bioestadística / Análisis de Datos": ["Estadística Descriptiva y Tablas", "Pruebas de Hipótesis (Chi-cuadrado, T-Student)", "Manejo de SPSS / Excel / R", "Otro tema (especificar abajo)"]
-        };
+   <div id="ciencias" class="tabcontent">
+    <div class="grid2">
+     <div class="field">
+      <label for="materia-ciencias">Asignatura</label>
+      <select id="materia-ciencias">
+       <option>Cálculo diferencial</option><option>Cálculo integral</option><option>Cálculo multivariado</option><option>Ecuaciones diferenciales</option><option>Álgebra lineal</option><option>Estadística / Bioestadística</option><option>Física</option><option>Química general</option>
+      </select>
+     </div>
+     <div class="field">
+      <label for="tema-ciencias">Tema específico</label>
+      <input id="tema-ciencias" placeholder="Ej. integrales por partes, matrices, derivadas">
+     </div>
+    </div>
+    <div class="grid2">
+     <div class="field">
+      <label for="fecha-ciencias">Fecha de entrega</label>
+      <input id="fecha-ciencias" placeholder="Ej. viernes a las 6:00 p. m.">
+     </div>
+     <div class="field">
+      <label for="archivo-ciencias">Adjuntar taller (opcional)</label>
+      <input type="file" id="archivo-ciencias" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+     </div>
+    </div>
+    <p class="hint">Si adjuntas un archivo, recuerda enviarlo manualmente desde el chat de WhatsApp.</p>
+    <button class="btn wide" id="wa-ciencias">Enviar solicitud por WhatsApp</button>
+   </div>
 
-        function actualizarTemasTutoria() {
-            const materia = document.getElementById('materia-tutoria').value;
-            const selectTema = document.getElementById('tema-select-tutoria');
-            const temas = temasPorMateria[materia] || ["Refuerzo general"];
-            
-            selectTema.innerHTML = "";
-            temas.forEach(t => {
-                const option = document.createElement("option");
-                option.value = t;
-                option.textContent = t;
-                selectTema.appendChild(option);
-            });
-        }
+   <div id="tutorias" class="tabcontent">
+    <div class="grid2">
+     <div class="field">
+      <label for="materia-tutoria">Materia o área</label>
+      <select id="materia-tutoria">
+       <option>Cálculo diferencial</option><option>Cálculo integral</option><option>Cálculo multivariado</option><option>Ecuaciones diferenciales</option><option>Álgebra y trigonometría</option><option>Álgebra lineal</option><option>Metodología de la investigación</option><option>Bioestadística / análisis de datos</option>
+      </select>
+     </div>
+     <div class="field">
+      <label for="tema-tutoria">Tema específico</label>
+      <input id="tema-tutoria" placeholder="Ej. regla de la cadena, planteamiento del problema">
+     </div>
+     <div class="field">
+      <label for="horario-tutoria">Disponibilidad</label>
+      <input id="horario-tutoria" placeholder="Ej. tardes después de las 5:00 p. m.">
+     </div>
+     <div class="field">
+      <label for="modalidad-tutoria">Modalidad</label>
+      <select id="modalidad-tutoria"><option>Virtual</option><option>Por definir</option></select>
+     </div>
+    </div>
+    <button class="btn wide" id="wa-tutorias">Solicitar tutoría por WhatsApp</button>
+   </div>
+  </div>
+ </div>
+</section>
 
-        async function buscarReferentesReales(queryTexto) {
-            try {
-                const url = `https://openalex.org{encodeURIComponent(queryTexto)}&per-page=2&sort=cited_by_count:desc`;
-                const response = await fetch(url);
-                if (!response.ok) return null;
-                const data = await response.json();
-                if (data.results && data.results.length > 0) {
-                    const autoresSet = new Set();
-                    const citasAPA = [];
+<section id="proyectos" class="projects">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="eyebrow">Experiencia y trabajos destacados</div>
+   <h2>Repositorio de proyectos</h2>
+   <p>Una selección de trabajos desarrollados, organizada por área y tipo de proyecto. Cada ficha puede enlazar a una descripción, imagen o documento autorizado.</p>
+  </div>
+  <div class="project-tools">
+   <input id="buscar-proyecto" placeholder="Buscar por título o tema">
+   <select id="filtro-proyecto">
+    <option value="">Todas las áreas</option>
+    <option>Ciencias de la salud</option>
+    <option>Ingeniería</option>
+    <option>Ciencias sociales</option>
+    <option>Administración y finanzas</option>
+    <option>Educación</option>
+    <option>Ciencias básicas</option>
+   </select>
+  </div>
+  <div class="project-grid" id="project-grid"></div>
+  <p class="small" style="text-align:center;margin-top:18px">Para publicar proyectos reales, incorpora sus datos en el arreglo PROYECTOS del código. Publica únicamente materiales propios o que tengas autorización para mostrar, y evita datos personales de estudiantes o instituciones.</p>
+ </div>
+</section>
 
-                    data.results.forEach(work => {
-                        const year = work.publication_year || "s.f.";
-                        const title = work.title || "Estudio científico";
-                        const source = work.primary_location?.source?.display_name || "Revista Científica Indexada";
-                        const authorsList = (work.authorships || []).slice(0, 3).map(a => a.author.display_name);
-                        
-                        authorsList.forEach(name => autoresSet.add(name));
-                        const authorsStr = authorsList.length > 0 ? authorsList.join(", ") : "Autores institucionales";
-                        citasAPA.push(`${authorsStr} (${year}). ${title}. <em>${source}</em>.`);
-                    });
+<section id="recursos">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="eyebrow">Aprendizaje y orientación</div>
+   <h2>Recursos audiovisuales</h2>
+   <p>Material de apoyo para fortalecer competencias de investigación y presentación académica.</p>
+  </div>
+  <div class="video-grid">
+   <article class="video-card">
+    <iframe src="https://www.youtube-nocookie.com/embed/qV6ba_AzSoY" title="Etapas de una investigación científica" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div><h3>Etapas de la investigación</h3><p>Recurso introductorio sobre planificación, desarrollo, análisis e interpretación de una investigación.</p></div>
+   </article>
+   <article class="video-card">
+    <iframe src="https://www.youtube-nocookie.com/embed/kk7ofvBURxg" title="Citas y referencias según APA séptima edición" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div><h3>Normas APA, séptima edición</h3><p>Explicación de citas y referencias para la presentación de trabajos académicos.</p></div>
+   </article>
+  </div>
+ </div>
+</section>
 
-                    return {
-                        autores: Array.from(autoresSet).slice(0, 5).join(", "),
-                        referencias: citasAPA
-                    };
-                }
-            } catch (e) {
-                return null;
-            }
-            return null;
-        }
-        function construirPropuestaContinua(carrera, enfoqueInput, tipoEstudio) {
-            const tema = enfoqueInput !== "" ? enfoqueInput : `los factores clínicos y asistenciales asociados a la atención integral en ${carrera}`;
-            
-            const plantillasPorTipo = {
-                "Revisión Sistemática / Literatura": [
-                    `Evidencia científica disponible sobre ${tema} y su impacto en la práctica profesional de ${carrera} durante el periodo 2020-2026`,
-                    `Análisis sistemático de los avances terapéuticos y protocolos asociados a ${tema} desde la perspectiva de ${carrera}`,
-                    `Determinantes y desenlaces clínicos relacionados con ${tema} reportados en la literatura científica reciente para ${carrera}`
-                ],
-                "Estudio Observacional / Descriptivo": [
-                    `Caracterización clínica y epidemiológica de ${tema} en pacientes atendidos en instituciones hospitalarias de tercer nivel`,
-                    `Comportamiento sociodemográfico y factores asociados a ${tema} mediante el análisis retrospectivo de registros institucionales`,
-                    `Perfil epidemiológico y evolución clínica de pacientes con ${tema} abordados desde el servicio de ${carrera}`
-                ],
-                "Estudio Cuantitativo / Correlacional": [
-                    `Relación entre los factores de riesgo modificables y la incidencia de ${tema} en población adulta atendida en consulta externa`,
-                    `Asociación estadística entre la adherencia a protocolos institucionales y los desenlaces clínicos frente a ${tema} en ${carrera}`,
-                    `Impacto de las estrategias de intervención temprana sobre los indicadores de recuperación en pacientes con ${tema}`
-                ],
-                "Estudio Cualitativo": [
-                    `Experiencias, percepciones y significados construidos por el equipo de ${carrera} frente al abordaje integral de ${tema}`,
-                    `Vivencias y barreras asistenciales percibidas por pacientes y cuidadores durante el manejo clínico de ${tema}`,
-                    `Representaciones sociales y prácticas profesionales en torno a la atención humanizada de ${tema} desde ${carrera}`
-                ]
-            };
+<section>
+ <div class="wrap">
+  <div class="section-head">
+   <div class="eyebrow">Preguntas frecuentes</div>
+   <h2>Resolvemos tus dudas</h2>
+  </div>
+  <div class="faq">
+   <details><summary>¿Pueden orientarme desde la elección del tema?</summary><p>Sí. Podemos ayudarte a delimitar el tema, formular la pregunta, establecer objetivos y definir una ruta metodológica viable.</p></details>
+   <details><summary>¿Trabajan con normas APA 7 y otros estilos?</summary><p>Se ofrece orientación para aplicar APA 7, Vancouver, IEEE e ICONTEC, de acuerdo con los lineamientos de cada institución.</p></details>
+   <details><summary>¿Cómo envío la guía o los archivos de mi actividad?</summary><p>Completa el formulario y abre el chat. Después adjunta manualmente el archivo en WhatsApp para que podamos revisarlo.</p></details>
+   <details><summary>¿Los autores y referencias que aparecen son definitivos?</summary><p>La herramienta consulta registros bibliográficos de OpenAlex. Los resultados son sugerencias de búsqueda: se debe comprobar pertinencia, datos editoriales y texto completo antes de citar.</p></details>
+  </div>
+ </div>
+</section>
 
-            const opciones = plantillasPorTipo[tipoEstudio] || plantillasPorTipo["Revisión Sistemática / Literatura"];
-            const indiceAleatorio = Math.floor(Math.random() * opciones.length);
-            const titulo = opciones[indiceAleatorio];
+<footer id="contacto">
+ <div class="wrap">
+  <div class="footgrid">
+   <div><div class="brand">GRADUANDO<span>.</span></div><p>Asesoría académica, investigación y acompañamiento universitario.</p></div>
+   <div><h3>Explora</h3><a href="#servicios">Servicios</a><a href="#herramientas">Solicitar asesoría</a><a href="#proyectos">Proyectos</a><a href="#recursos">Recursos</a></div>
+   <div><h3>Contacto</h3><a href="#" id="footer-wa">WhatsApp: +57 310 471 4499</a><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a></div>
+  </div>
+  <div class="copyright">© <span id="year"></span> GRADUANDO. Todos los derechos reservados.</div>
+ </div>
+</footer>
 
-            let objetivo = "";
-            let pregunta = "";
+<a class="floating-wa" id="floating-wa" href="#" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">☏ WhatsApp</a>
 
-            if (tipoEstudio.includes("Revisión")) {
-                objetivo = `Analizar la evidencia científica publicada entre 2020 y 2026 sobre ${tema} con el fin de consolidar criterios actualizados para la práctica en ${carrera}.`;
-                pregunta = `¿Cuál es el estado actual de la evidencia científica respecto al abordaje y los desenlaces asociados a ${tema} en ${carrera}?`;
-            } else if (tipoEstudio.includes("Observacional")) {
-                objetivo = `Describir las características clínicas, sociodemográficas y los principales factores asociados a ${tema} en la población de estudio seleccionada.`;
-                pregunta = `¿Cuáles son las características clínicas y epidemiológicas predominantes en los casos documentados de ${tema}?`;
-            } else if (tipoEstudio.includes("Cuantitativo")) {
-                objetivo = `Determinar el grado de correlación estadística entre las variables determinantes y los resultados observados frente a ${tema}.`;
-                pregunta = `¿Qué relación estadística existe entre los factores asociados y el comportamiento clínico de ${tema} en la muestra evaluada?`;
-            } else {
-                objetivo = `Comprender las experiencias, percepciones y dinámicas profesionales que configuran el abordaje de ${tema} desde la perspectiva de los participantes.`;
-                pregunta = `¿Cómo perciben y experimentan los actores involucrados el proceso de atención y manejo frente a ${tema}?`;
-            }
+<script>
+"use strict";
 
-            return { titulo, objetivo, pregunta };
-        }
+const WHATSAPP_NUMBER = "573104714499";
 
-        async function generarPropuesta() {
-            const carrera = document.getElementById('carrera').value;
-            const enfoqueInput = document.getElementById('enfoque').value.trim();
-            const tipoEstudio = document.getElementById('tipo-estudio').value;
-            const btnGenerar = document.getElementById('btn-generar');
+/*
+  REPOSITORIO DE PROYECTOS:
+  Agrega tus proyectos reales dentro de este arreglo.
+  Ejemplo:
+  {
+    titulo: "Propuesta de protocolo de cirugía segura",
+    area: "Ciencias de la salud",
+    tipo: "Proyecto de investigación",
+    resumen: "Diseño de una propuesta de protocolo para...",
+    enlace: "https://..."
+  }
+*/
+const PROYECTOS = [
+  // Agrega aquí tus proyectos reales.
+];
 
-            if (!carrera) {
-                alert("Por favor, selecciona tu Programa o Carrera primero.");
-                return;
-            }
+function whatsappURL(message){
+  const url = new URL("https://wa.me/" + WHATSAPP_NUMBER);
+  url.searchParams.set("text", message);
+  return url.toString();
+}
 
-            btnGenerar.disabled = true;
-            btnGenerar.textContent = "Estructurando propuesta y buscando referentes...";
+function abrirWhatsApp(message){
+  const url = whatsappURL(message);
+  const win = window.open(url, "_blank", "noopener,noreferrer");
+  if(!win) window.location.href = url;
+}
 
-            const propuesta = construirPropuestaContinua(carrera, enfoqueInput, tipoEstudio);
-            const consultaBusqueda = enfoqueInput !== "" ? `${enfoqueInput} ${carrera}` : carrera;
-            const referentesReales = await buscarReferentesReales(consultaBusqueda);
+function valor(id, fallback="No especificado"){
+  const el = document.getElementById(id);
+  return el && el.value.trim() ? el.value.trim() : fallback;
+}
 
-            let bloqueAutores = "Hernández-Sampieri et al., Argimon Pallàs, Organización Mundial de la Salud (OMS)";
-            let bloqueReferencias = `<li>Hernández-Sampieri, R., & Mendoza, C. P. (2018). <em>Metodología de la investigación: Las rutas cuantitativa, cualitativa y mixta</em>. McGraw-Hill.</li>`;
+document.getElementById("floating-wa").href = whatsappURL("Hola GRADUANDO, quisiera recibir información sobre sus servicios académicos.");
+document.getElementById("footer-wa").href = whatsappURL("Hola GRADUANDO, quisiera recibir información sobre sus servicios académicos.");
+document.getElementById("year").textContent = new Date().getFullYear();
 
-            if (referentesReales && referentesReales.referencias.length > 0) {
-                bloqueAutores = referentesReales.autores;
-                bloqueReferencias = referentesReales.referencias.map(ref => `<li style="margin-bottom:6px;">${ref}</li>`).join("");
-            }
+/* Pestañas */
+document.querySelectorAll(".tab").forEach(btn => btn.addEventListener("click", () => {
+  document.querySelectorAll(".tab").forEach(t => t.classList.toggle("active", t === btn));
+  document.querySelectorAll(".tabcontent").forEach(p => p.classList.toggle("active", p.id === btn.dataset.tab));
+}));
 
-            const contenidoHTML = `
-                <h3>📌 Título Profesional Sugerido</h3>
-                <p class="propuesta-item" style="font-size:1.08rem; color:#0f4c81;"><strong>"${propuesta.titulo}"</strong></p>
-                
-                <div class="propuesta-item">
-                    <strong>❓ Pregunta Problema:</strong> ${propuesta.pregunta}
-                </div>
-                <div class="propuesta-item">
-                    <strong>🎯 Objetivo General:</strong> ${propuesta.objetivo}
-                </div>
-                <div class="propuesta-item">
-                    <strong>🔬 Ruta Metodológica:</strong> ${tipoEstudio} (${carrera})
-                </div>
-                <div class="propuesta-item">
-                    <strong>📚 Autores y Referentes Identificados:</strong> ${bloqueAutores}
-                </div>
-                <div class="propuesta-item">
-                    <strong>📖 Referencias Bibliográficas Base (Norma APA 7):</strong>
-                    <ul style="margin-left: 1.2rem; margin-top: 0.4rem;">${bloqueReferencias}</ul>
-                </div>
-            `;
+/* Generación contextual de títulos */
+function familiaDisciplina(carrera){
+  const c = carrera.toLowerCase();
 
-            document.getElementById('propuesta-contenido').innerHTML = contenidoHTML;
-            document.getElementById('resultado-container').style.display = 'block';
+  if(/medicina|enfermer|instrumentación|fisioterapia|bacteriología|odontología|nutrición|psicología|salud|farmacia/.test(c)) return "salud";
+  if(/ingeniería|sistemas|civil|industrial|ambiental/.test(c)) return "ingenieria";
+  if(/derecho|trabajo social|educación/.test(c)) return "social";
+  if(/administración|contaduría|economía/.test(c)) return "administracion";
 
-            const mensajeWA = `Hola GRADUANDO, me interesa recibir asesoría para mi proyecto de grado.\n\n*Carrera:* ${carrera}\n*Enfoque:* ${tipoEstudio}\n*Título propuesto:* "${propuesta.titulo}"`;
-            const urlWA = `https://whatsapp.com{WHATSAPP_NUMBER}&text=${encodeURIComponent(mensajeWA)}`;
-            
-            document.getElementById('btn-wa-tesis').href = urlWA;
-            btnGenerar.disabled = false;
-            btnGenerar.textContent = "Generar Otra Propuesta de Título y Referentes";
-            document.getElementById('resultado-container').scrollIntoView({ behavior: 'smooth' });
-        }
+  return "general";
+}
 
-            function actualizarEnlaceWA(servicio) {
-            let mensajeWA = "";
+function construirTitulo(carrera, tema, metodo, contexto){
+  const fam = familiaDisciplina(carrera);
+  const lugar = contexto && contexto !== "No especificado" ? ` en ${contexto}` : "";
 
-            if (servicio === 'trabajos') {
-                const tipo = document.getElementById('tipo-trabajo').value;
-                const tema = document.getElementById('tema-trabajo').value.trim() || "No especificado";
-                const detalle = document.getElementById('detalle-trabajo').value.trim() || "Sin detalles adicionales";
-                const archivoInput = document.getElementById('archivo-trabajo');
-                const nombreArchivo = archivoInput.files.length > 0 ? archivoInput.files[0].name : "Ninguno";
-                
-                mensajeWA = `Hola GRADUANDO, quiero cotizar un trabajo academico. Servicio: ${tipo}. Tema: ${tema}. Detalles: ${detalle}. Archivo adjunto a enviar: ${nombreArchivo}`;
-                document.getElementById('link-wa-trabajos').href = `https://wa.me{WHATSAPP_NUMBER}?text=${encodeURIComponent(mensajeWA)}`;
-            } 
-            else if (servicio === 'ciencias') {
-                const materia = document.getElementById('materia-ciencias').value;
-                const tema = document.getElementById('tema-ciencias').value.trim() || "No especificado";
-                const fecha = document.getElementById('fecha-ciencias').value.trim() || "Por definir";
-                const archivoInput = document.getElementById('archivo-ciencias');
-                const nombreArchivo = archivoInput.files.length > 0 ? archivoInput.files[0].name : "Ninguno";
+  const sujeto = fam === "salud"
+    ? `la atención y los resultados asociados con ${tema}`
+    : fam === "ingenieria"
+    ? `el desempeño, diseño o gestión de soluciones relacionadas con ${tema}`
+    : fam === "administracion"
+    ? `la gestión y los resultados organizacionales relacionados con ${tema}`
+    : fam === "social"
+    ? `las prácticas, experiencias y dinámicas sociales vinculadas con ${tema}`
+    : `el análisis de ${tema}`;
 
-                mensajeWA = `Hola GRADUANDO, necesito ayuda con Ciencias Basicas. Asignatura: ${materia}. Temas: ${tema}. Entrega: ${fecha}. Archivo adjunto a enviar: ${nombreArchivo}`;
-                document.getElementById('link-wa-ciencias').href = `https://wa.me{WHATSAPP_NUMBER}?text=${encodeURIComponent(mensajeWA)}`;
-            } 
-            else if (servicio === 'tutorias') {
-                const materia = document.getElementById('materia-tutoria').value;
-                const temaEscogido = document.getElementById('tema-select-tutoria').value;
-                const detalleExtra = document.getElementById('tema-tutoria').value.trim();
-                const horario = document.getElementById('horario-tutoria').value.trim() || "Flexible";
-                
-                mensajeWA = `Hola GRADUANDO, quiero agendar una tutoria virtual. Materia: ${materia}. Tema: ${temaEscogido}${detalleExtra ? `. Detalle: ${detalleExtra}` : ''}. Horario: ${horario}`;
-                document.getElementById('link-wa-tutorias').href = `https://wa.me{WHATSAPP_NUMBER}?text=${encodeURIComponent(mensajeWA)}`;
-            }
-        }
+  if(metodo === "Revisión de literatura" || metodo === "Revisión sistemática")
+    return `Evidencia científica sobre ${sujeto}: ${metodo.toLowerCase()}${lugar}`;
 
-    </script>
+  if(metodo === "Estudio cualitativo")
+    return `Experiencias y perspectivas sobre ${sujeto}${lugar}: un estudio cualitativo`;
+
+  if(metodo === "Estudio cuantitativo / correlacional")
+    return `Relación entre variables asociadas con ${tema}${lugar}: estudio cuantitativo correlacional`;
+
+  if(metodo === "Estudio observacional / descriptivo")
+    return `Caracterización de ${tema}${lugar}: estudio observacional descriptivo`;
+
+  if(metodo === "Estudio mixto")
+    return `Análisis integral de ${tema}${lugar} mediante un enfoque mixto`;
+
+  return `Análisis de ${sujeto}${lugar}`;
+}
+
+function construirPregunta(tema, metodo, contexto){
+  const poblacion = contexto && contexto !== "No especificado" ? ` en ${contexto}` : "";
+
+  if(metodo.includes("Revisión"))
+    return `¿Qué evidencia científica se ha publicado sobre ${tema}${poblacion} y cuáles son sus principales hallazgos?`;
+
+  if(metodo.includes("cualitativo"))
+    return `¿Cómo describen los participantes sus experiencias y perspectivas relacionadas con ${tema}${poblacion}?`;
+
+  if(metodo.includes("correlacional"))
+    return `¿Qué relación existe entre las variables vinculadas con ${tema}${poblacion}?`;
+
+  if(metodo.includes("observacional"))
+    return `¿Cuáles son las características y patrones observables relacionados con ${tema}${poblacion}?`;
+
+  return `¿Cómo puede comprenderse o analizarse ${tema}${poblacion} desde las dimensiones definidas para el estudio?`;
+}
+
+function escapar(s){
+  return String(s ?? "").replace(/[&<>"']/g, c => ({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  }[c]));
+}
+
+/* Consulta de literatura en OpenAlex */
+async function buscarReferentes(tema, carrera){
+  const q = encodeURIComponent(`${tema} ${carrera}`);
+  const url = `https://api.openalex.org/works?search=${q}&per-page=6&sort=relevance_score:desc`;
+
+  const response = await fetch(url, {headers:{Accept:"application/json"}});
+
+  if(!response.ok) throw new Error("No fue posible consultar OpenAlex");
+
+  const data = await response.json();
+
+  return (data.results || [])
+    .filter(w => w.title && w.authorships?.length)
+    .slice(0,5);
+}
+
+function referenciaAPA(work){
+  const autores = (work.authorships || [])
+    .slice(0,3)
+    .map(a => a.author?.display_name)
+    .filter(Boolean);
+
+  let autor = autores.length ? autores.join(", ") : "Autor no identificado";
+
+  if((work.authorships || []).length > 3) autor += " et al.";
+
+  const anio = work.publication_year || "s. f.";
+  const titulo = work.title || "Título no disponible";
+  const revista = work.primary_location?.source?.display_name || work.host_venue?.display_name || "";
+  const doi = work.doi ? ` https://doi.org/${work.doi.replace("https://doi.org/","")}` : "";
+
+  return {
+    autor,
+    anio,
+    titulo,
+    revista,
+    doi,
+    apa: `${autor} (${anio}). ${titulo}.${revista ? ` ${revista}.` : ""}${doi}`
+  };
+}
+
+let propuestaActual = null;
+
+document.getElementById("generar").addEventListener("click", async () => {
+  const carrera = valor("carrera", "");
+  const tema = valor("enfoque", "");
+  const metodo = valor("tipo-estudio");
+  const contexto = valor("contexto", "");
+
+  if(!carrera || carrera === "No especificado"){
+    alert("Selecciona tu programa o carrera.");
+    return;
+  }
+
+  if(!tema || tema === "No especificado"){
+    alert("Escribe el tema o problema de interés para generar una propuesta pertinente.");
+    return;
+  }
+
+  const btn = document.getElementById("generar");
+  btn.disabled = true;
+  btn.textContent = "Construyendo propuesta y consultando literatura…";
+
+  const titulo = construirTitulo(carrera, tema, metodo, contexto);
+  const pregunta = construirPregunta(tema, metodo, contexto);
+
+  let objetivo = "";
+
+  if(metodo.includes("Revisión"))
+    objetivo = `Analizar y sintetizar la evidencia científica disponible sobre ${tema}, mediante criterios de búsqueda y selección definidos para la revisión.`;
+  else if(metodo.includes("cualitativo"))
+    objetivo = `Comprender las experiencias, percepciones o prácticas de los participantes en relación con ${tema}.`;
+  else if(metodo.includes("correlacional"))
+    objetivo = `Establecer la relación entre las variables definidas en torno a ${tema}, de acuerdo con el diseño y la población seleccionada.`;
+  else if(metodo.includes("observacional"))
+    objetivo = `Describir las características y patrones relacionados con ${tema} en la población o unidad de análisis seleccionada.`;
+  else
+    objetivo = `Analizar ${tema} integrando información cuantitativa y cualitativa, de acuerdo con los objetivos y alcance del estudio.`;
+
+  propuestaActual = {carrera, tema, metodo, contexto, titulo, pregunta, objetivo};
+
+  const cont = document.getElementById("propuesta-contenido");
+
+  cont.innerHTML = `
+    <p><strong>Título sugerido:</strong><br>${escapar(titulo)}</p>
+    <p><strong>Pregunta orientadora:</strong><br>${escapar(pregunta)}</p>
+    <p><strong>Objetivo general preliminar:</strong><br>${escapar(objetivo)}</p>
+    <p><strong>Área:</strong> ${escapar(carrera)} · <strong>Diseño:</strong> ${escapar(metodo)}</p>
+    <h3 style="margin-top:20px">Autores y literatura relacionada</h3>
+    <p id="estado-ref" class="small">Consultando publicaciones relacionadas con el tema…</p>
+    <ol class="refs" id="lista-ref"></ol>
+  `;
+
+  document.getElementById("resultado").style.display = "block";
+  document.getElementById("resultado").scrollIntoView({behavior:"smooth",block:"start"});
+
+  try{
+    const works = await buscarReferentes(tema, carrera);
+    const lista = document.getElementById("lista-ref");
+
+    document.getElementById("estado-ref").textContent = works.length
+      ? "Publicaciones recuperadas de OpenAlex. Comprueba la pertinencia y los datos bibliográficos antes de citarlas."
+      : "No se encontraron publicaciones suficientemente relacionadas. Prueba con palabras clave más específicas o en inglés.";
+
+    lista.innerHTML = works.map(w => {
+      const r = referenciaAPA(w);
+
+      return `<li>
+        <strong>${escapar(r.autor)}</strong>
+        (${escapar(r.anio)}). ${escapar(r.titulo)}.
+        ${escapar(r.revista)}
+        ${r.doi ? `<a href="${escapar(r.doi.trim())}" target="_blank" rel="noopener noreferrer">Consultar DOI</a>` : ""}
+      </li>`;
+    }).join("");
+
+    propuestaActual.referentes = works.map(referenciaAPA);
+
+  }catch(e){
+    document.getElementById("estado-ref").textContent =
+      "No fue posible consultar OpenAlex en este momento. La propuesta se generó, pero no se mostrarán autores ni referencias sin verificar.";
+
+    propuestaActual.referentes = [];
+  }
+
+  btn.disabled = false;
+  btn.textContent = "Generar otra propuesta";
+});
+
+/* WhatsApp: tesis */
+document.getElementById("wa-tesis").addEventListener("click", () => {
+  if(!propuestaActual) return;
+
+  const p = propuestaActual;
+
+  abrirWhatsApp(`Hola GRADUANDO, quisiera recibir orientación para mi proyecto de investigación.
+
+Carrera: ${p.carrera}
+Tema: ${p.tema}
+Enfoque: ${p.metodo}
+Título sugerido: ${p.titulo}
+Pregunta: ${p.pregunta}
+Objetivo preliminar: ${p.objetivo}`);
+});
+
+/* WhatsApp: trabajos académicos */
+document.getElementById("wa-trabajos").addEventListener("click", () => {
+  const file = document.getElementById("archivo-trabajo").files[0]?.name || "No adjuntado";
+
+  abrirWhatsApp(`Hola GRADUANDO, deseo cotizar un servicio académico.
+Servicio: ${valor("tipo-trabajo")}
+Tema: ${valor("tema-trabajo")}
+Detalles: ${valor("detalle-trabajo")}
+Archivo seleccionado: ${file}
+(Adjuntaré el archivo manualmente en este chat.)`);
+});
+
+/* WhatsApp: ciencias básicas */
+document.getElementById("wa-ciencias").addEventListener("click", () => {
+  const file = document.getElementById("archivo-ciencias").files[0]?.name || "No adjuntado";
+
+  abrirWhatsApp(`Hola GRADUANDO, necesito orientación con un taller de ciencias básicas.
+Asignatura: ${valor("materia-ciencias")}
+Tema: ${valor("tema-ciencias")}
+Fecha de entrega: ${valor("fecha-ciencias")}
+Archivo seleccionado: ${file}
+(Adjuntaré el archivo manualmente en este chat.)`);
+});
+
+/* WhatsApp: tutorías */
+document.getElementById("wa-tutorias").addEventListener("click", () => {
+  abrirWhatsApp(`Hola GRADUANDO, deseo solicitar una tutoría.
+Materia: ${valor("materia-tutoria")}
+Tema: ${valor("tema-tutoria")}
+Disponibilidad: ${valor("horario-tutoria")}
+Modalidad: ${valor("modalidad-tutoria")}`);
+});
+
+/* Repositorio de proyectos */
+function renderProyectos(){
+  const grid = document.getElementById("project-grid");
+  const q = document.getElementById("buscar-proyecto").value.toLowerCase();
+  const area = document.getElementById("filtro-proyecto").value;
+
+  const items = PROYECTOS.filter(p =>
+    (!area || p.area === area) &&
+    (`${p.titulo} ${p.resumen} ${p.tipo} ${p.area}`).toLowerCase().includes(q)
+  );
+
+  if(!items.length){
+    grid.innerHTML = `
+      <div class="empty">
+        <strong>Estamos preparando este espacio.</strong><br>
+        Pronto encontrarás aquí proyectos destacados de GRADUANDO, organizados por disciplina y tipo de trabajo.<br>
+        <span class="small">El repositorio se activará al incorporar los proyectos reales y sus respectivos permisos de publicación.</span>
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = items.map(p => `
+    <article class="project-card">
+      <div class="project-thumb">📘</div>
+      <div class="project-body">
+        <span class="tag">${escapar(p.area)} · ${escapar(p.tipo)}</span>
+        <h3>${escapar(p.titulo)}</h3>
+        <p>${escapar(p.resumen)}</p>
+        ${p.enlace ? `<p style="margin-top:12px"><a href="${escapar(p.enlace)}" target="_blank" rel="noopener noreferrer">Ver proyecto ↗</a></p>` : ""}
+      </div>
+    </article>
+  `).join("");
+}
+
+document.getElementById("buscar-proyecto").addEventListener("input", renderProyectos);
+document.getElementById("filtro-proyecto").addEventListener("change", renderProyectos);
+
+renderProyectos();
+</script>
 </body>
 </html>
