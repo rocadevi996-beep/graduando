@@ -149,3 +149,689 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
      <a class="btn btn-outline" href="#proyectos">Conocer proyectos</a>
     </div>
    </div>
+   <div class="hero-visual" role="img" aria-label="Estudiantes universitarios trabajando en un proyecto académico">
+    <div class="visual-label">
+     <strong>Ideas claras. Investigación rigurosa. Resultados sólidos.</strong>
+     <span>GRADUANDO · Asesoría académica en Colombia</span>
+    </div>
+   </div>
+  </div>
+ </div>
+</header>
+<div class="trustbar">
+ <div class="wrap trustgrid">
+  <div><strong>Orientación personalizada</strong><span>Soluciones según tu disciplina y necesidad</span></div>
+  <div><strong>Fuentes académicas</strong><span>Referentes y literatura verificable</span></div>
+  <div><strong>Acompañamiento virtual</strong><span>Atención en Colombia</span></div>
+ </div>
+</div>
+<section id="servicios">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="eyebrow">Qué hacemos</div>
+   <h2>Servicios académicos</h2>
+   <p>Apoyo organizado por áreas para que encuentres la orientación que necesitas.</p>
+  </div>
+  <div class="services">
+   <article class="service"><div class="ico">🎓</div><h3>Tesis y proyectos</h3><p>Delimitación del tema, pregunta de investigación, objetivos, metodología y revisión de literatura.</p></article>
+   <article class="service"><div class="ico">📝</div><h3>Trabajos y normas</h3><p>Corrección, estructura, citación y aplicación de APA 7, Vancouver, IEEE e ICONTEC.</p></article>
+   <article class="service"><div class="ico">📐</div><h3>Ciencias básicas</h3><p>Orientación en cálculo, álgebra, estadística, física y resolución explicada de ejercicios.</p></article>
+   <article class="service"><div class="ico">💻</div><h3>Tutorías virtuales</h3><p>Sesiones personalizadas para reforzar conceptos y preparar evaluaciones.</p></article>
+  </div>
+ </div>
+</section>
+<section id="herramientas" style="background:#fff">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="eyebrow">Atención directa</div>
+   <h2>Cuéntanos qué necesitas</h2>
+   <p>Completa el formulario correspondiente. Se abrirá WhatsApp con tu solicitud organizada para que puedas enviarla.</p>
+  </div>
+  <div class="panel">
+   <div class="tabs">
+    <button class="tab active" data-tab="tesis">🎓 Tesis y proyectos</button>
+    <button class="tab" data-tab="trabajos">📝 Trabajos académicos</button>
+    <button class="tab" data-tab="ciencias">📐 Ciencias básicas</button>
+    <button class="tab" data-tab="tutorias">💻 Tutorías</button>
+   </div>
+   <div id="tesis" class="tabcontent active">
+    <div class="grid2">
+     <div class="field">
+      <label for="carrera">Programa o carrera</label>
+      <select id="carrera">
+       <option value="">Selecciona tu carrera</option>
+       <optgroup label="Ciencias de la salud">
+        <option>Medicina</option><option>Enfermería</option><option>Instrumentación Quirúrgica</option><option>Fisioterapia</option><option>Bacteriología</option><option>Odontología</option><option>Nutrición y Dietética</option><option>Psicología</option><option>Seguridad y Salud en el Trabajo</option>
+       </optgroup>
+       <optgroup label="Ingeniería y tecnología">
+        <option>Ingeniería Civil</option><option>Ingeniería de Sistemas</option><option>Ingeniería Industrial</option><option>Ingeniería Ambiental</option>
+       </optgroup>
+       <optgroup label="Sociales, jurídicas y administrativas">
+        <option>Derecho</option><option>Administración de Empresas</option><option>Contaduría Pública</option><option>Trabajo Social</option><option>Educación</option><option>Economía</option>
+       </optgroup>
+       <option>Otra disciplina</option>
+      </select>
+     </div>
+     <div class="field">
+      <label for="enfoque">Tema o idea de interés</label>
+      <input id="enfoque" placeholder="Ej. Vías, análisis estructural, seguridad del paciente...">
+     </div>
+     <div class="field">
+      <label for="tipo-estudio">Enfoque metodológico</label>
+      <select id="tipo-estudio">
+       <option>Revisión de literatura</option>
+       <option>Revisión sistemática</option>
+       <option>Estudio cuantitativo / correlacional</option>
+       <option>Estudio observacional / descriptivo</option>
+       <option>Estudio cualitativo</option>
+       <option>Estudio mixto</option>
+      </select>
+     </div>
+     <div class="field">
+      <label for="contexto">Población, lugar o periodo (opcional)</label>
+      <input id="contexto" placeholder="Ej. Colombia, 2024–2026">
+     </div>
+    </div>
+    <button class="btn wide" id="generar">Generar opciones de título y propuesta</button>
+    <div class="result" id="resultado">
+     <h3>Propuesta inicial</h3>
+     <div id="propuesta-contenido"></div>
+     <button class="btn wide" id="wa-tesis" style="margin-top:16px">Enviar propuesta por WhatsApp</button>
+     <p class="small">Los títulos son sugerencias iniciales que deben delimitarse con el alcance real del proyecto. Las referencias bibliográficas deben verificarse antes de incorporarlas al documento.</p>
+    </div>
+   </div>
+   <div id="trabajos" class="tabcontent">
+    <div class="field">
+     <label for="tipo-trabajo">¿Qué tipo de actividad académica necesitas?</label>
+     <select id="tipo-trabajo" required>
+      <option value="">Selecciona una actividad</option>
+      <optgroup label="Investigación y trabajos de grado">
+       <option>Anteproyecto o propuesta de investigación</option>
+       <option>Tesis o trabajo de grado</option>
+       <option>Proyecto de investigación</option>
+       <option>Artículo científico o académico</option>
+       <option>Revisión bibliográfica o narrativa</option>
+       <option>Revisión sistemática o de alcance</option>
+       <option>Estado del arte</option>
+       <option>Marco teórico, conceptual o metodológico</option>
+       <option>Planteamiento del problema, pregunta y objetivos</option>
+       <option>Diseño metodológico e instrumentos</option>
+       <option>Estudio de caso</option>
+       <option>Protocolo de investigación</option>
+      </optgroup>
+      <optgroup label="Actividades y trabajos universitarios">
+       <option>Taller o guía de aprendizaje</option>
+       <option>Trabajo individual o grupal</option>
+       <option>Ensayo argumentativo, crítico o reflexivo</option>
+       <option>Consulta o investigación temática</option>
+       <option>Análisis y resolución de casos</option>
+       <option>Foro académico o participación argumentada</option>
+       <option>Cuestionario o actividad de preguntas</option>
+       <option>Reseña crítica o reseña de lectura</option>
+       <option>Relatoría, reflexión o informe de lectura</option>
+       <option>Resumen, síntesis o abstract</option>
+       <option>Comentario de texto</option>
+       <option>Mapa de lectura o fichas bibliográficas</option>
+      </optgroup>
+      <optgroup label="Informes y documentos técnicos">
+       <option>Informe académico</option>
+       <option>Informe técnico</option>
+       <option>Informe de laboratorio</option>
+       <option>Informe de práctica o pasantía</option>
+       <option>Informe de gestión o resultados</option>
+       <option>Diagnóstico organizacional o situacional</option>
+       <option>Estudio de factibilidad</option>
+       <option>Propuesta o plan de mejoramiento</option>
+       <option>Documento de análisis</option>
+      </optgroup>
+      <optgroup label="Presentaciones y recursos visuales">
+       <option>Presentación o diapositivas</option>
+       <option>Preparación de exposición o sustentación</option>
+       <option>Mapa conceptual</option>
+       <option>Mapa mental</option>
+       <option>Infografía</option>
+       <option>Cuadro comparativo</option>
+       <option>Cuadro sinóptico</option>
+       <option>Línea de tiempo</option>
+       <option>Organizador gráfico o esquema</option>
+       <option>Póster o cartel académico</option>
+      </optgroup>
+      <optgroup label="Ciencias básicas, exactas y análisis de datos">
+       <option>Ejercicios de matemáticas, álgebra o cálculo</option>
+       <option>Problemas de física o química</option>
+       <option>Estadística y probabilidad</option>
+       <option>Bioestadística</option>
+       <option>Análisis e interpretación de datos</option>
+       <option>Procesamiento de encuestas</option>
+       <option>Tablas, gráficos y visualización de datos</option>
+       <option>Modelación o simulación</option>
+      </optgroup>
+      <optgroup label="Administración, economía y finanzas">
+       <option>Análisis financiero e indicadores</option>
+       <option>Estados financieros y diagnóstico</option>
+       <option>Presupuestos y proyecciones</option>
+       <option>Análisis de costos</option>
+       <option>Estudio de mercado</option>
+       <option>Plan de negocio o emprendimiento</option>
+       <option>Plan estratégico o de marketing</option>
+       <option>Diagnóstico empresarial</option>
+       <option>Evaluación económica o financiera</option>
+      </optgroup>
+      <optgroup label="Ingeniería y tecnología">
+       <option>Proyecto de ingeniería</option>
+       <option>Diseño o modelación técnica</option>
+       <option>Diagramas y planos</option>
+       <option>Análisis y mejora de procesos</option>
+       <option>Programación o desarrollo de software</option>
+       <option>Base de datos</option>
+       <option>Simulación técnica</option>
+       <option>Documentación de sistemas</option>
+       <option>Memoria o cálculo técnico</option>
+      </optgroup>
+      <optgroup label="Salud y ciencias sociales">
+       <option>Análisis de artículo científico</option>
+       <option>Revisión de evidencia científica</option>
+       <option>Estudio de caso en salud</option>
+       <option>Protocolo o ruta de atención</option>
+       <option>Proyecto de intervención</option>
+       <option>Caracterización o diagnóstico social</option>
+       <option>Análisis de políticas o programas</option>
+       <option>Informe de caso</option>
+      </optgroup>
+      <optgroup label="Educación y pedagogía">
+       <option>Planeación de clase</option>
+       <option>Secuencia o unidad didáctica</option>
+       <option>Módulo educativo</option>
+       <option>Guía docente o material de aprendizaje</option>
+       <option>Taller pedagógico</option>
+       <option>Rúbrica o instrumento de evaluación</option>
+       <option>Diseño curricular</option>
+       <option>Proyecto educativo</option>
+      </optgroup>
+      <optgroup label="Corrección, edición y normas">
+       <option>Corrección de estilo y ortografía</option>
+       <option>Revisión de estructura y coherencia</option>
+       <option>Aplicación de normas APA 7</option>
+       <option>Aplicación de normas IEEE, Vancouver o ICONTEC</option>
+       <option>Organización de citas y referencias</option>
+       <option>Revisión de tablas, figuras y anexos</option>
+       <option>Formato y presentación del documento</option>
+      </optgroup>
+      <optgroup label="Otras solicitudes">
+       <option>Actividad interdisciplinaria</option>
+       <option>Proyecto o actividad personalizada</option>
+       <option>Otra actividad académica (describir)</option>
+      </optgroup>
+     </select>
+     <p class="hint">Si no encuentras exactamente lo que necesitas, selecciona «Otra actividad académica» y descríbela.</p>
+    </div>
+    <div class="grid2">
+     <div class="field">
+      <label for="tema-trabajo">Asignatura, carrera o tema</label>
+      <input id="tema-trabajo" placeholder="Ej. Administración financiera, enfermería, cálculo...">
+     </div>
+     <div class="field">
+      <label for="nivel-trabajo">Nivel académico (opcional)</label>
+      <select id="nivel-trabajo">
+       <option value="">No especificado</option>
+       <option>Educación básica</option>
+       <option>Educación media</option>
+       <option>Técnico o tecnológico</option>
+       <option>Pregrado</option>
+       <option>Especialización</option>
+       <option>Maestría</option>
+       <option>Doctorado</option>
+       <option>Formación profesional o empresarial</option>
+      </select>
+     </div>
+    </div>
+    <div class="field" id="otro-trabajo-wrap" hidden>
+     <label for="otro-trabajo">Describe el tipo de actividad</label>
+     <input id="otro-trabajo" placeholder="Escribe qué necesitas que desarrollemos">
+    </div>
+    <div class="grid2">
+     <div class="field">
+      <label for="formato-trabajo">Formato de entrega (opcional)</label>
+      <select id="formato-trabajo">
+       <option value="">Por definir</option>
+       <option>Word</option>
+       <option>PDF</option>
+       <option>Excel</option>
+       <option>PowerPoint</option>
+       <option>Word y PDF</option>
+       <option>Excel y PDF</option>
+       <option>Presentación y documento de apoyo</option>
+       <option>Otro / por acordar</option>
+      </select>
+     </div>
+     <div class="field">
+      <label for="fecha-trabajo">Fecha y hora límite (opcional)</label>
+      <input id="fecha-trabajo" placeholder="Ej. viernes 28, 6:00 p. m.">
+     </div>
+    </div>
+    <div class="field">
+     <label for="detalle-trabajo">Instrucciones y características de la actividad</label>
+     <textarea id="detalle-trabajo" placeholder="Describe las instrucciones del docente, extensión, criterios de evaluación, normas de citación, fuentes obligatorias, productos esperados y cualquier otro requisito."></textarea>
+    </div>
+    <div class="field">
+     <label for="archivo-trabajo">Adjuntar guía o documentos de referencia (opcional)</label>
+     <input type="file" id="archivo-trabajo" multiple>
+     <p class="hint">Puedes seleccionar uno o varios archivos. Al abrir WhatsApp, tendrás que adjuntarlos manualmente al chat; la página no los transfiere automáticamente.</p>
+    </div>
+    <button class="btn wide" id="wa-trabajos">Enviar solicitud por WhatsApp</button>
+   </div>
+   <div id="ciencias" class="tabcontent">
+    <div class="grid2">
+     <div class="field">
+      <label for="materia-ciencias">Asignatura</label>
+      <select id="materia-ciencias">
+       <option>Cálculo diferencial</option>
+       <option>Cálculo integral</option>
+       <option>Cálculo multivariado</option>
+       <option>Ecuaciones diferenciales</option>
+       <option>Álgebra lineal</option>
+       <option>Estadística / Bioestadística</option>
+       <option>Física</option>
+       <option>Química general</option>
+      </select>
+     </div>
+     <div class="field">
+      <label for="tema-ciencias">Tema específico</label>
+      <input id="tema-ciencias" placeholder="Ej. integrales por partes, matrices, derivadas">
+     </div>
+    </div>
+    <div class="grid2">
+     <div class="field">
+      <label for="fecha-ciencias">Fecha de entrega</label>
+      <input id="fecha-ciencias" placeholder="Ej. viernes a las 6:00 p. m.">
+     </div>
+     <div class="field">
+      <label for="archivo-ciencias">Adjuntar taller (opcional)</label>
+      <input type="file" id="archivo-ciencias" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+     </div>
+    </div>
+    <p class="hint">Si adjuntas un archivo, recuerda enviarlo manualmente desde el chat de WhatsApp.</p>
+    <button class="btn wide" id="wa-ciencias">Enviar solicitud por WhatsApp</button>
+   </div>
+   <div id="tutorias" class="tabcontent">
+    <div class="grid2">
+     <div class="field">
+      <label for="materia-tutoria">Materia o área</label>
+      <select id="materia-tutoria">
+       <option>Cálculo diferencial</option>
+       <option>Cálculo integral</option>
+       <option>Cálculo multivariado</option>
+       <option>Ecuaciones diferenciales</option>
+       <option>Álgebra y trigonometría</option>
+       <option>Álgebra lineal</option>
+       <option>Metodología de la investigación</option>
+       <option>Bioestadística / análisis de datos</option>
+      </select>
+     </div>
+     <div class="field">
+      <label for="tema-tutoria">Tema específico</label>
+      <input id="tema-tutoria" placeholder="Ej. regla de la cadena, planteamiento del problema">
+     </div>
+     <div class="field">
+      <label for="horario-tutoria">Disponibilidad</label>
+      <input id="horario-tutoria" placeholder="Ej. tardes después de las 5:00 p. m.">
+     </div>
+     <div class="field">
+      <label for="modalidad-tutoria">Modalidad</label>
+      <select id="modalidad-tutoria">
+       <option>Virtual</option>
+       <option>Por definir</option>
+      </select>
+     </div>
+    </div>
+    <button class="btn wide" id="wa-tutorias">Solicitar tutoría por WhatsApp</button>
+   </div>
+  </div>
+ </div>
+</section>
+<section id="proyectos" class="projects">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="eyebrow">Experiencia y trabajos destacados</div>
+   <h2>Repositorio de proyectos</h2>
+   <p>Una selección de trabajos desarrollados, organizada por área y tipo de proyecto. Cada ficha puede enlazar a una descripción, imagen o documento autorizado.</p>
+  </div>
+  <div class="project-tools">
+   <input id="buscar-proyecto" placeholder="Buscar por título o tema">
+   <select id="filtro-proyecto">
+    <option value="">Todas las áreas</option>
+    <option>Ciencias de la salud</option>
+    <option>Ingeniería</option>
+    <option>Ciencias sociales</option>
+    <option>Administración y finanzas</option>
+    <option>Educación</option>
+    <option>Ciencias básicas</option>
+   </select>
+  </div>
+  <div class="project-grid" id="project-grid"></div>
+  <p class="small" style="text-align:center;margin-top:18px">Para publicar proyectos reales, incorpora sus datos en el arreglo PROYECTOS del código. Publica únicamente materiales propios o que tengas autorización para mostrar, y evita datos personales de estudiantes o instituciones.</p>
+ </div>
+</section>
+<section id="recursos">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="eyebrow">Aprendizaje y orientación</div>
+   <h2>Recursos audiovisuales</h2>
+   <p>Material de apoyo para fortalecer competencias de investigación y presentación académica.</p>
+  </div>
+  <div class="video-grid">
+   <article class="video-card">
+    <iframe src="https://youtube-nocookie.com" title="Etapas de una investigación científica" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div><h3>Etapas de la investigación</h3><p>Recurso introductorio sobre planificación, desarrollo, análisis e interpretación de una investigación.</p></div>
+   </article>
+   <article class="video-card">
+    <iframe src="https://youtube-nocookie.com" title="Citas y referencias según APA séptima edición" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div><h3>Normas APA, séptima edición</h3><p>Explicación de citas y referencias para la presentación de trabajos académicos.</p></div>
+   </article>
+  </div>
+ </div>
+</section>
+<section>
+ <div class="wrap">
+  <div class="section-head">
+   <div class="eyebrow">Preguntas frecuentes</div>
+   <h2>Resolvemos tus dudas</h2>
+  </div>
+  <div class="faq">
+   <details>
+    <summary>¿Pueden orientarme desde la elección del tema?</summary>
+    <p>Sí. Podemos ayudarte a delimitar el tema, formular la pregunta, establecer objetivos y definir una ruta metodológica viable.</p>
+   </details>
+   <details>
+    <summary>¿Trabajan con normas APA 7 y otros estilos?</summary>
+    <p>Se ofrece orientación para aplicar APA 7, Vancouver, IEEE e ICONTEC, de acuerdo con los lineamientos de cada institución.</p>
+   </details>
+   <details>
+    <summary>¿Cómo envío la guía o los archivos de mi actividad?</summary>
+    <p>Completa el formulario y abre el chat. Después adjunta manualmente el archivo en WhatsApp para que podamos revisarlo.</p>
+   </details>
+   <details>
+    <summary>¿Los autores y referencias que aparecen son definitivos?</summary>
+    <p>La herramienta consulta registros bibliográficos indexados con DOI. Los resultados son sugerencias de búsqueda: se debe comprobar pertinencia, datos editoriales y texto completo antes de citar.</p>
+   </details>
+  </div>
+ </div>
+</section>
+<footer id="contacto">
+ <div class="wrap">
+  <div class="footgrid">
+   <div>
+    <div class="brand">GRADUANDO<span>.</span></div>
+    <p>Asesoría académica, investigación y acompañamiento universitario.</p>
+   </div>
+   <div>
+    <h3>Explora</h3>
+    <a href="#servicios">Servicios</a>
+    <a href="#herramientas">Solicitar asesoría</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#recursos">Recursos</a>
+   </div>
+   <div>
+    <h3>Contacto</h3>
+    <a href="#" id="footer-wa">WhatsApp: +57 310 471 4499</a>
+    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+   </div>
+  </div>
+  <div class="copyright">© <span id="year"></span> GRADUANDO. Todos los derechos reservados.</div>
+ </div>
+</footer>
+<a class="floating-wa" id="floating-wa" href="#" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">☏ WhatsApp</a>
+<script>
+"use strict";
+const WHATSAPP_NUMBER = "573104714499";
+const WORKER_URL = "https://graduando-gemini.rocadevi996.workers.dev/";
+const PROYECTOS = [];
+
+function whatsappURL(message){
+ const url = new URL("https://wa.me" + WHATSAPP_NUMBER);
+ url.searchParams.set("text", message);
+ return url.toString();
+}
+function abrirWhatsApp(message){
+ const url = whatsappURL(message);
+ const win = window.open(url, "_blank", "noopener,noreferrer");
+ if(!win) window.location.href = url;
+}
+function valor(id, fallback="No especificado"){
+ const el=document.getElementById(id);
+ return el && el.value.trim() ? el.value.trim() : fallback;
+}
+function escapar(s){
+ return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+document.getElementById("floating-wa").href=whatsappURL("Hola GRADUANDO, quisiera recibir información sobre sus servicios académicos.");
+document.getElementById("footer-wa").href=whatsappURL("Hola GRADUANDO, quisiera recibir información sobre sus servicios académicos.");
+document.getElementById("year").textContent=new Date().getFullYear();
+
+document.querySelectorAll(".tab").forEach(btn=>btn.addEventListener("click",()=>{
+ document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active",t===btn));
+ document.querySelectorAll(".tabcontent").forEach(p=>p.classList.toggle("active",p.id===btn.dataset.tab));
+}));
+
+async function buscarReferentes(keywords){
+ const q=encodeURIComponent(keywords);
+ const url=`https://openalex.org{q}&per-page=6&sort=relevance_score:desc`;
+ const response=await fetch(url,{headers:{Accept:"application/json"}});
+ if(!response.ok) throw new Error("No fue posible consultar el repositorio bibliográfico");
+ const data=await response.json();
+ return (data.results||[]).filter(w=>w.title && w.authorships?.length).slice(0,5);
+}
+
+function referenciaAPA(work){
+ const autores=(work.authorships||[]).slice(0,3).map(a=>a.author?.display_name).filter(Boolean);
+ let autor=autores.length?autores.join(", "):"Autor no identificado";
+ if((work.authorships||[]).length>3) autor+=" et al.";
+ const anio=work.publication_year||"s. f.";
+ const titulo=work.title||"Título no disponible";
+ const revista=work.primary_location?.source?.display_name||work.host_venue?.display_name||"";
+ const doi=work.doi?` https://doi.org{work.doi.replace("https://doi.org","")}`:"";
+ return {autor,anio,titulo,revista,doi};
+}
+
+function renderTablaHTML(tabla){
+ if(!tabla || !tabla.columnas || !tabla.filas) return "";
+ const ths = tabla.columnas.map(c=>`<th>${escapar(c)}</th>`).join("");
+ const trs = tabla.filas.map(fila=>`<tr>${fila.map(celda=>`<td>${escapar(celda)}</td>`).join("")}</tr>`).join("");
+ return `
+  <div class="stat-box">
+   <h4>📊 ${escapar(tabla.titulo)}</h4>
+   <table class="stat-table">
+    <thead><tr>${ths}</tr></thead>
+    <tbody>${trs}</tbody>
+   </table>
+   <p class="small" style="margin-top:8px"><strong>Fuente institucional:</strong> ${escapar(tabla.fuente)}</p>
+  </div>`;
+}
+let propuestaActual = null;
+
+document.getElementById("generar").addEventListener("click", async () => {
+ const carrera = valor("carrera", "");
+ const tema = valor("enfoque", "");
+ const metodo = valor("tipo-estudio");
+ const contexto = valor("contexto", "");
+
+ if(!carrera || carrera === "No especificado"){
+  alert("Selecciona tu programa o carrera.");
+  return;
+ }
+ if(!tema || tema === "No especificado"){
+  alert("Escribe al menos una idea general o tema de interés (ej. Vías, Análisis estructural, Salud mental).");
+  return;
+ }
+
+ const btn = document.getElementById("generar");
+ btn.disabled = true;
+ btn.textContent = "Preparando tus opciones de investigación…";
+
+ const cont = document.getElementById("propuesta-contenido");
+ const resBox = document.getElementById("resultado");
+ document.getElementById("wa-tesis").style.display = "none";
+ resBox.style.display = "block";
+ cont.innerHTML = `<p class="small">⏳ Se están preparando tus opciones de investigación para <strong>${escapar(carrera)}</strong>…</p>`;
+ resBox.scrollIntoView({behavior:"smooth", block:"start"});
+
+ try {
+  const resp = await fetch(WORKER_URL, {
+   method: "POST",
+   headers: {"Content-Type": "application/json"},
+   body: JSON.stringify({ paso: "titulos", carrera, tema, metodo, contexto })
+  });
+  const data = await resp.json();
+  if(!resp.ok || !data.opciones) throw new Error(data.error || "No fue posible preparar las opciones en este momento.");
+
+  cont.innerHTML = `
+   <p><strong>Paso 1: Selecciona el enfoque de título que más te interese</strong> (haz clic sobre una opción para desplegar la pregunta, objetivo, estadísticas y referentes reales):</p>
+   <div class="title-options" id="lista-opciones-titulo">
+    ${data.opciones.map((op, i) => `
+     <div class="title-card" data-idx="${i}">
+      <span class="title-badge">${escapar(op.enfoque)}</span>
+      <div style="font-weight:800;color:var(--navy);font-size:1.02rem;margin-bottom:4px">${escapar(op.titulo)}</div>
+      <div class="small">${escapar(op.justificacion)}</div>
+     </div>
+    `).join("")}
+   </div>
+   <div id="desarrollo-completo"></div>
+  `;
+
+  document.querySelectorAll(".title-card").forEach(card => {
+   card.addEventListener("click", () => {
+    document.querySelectorAll(".title-card").forEach(c => c.classList.remove("selected"));
+    card.classList.add("selected");
+    const opcion = data.opciones.at(Number(card.dataset.idx));
+    desarrollarPropuestaCompleta(carrera, tema, metodo, contexto, opcion.titulo);
+   });
+  });
+
+ } catch (err) {
+  cont.innerHTML = `<p style="color:#b91c1c"><strong>Aviso:</strong> ${escapar(err.message)}</p>`;
+ } finally {
+  btn.disabled = false;
+  btn.textContent = "Generar nuevas opciones de título";
+ }
+});
+
+async function desarrollarPropuestaCompleta(carrera, tema, metodo, contexto, tituloElegido){
+ const devBox = document.getElementById("desarrollo-completo");
+ devBox.innerHTML = `<hr style="border:0;border-top:1px solid #cbd5e1;margin:20px 0"><p class="small">⏳ Estructurando pregunta de investigación, objetivo general, indicadores estadísticos y literatura científica…</p>`;
+
+ try {
+  const resp = await fetch(WORKER_URL, {
+   method: "POST",
+   headers: {"Content-Type": "application/json"},
+   body: JSON.stringify({ paso: "desarrollar", carrera, tema, metodo, contexto, tituloElegido })
+  });
+  const info = await resp.json();
+  if(!resp.ok) throw new Error(info.error || "No se pudo completar la estructura de la propuesta.");
+
+  propuestaActual = {
+   carrera, tema, metodo, contexto,
+   titulo: tituloElegido,
+   pregunta: info.pregunta,
+   objetivo: info.objetivoGeneral
+  };
+
+  const queryBusqueda = encodeURIComponent(`${tema} ${carrera}`);
+  const queryIngles = encodeURIComponent((info.palabrasClave || [tema]).join(" "));
+
+  devBox.innerHTML = `
+   <hr style="border:0;border-top:1px solid #cbd5e1;margin:20px 0">
+   <p><strong>Título seleccionado:</strong><br>${escapar(tituloElegido)}</p>
+   <p><strong>Pregunta de investigación:</strong><br>${escapar(info.pregunta)}</p>
+   <p><strong>Objetivo general:</strong><br>${escapar(info.objetivoGeneral)}</p>
+   <p><strong>Contexto de la problemática:</strong><br>${escapar(info.problematicaResumen)}</p>
+
+   ${renderTablaHTML(info.tablaMundial)}
+   ${renderTablaHTML(info.tablaNacional)}
+
+   <h3 style="margin-top:22px">Referentes académicos reales y bases de datos</h3>
+   <div class="repo-links">
+    <a href="https://google.com{queryBusqueda}" target="_blank" rel="noopener noreferrer">🔎 Buscar en Google Académico</a>
+    <a href="https://lens.org{queryIngles}" target="_blank" rel="noopener noreferrer">🔬 Buscar en Lens.org</a>
+    <a href="https://nih.gov{queryIngles}" target="_blank" rel="noopener noreferrer">🏥 Buscar en PubMed</a>
+    <a href="https://mendeley.com{queryIngles}" target="_blank" rel="noopener noreferrer">📚 Buscar en Mendeley</a>
+   </div>
+   <p id="estado-ref" class="small">Consultando publicaciones científicas verificadas…</p>
+   <ol class="refs" id="lista-ref"></ol>
+  `;
+
+  document.getElementById("wa-tesis").style.display = "inline-flex";
+
+  const works = await buscarReferentes((info.palabrasClave || [tema, carrera]).join(" "));
+  const lista = document.getElementById("lista-ref");
+  document.getElementById("estado-ref").textContent = works.length
+   ? "Artículos científicos reales indexados (incluye registros de PubMed, Crossref y repositorios con DOI):"
+   : "Usa los botones superiores para explorar resultados directos en Google Académico, Lens.org o PubMed.";
+
+  lista.innerHTML = works.map(w => {
+   const r = referenciaAPA(w);
+   return `<li><strong>${escapar(r.autor)}</strong> (${escapar(r.anio)}). ${escapar(r.titulo)}. <em>${escapar(r.revista)}</em> ${r.doi ? `<a href="${escapar(r.doi.trim())}" target="_blank" rel="noopener noreferrer">Ver artículo / DOI ↗</a>` : ""}</li>`;
+  }).join("");
+
+ } catch (err) {
+  devBox.innerHTML = `<p style="color:#b91c1c"><strong>Aviso:</strong> ${escapar(err.message)}</p>`;
+ }
+}
+document.getElementById("wa-tesis").addEventListener("click", () => {
+ if(!propuestaActual) return;
+ const p = propuestaActual;
+ abrirWhatsApp(`Hola GRADUANDO, quisiera recibir orientación para mi proyecto de investigación.\n\nCarrera: ${p.carrera}\nTítulo seleccionado: ${p.titulo}\nPregunta: ${p.pregunta}\nObjetivo general: ${p.objetivo}\nEnfoque: ${p.metodo}`);
+});
+
+const tipoTrabajo=document.getElementById("tipo-trabajo");
+const otroTrabajoWrap=document.getElementById("otro-trabajo-wrap");
+tipoTrabajo.addEventListener("change",()=>{
+ const personalizado=/Otra actividad académica|Proyecto o actividad personalizada|Actividad interdisciplinaria/.test(tipoTrabajo.value);
+ otroTrabajoWrap.hidden=!personalizado;
+});
+
+document.getElementById("wa-trabajos").addEventListener("click",()=>{
+ const tipo=valor("tipo-trabajo","");
+ if(!tipo){
+  alert("Selecciona el tipo de actividad académica. Si no aparece, elige «Otra actividad académica».");
+  tipoTrabajo.focus();
+  return;
+ }
+ if(/Otra actividad académica|Proyecto o actividad personalizada|Actividad interdisciplinaria/.test(tipo) && !valor("otro-trabajo","")){
+  alert("Describe brevemente la actividad personalizada que necesitas.");
+  document.getElementById("otro-trabajo").focus();
+  return;
+ }
+ const archivos=Array.from(document.getElementById("archivo-trabajo").files||[]).map(f=>f.name);
+ const detallePersonalizado=valor("otro-trabajo","");
+ const mensaje=`Hola GRADUANDO, deseo solicitar una cotización para una actividad académica.\n\nTipo de actividad: ${tipo}${detallePersonalizado?`\nDescripción de la actividad personalizada: ${detallePersonalizado}`:""}\nAsignatura, carrera o tema: ${valor("tema-trabajo")}\nNivel académico: ${valor("nivel-trabajo")}\nFormato de entrega: ${valor("formato-trabajo")}\nFecha y hora límite: ${valor("fecha-trabajo")}\nInstrucciones y requisitos: ${valor("detalle-trabajo")}\n\nArchivos seleccionados: ${archivos.length?archivos.join(", "):"Ninguno"}\n${archivos.length?"Adjuntaré manualmente los archivos seleccionados en este chat de WhatsApp.":""}`;
+ abrirWhatsApp(mensaje);
+});
+
+document.getElementById("wa-ciencias").addEventListener("click",()=>{
+ const filesList = document.getElementById("archivo-ciencias").files;
+ const file = (filesList && filesList.length > 0) ? filesList.item(0).name : "No adjuntado";
+ abrirWhatsApp(`Hola GRADUANDO, necesito orientación con un taller de ciencias básicas.\nAsignatura: ${valor("materia-ciencias")}\nTema: ${valor("tema-ciencias")}\nFecha de entrega: ${valor("fecha-ciencias")}\nArchivo seleccionado: ${file}\n(Adjuntaré el archivo manualmente en este chat.)`);
+});
+
+document.getElementById("wa-tutorias").addEventListener("click",()=>{
+ abrirWhatsApp(`Hola GRADUANDO, deseo solicitar una tutoría.\nMateria: ${valor("materia-tutoria")}\nTema: ${valor("tema-tutoria")}\nDisponibilidad: ${valor("horario-tutoria")}\nModalidad: ${valor("modalidad-tutoria")}`);
+});
+
+function renderProyectos(){
+ const grid=document.getElementById("project-grid");
+ const q=document.getElementById("buscar-proyecto").value.toLowerCase();
+ const area=document.getElementById("filtro-proyecto").value;
+ const items=PROYECTOS.filter(p=>(!area||p.area===area)&&(`${p.titulo} ${p.resumen} ${p.tipo} ${p.area}`).toLowerCase().includes(q));
+ if(!items.length){
+  grid.innerHTML=`<div class="empty"><strong>Estamos preparando este espacio.</strong><br>Pronto encontrarás aquí proyectos destacados de GRADUANDO, organizados por disciplina y tipo de trabajo.<br><span class="small">El repositorio se activará al incorporar los proyectos reales y sus respectivos permisos de publicación.</span></div>`;
+  return;
+ }
+ grid.innerHTML=items.map(p=>`<article class="project-card"><div class="project-thumb">📘</div><div class="project-body"><span class="tag">${escapar(p.area)} · ${escapar(p.tipo)}</span><h3>${escapar(p.titulo)}</h3><p>${escapar(p.resumen)}</p>${p.enlace?`<p style="margin-top:12px"><a href="${escapar(p.enlace)}" target="_blank" rel="noopener noreferrer">Ver proyecto ↗</a></p>`:""}</div></article>`).join("");
+}
+document.getElementById("buscar-proyecto").addEventListener("input",renderProyectos);
+document.getElementById("filtro-proyecto").addEventListener("change",renderProyectos);
+renderProyectos();
+</script>
+</body>
+</html>
