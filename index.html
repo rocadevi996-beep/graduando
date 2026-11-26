@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,9 +29,8 @@ nav{display:flex;align-items:center;justify-content:space-between;gap:20px;paddi
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
 .btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:13px 20px;border:0;border-radius:10px;background:var(--teal);color:white;text-decoration:none;font-weight:800;cursor:pointer;transition:.2s}
 .btn:hover{transform:translateY(-2px);filter:brightness(.96)}
-.btn:disabled{opacity:.65;cursor:not-allowed;transform:none}
 .btn-outline{background:transparent;border:1px solid #91a9bd;color:white}
-.hero-visual{min-height:360px;border-radius:26px;overflow:hidden;position:relative;background:linear-gradient(145deg,rgba(12,39,64,.08),rgba(12,39,64,.72)),url('https://unsplash.com') center/cover;box-shadow:0 25px 60px rgba(0,0,0,.25)}
+.hero-visual{min-height:360px;border-radius:26px;overflow:hidden;position:relative;background:linear-gradient(145deg,rgba(12,39,64,.08),rgba(12,39,64,.72)),url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1200&q=85') center/cover;box-shadow:0 25px 60px rgba(0,0,0,.25)}
 .visual-label{position:absolute;left:24px;right:24px;bottom:24px;padding:20px;border-radius:16px;background:rgba(10,34,56,.82);backdrop-filter:blur(8px)}
 .visual-label strong{display:block;font-size:1.2rem}
 .visual-label span{color:#d2e2ee;font-size:.92rem}
@@ -65,20 +65,6 @@ h2{font-size:clamp(1.8rem,3vw,2.55rem);line-height:1.18;color:var(--navy);margin
 .result{display:none;background:#f1f7fa;border:1px solid #d9e7ee;border-left:5px solid var(--teal);border-radius:12px;padding:22px;margin-top:22px}
 .result h3{margin:0 0 10px;color:var(--navy)}
 .result p{margin:8px 0}
-.title-options{display:grid;gap:12px;margin:14px 0}
-.title-card{background:#fff;border:2px solid #cbd5e1;border-radius:12px;padding:15px;cursor:pointer;transition:.2s;text-align:left}
-.title-card:hover{border-color:var(--teal);transform:translateY(-2px);box-shadow:0 8px 20px rgba(16,43,70,.08)}
-.title-card.selected{border-color:var(--navy);background:#eef6fa}
-.title-badge{display:inline-block;background:var(--navy);color:#fff;font-size:.75rem;font-weight:800;padding:3px 9px;border-radius:6px;text-transform:uppercase;margin-bottom:6px}
-.stat-box{background:#fff;border:1px solid #d9e7ee;border-radius:12px;padding:16px;margin-top:16px;overflow-x:auto}
-.stat-box h4{margin:0 0 8px;color:var(--navy);font-size:1rem}
-.stat-table{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:8px}
-.stat-table th{background:var(--navy);color:#fff;text-align:left;padding:9px 11px}
-.stat-table td{border-bottom:1px solid #e2e8f0;padding:9px 11px;color:var(--ink)}
-.stat-table tr:nth-child(even) td{background:#f8fafc}
-.repo-links{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 14px}
-.repo-links a{font-size:.82rem;font-weight:700;padding:6px 12px;border-radius:8px;background:#e2eef4;color:var(--navy);text-decoration:none}
-.repo-links a:hover{background:var(--teal);color:#fff}
 .refs{padding-left:20px}
 .refs li{margin:10px 0;overflow-wrap:anywhere}
 .small{font-size:.86rem;color:var(--muted)}
@@ -158,6 +144,7 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
   </div>
  </div>
 </header>
+
 <div class="trustbar">
  <div class="wrap trustgrid">
   <div><strong>Orientación personalizada</strong><span>Soluciones según tu disciplina y necesidad</span></div>
@@ -165,6 +152,7 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
   <div><strong>Acompañamiento virtual</strong><span>Atención en Colombia</span></div>
  </div>
 </div>
+
 <section id="servicios">
  <div class="wrap">
   <div class="section-head">
@@ -180,6 +168,7 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
   </div>
  </div>
 </section>
+
 <section id="herramientas" style="background:#fff">
  <div class="wrap">
   <div class="section-head">
@@ -194,6 +183,7 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
     <button class="tab" data-tab="ciencias">📐 Ciencias básicas</button>
     <button class="tab" data-tab="tutorias">💻 Tutorías</button>
    </div>
+
    <div id="tesis" class="tabcontent active">
     <div class="grid2">
      <div class="field">
@@ -213,8 +203,8 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
       </select>
      </div>
      <div class="field">
-      <label for="enfoque">Tema o idea de interés</label>
-      <input id="enfoque" placeholder="Ej. Vías, análisis estructural, seguridad del paciente...">
+      <label for="enfoque">Tema o problema de interés</label>
+      <input id="enfoque" placeholder="Ej. seguridad del paciente en cirugía robótica">
      </div>
      <div class="field">
       <label for="tipo-estudio">Enfoque metodológico</label>
@@ -229,17 +219,18 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
      </div>
      <div class="field">
       <label for="contexto">Población, lugar o periodo (opcional)</label>
-      <input id="contexto" placeholder="Ej. Colombia, 2024–2026">
+      <input id="contexto" placeholder="Ej. personal de enfermería, Colombia, 2024–2026">
      </div>
     </div>
-    <button class="btn wide" id="generar">Generar opciones de título y propuesta</button>
+    <button class="btn wide" id="generar">Generar propuesta temática y referentes</button>
     <div class="result" id="resultado">
      <h3>Propuesta inicial</h3>
      <div id="propuesta-contenido"></div>
      <button class="btn wide" id="wa-tesis" style="margin-top:16px">Enviar propuesta por WhatsApp</button>
-     <p class="small">Los títulos son sugerencias iniciales que deben delimitarse con el alcance real del proyecto. Las referencias bibliográficas deben verificarse antes de incorporarlas al documento.</p>
+     <p class="small">Los títulos son sugerencias iniciales que deben delimitarse con el alcance real del proyecto. Las referencias se consultan en OpenAlex y deben verificarse antes de incorporarlas al documento.</p>
     </div>
    </div>
+
    <div id="trabajos" class="tabcontent">
     <div class="field">
      <label for="tipo-trabajo">¿Qué tipo de actividad académica necesitas?</label>
@@ -365,6 +356,7 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
      </select>
      <p class="hint">Si no encuentras exactamente lo que necesitas, selecciona «Otra actividad académica» y descríbela.</p>
     </div>
+
     <div class="grid2">
      <div class="field">
       <label for="tema-trabajo">Asignatura, carrera o tema</label>
@@ -385,10 +377,12 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
       </select>
      </div>
     </div>
+
     <div class="field" id="otro-trabajo-wrap" hidden>
      <label for="otro-trabajo">Describe el tipo de actividad</label>
      <input id="otro-trabajo" placeholder="Escribe qué necesitas que desarrollemos">
     </div>
+
     <div class="grid2">
      <div class="field">
       <label for="formato-trabajo">Formato de entrega (opcional)</label>
@@ -409,10 +403,12 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
       <input id="fecha-trabajo" placeholder="Ej. viernes 28, 6:00 p. m.">
      </div>
     </div>
+
     <div class="field">
      <label for="detalle-trabajo">Instrucciones y características de la actividad</label>
      <textarea id="detalle-trabajo" placeholder="Describe las instrucciones del docente, extensión, criterios de evaluación, normas de citación, fuentes obligatorias, productos esperados y cualquier otro requisito."></textarea>
     </div>
+
     <div class="field">
      <label for="archivo-trabajo">Adjuntar guía o documentos de referencia (opcional)</label>
      <input type="file" id="archivo-trabajo" multiple>
@@ -420,6 +416,7 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
     </div>
     <button class="btn wide" id="wa-trabajos">Enviar solicitud por WhatsApp</button>
    </div>
+
    <div id="ciencias" class="tabcontent">
     <div class="grid2">
      <div class="field">
@@ -453,6 +450,7 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
     <p class="hint">Si adjuntas un archivo, recuerda enviarlo manualmente desde el chat de WhatsApp.</p>
     <button class="btn wide" id="wa-ciencias">Enviar solicitud por WhatsApp</button>
    </div>
+
    <div id="tutorias" class="tabcontent">
     <div class="grid2">
      <div class="field">
@@ -489,6 +487,7 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
   </div>
  </div>
 </section>
+
 <section id="proyectos" class="projects">
  <div class="wrap">
   <div class="section-head">
@@ -512,6 +511,7 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
   <p class="small" style="text-align:center;margin-top:18px">Para publicar proyectos reales, incorpora sus datos en el arreglo PROYECTOS del código. Publica únicamente materiales propios o que tengas autorización para mostrar, y evita datos personales de estudiantes o instituciones.</p>
  </div>
 </section>
+
 <section id="recursos">
  <div class="wrap">
   <div class="section-head">
@@ -521,16 +521,17 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
   </div>
   <div class="video-grid">
    <article class="video-card">
-    <iframe src="https://youtube-nocookie.com" title="Etapas de una investigación científica" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/qV6ba_AzSoY" title="Etapas de una investigación científica" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <div><h3>Etapas de la investigación</h3><p>Recurso introductorio sobre planificación, desarrollo, análisis e interpretación de una investigación.</p></div>
    </article>
    <article class="video-card">
-    <iframe src="https://youtube-nocookie.com" title="Citas y referencias según APA séptima edición" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe src="https://www.youtube-nocookie.com/embed/kk7ofvBURxg" title="Citas y referencias según APA séptima edición" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <div><h3>Normas APA, séptima edición</h3><p>Explicación de citas y referencias para la presentación de trabajos académicos.</p></div>
    </article>
   </div>
  </div>
 </section>
+
 <section>
  <div class="wrap">
   <div class="section-head">
@@ -552,11 +553,12 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
    </details>
    <details>
     <summary>¿Los autores y referencias que aparecen son definitivos?</summary>
-    <p>La herramienta consulta registros bibliográficos indexados con DOI. Los resultados son sugerencias de búsqueda: se debe comprobar pertinencia, datos editoriales y texto completo antes de citar.</p>
+    <p>La herramienta consulta registros bibliográficos de OpenAlex. Los resultados son sugerencias de búsqueda: se debe comprobar pertinencia, datos editoriales y texto completo antes de citar.</p>
    </details>
   </div>
  </div>
 </section>
+
 <footer id="contacto">
  <div class="wrap">
   <div class="footgrid">
@@ -574,35 +576,40 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
    <div>
     <h3>Contacto</h3>
     <a href="#" id="footer-wa">WhatsApp: +57 310 471 4499</a>
-    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
    </div>
   </div>
   <div class="copyright">© <span id="year"></span> GRADUANDO. Todos los derechos reservados.</div>
  </div>
 </footer>
+
 <a class="floating-wa" id="floating-wa" href="#" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">☏ WhatsApp</a>
+
 <script>
 "use strict";
+
 const WHATSAPP_NUMBER = "573104714499";
-const WORKER_URL = "https://graduando-gemini.rocadevi996.workers.dev/";
-const PROYECTOS = [];
+
+const PROYECTOS = [
+ // Agrega aquí proyectos reales. Ejemplo de estructura:
+ // {titulo:"Título del proyecto", area:"Ciencias de la salud", tipo:"Revisión de literatura", resumen:"Descripción breve.", enlace:"https://..."}
+];
 
 function whatsappURL(message){
- const url = new URL("https://wa.me" + WHATSAPP_NUMBER);
+ const url = new URL("https://wa.me/" + WHATSAPP_NUMBER);
  url.searchParams.set("text", message);
  return url.toString();
 }
+
 function abrirWhatsApp(message){
  const url = whatsappURL(message);
  const win = window.open(url, "_blank", "noopener,noreferrer");
  if(!win) window.location.href = url;
 }
+
 function valor(id, fallback="No especificado"){
  const el=document.getElementById(id);
  return el && el.value.trim() ? el.value.trim() : fallback;
-}
-function escapar(s){
- return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 }
 
 document.getElementById("floating-wa").href=whatsappURL("Hola GRADUANDO, quisiera recibir información sobre sus servicios académicos.");
@@ -614,11 +621,50 @@ document.querySelectorAll(".tab").forEach(btn=>btn.addEventListener("click",()=>
  document.querySelectorAll(".tabcontent").forEach(p=>p.classList.toggle("active",p.id===btn.dataset.tab));
 }));
 
-async function buscarReferentes(keywords){
- const q=encodeURIComponent(keywords);
- const url=`https://openalex.org{q}&per-page=6&sort=relevance_score:desc`;
+function familiaDisciplina(carrera){
+ const c=carrera.toLowerCase();
+ if(/medicina|enfermer|instrumentación|fisioterapia|bacteriología|odontología|nutrición|psicología|salud|farmacia/.test(c)) return "salud";
+ if(/ingeniería|sistemas|civil|industrial|ambiental/.test(c)) return "ingenieria";
+ if(/derecho|trabajo social|educación/.test(c)) return "social";
+ if(/administración|contaduría|economía/.test(c)) return "administracion";
+ return "general";
+}
+
+function construirTitulo(carrera,tema,metodo,contexto){
+ const fam=familiaDisciplina(carrera);
+ const lugar=contexto && contexto!=="No especificado" ? ` en ${contexto}` : "";
+ const sujeto = fam==="salud" ? `la atención y los resultados asociados con ${tema}` :
+ fam==="ingenieria" ? `el desempeño, diseño o gestión de soluciones relacionadas con ${tema}` :
+ fam==="administracion" ? `la gestión y los resultados organizacionales relacionados con ${tema}` :
+ fam==="social" ? `las prácticas, experiencias y dinámicas sociales vinculadas con ${tema}` :
+ `el análisis de ${tema}`;
+
+ if(metodo==="Revisión de literatura" || metodo==="Revisión sistemática") return `Evidencia científica sobre ${sujeto}: ${metodo.toLowerCase()}${lugar}`;
+ if(metodo==="Estudio cualitativo") return `Experiencias y perspectivas sobre ${sujeto}${lugar}: un estudio cualitativo`;
+ if(metodo==="Estudio cuantitativo / correlacional") return `Relación entre variables asociadas con ${tema}${lugar}: estudio cuantitativo correlacional`;
+ if(metodo==="Estudio observacional / descriptivo") return `Caracterización de ${tema}${lugar}: estudio observacional descriptivo`;
+ if(metodo==="Estudio mixto") return `Análisis integral de ${tema}${lugar} mediante un enfoque mixto`;
+ return `Análisis de ${sujeto}${lugar}`;
+}
+
+function construirPregunta(tema,metodo,contexto){
+ const poblacion=contexto && contexto!=="No especificado" ? ` en ${contexto}` : "";
+ if(metodo.includes("Revisión")) return `¿Qué evidencia científica se ha publicado sobre ${tema}${poblacion} y cuáles son sus principales hallazgos?`;
+ if(metodo.includes("cualitativo")) return `¿Cómo describen los participantes sus experiencias y perspectivas relacionadas con ${tema}${poblacion}?`;
+ if(metodo.includes("correlacional")) return `¿Qué relación existe entre las variables vinculadas con ${tema}${poblacion}?`;
+ if(metodo.includes("observacional")) return `¿Cuáles son las características y patrones observables relacionados con ${tema}${poblacion}?`;
+ return `¿Cómo puede comprenderse o analizarse ${tema}${poblacion} desde las dimensiones definidas para el estudio?`;
+}
+
+function escapar(s){
+ return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+
+async function buscarReferentes(tema,carrera){
+ const q=encodeURIComponent(`${tema} ${carrera}`);
+ const url=`https://api.openalex.org/works?search=${q}&per-page=6&sort=relevance_score:desc`;
  const response=await fetch(url,{headers:{Accept:"application/json"}});
- if(!response.ok) throw new Error("No fue posible consultar el repositorio bibliográfico");
+ if(!response.ok) throw new Error("No fue posible consultar OpenAlex");
  const data=await response.json();
  return (data.results||[]).filter(w=>w.title && w.authorships?.length).slice(0,5);
 }
@@ -630,161 +676,82 @@ function referenciaAPA(work){
  const anio=work.publication_year||"s. f.";
  const titulo=work.title||"Título no disponible";
  const revista=work.primary_location?.source?.display_name||work.host_venue?.display_name||"";
- const doi=work.doi?` https://doi.org{work.doi.replace("https://doi.org","")}`:"";
- return {autor,anio,titulo,revista,doi};
+ const doi=work.doi?` https://doi.org/${work.doi.replace("https://doi.org/","")}`:"";
+ return {autor,anio,titulo,revista,doi,apa:`${autor} (${anio}). ${titulo}.${revista?` ${revista}.`:""}${doi}`};
 }
 
-function renderTablaHTML(tabla){
- if(!tabla || !tabla.columnas || !tabla.filas) return "";
- const ths = tabla.columnas.map(c=>`<th>${escapar(c)}</th>`).join("");
- const trs = tabla.filas.map(fila=>`<tr>${fila.map(celda=>`<td>${escapar(celda)}</td>`).join("")}</tr>`).join("");
- return `
-  <div class="stat-box">
-   <h4>📊 ${escapar(tabla.titulo)}</h4>
-   <table class="stat-table">
-    <thead><tr>${ths}</tr></thead>
-    <tbody>${trs}</tbody>
-   </table>
-   <p class="small" style="margin-top:8px"><strong>Fuente institucional:</strong> ${escapar(tabla.fuente)}</p>
-  </div>`;
-}
-let propuestaActual = null;
+let propuestaActual=null;
 
-document.getElementById("generar").addEventListener("click", async () => {
- const carrera = valor("carrera", "");
- const tema = valor("enfoque", "");
- const metodo = valor("tipo-estudio");
- const contexto = valor("contexto", "");
+document.getElementById("generar").addEventListener("click",async()=>{
+ const carrera=valor("carrera","");
+ const tema=valor("enfoque","");
+ const metodo=valor("tipo-estudio");
+ const contexto=valor("contexto","");
 
- if(!carrera || carrera === "No especificado"){
+ if(!carrera || carrera==="No especificado"){
   alert("Selecciona tu programa o carrera.");
   return;
  }
- if(!tema || tema === "No especificado"){
-  alert("Escribe al menos una idea general o tema de interés (ej. Vías, Análisis estructural, Salud mental).");
+
+ if(!tema || tema==="No especificado"){
+  alert("Escribe el tema o problema de interés para generar una propuesta pertinente.");
   return;
  }
 
- const btn = document.getElementById("generar");
- btn.disabled = true;
- btn.textContent = "Preparando tus opciones de investigación…";
+ const btn=document.getElementById("generar");
+ btn.disabled=true;
+ btn.textContent="Construyendo propuesta y consultando literatura…";
 
- const cont = document.getElementById("propuesta-contenido");
- const resBox = document.getElementById("resultado");
- document.getElementById("wa-tesis").style.display = "none";
- resBox.style.display = "block";
- cont.innerHTML = `<p class="small">⏳ Se están preparando tus opciones de investigación para <strong>${escapar(carrera)}</strong>…</p>`;
- resBox.scrollIntoView({behavior:"smooth", block:"start"});
+ const titulo=construirTitulo(carrera,tema,metodo,contexto);
+ const pregunta=construirPregunta(tema,metodo,contexto);
 
- try {
-  const resp = await fetch(WORKER_URL, {
-   method: "POST",
-   headers: {"Content-Type": "application/json"},
-   body: JSON.stringify({ paso: "titulos", carrera, tema, metodo, contexto })
-  });
-  const data = await resp.json();
-  if(!resp.ok || !data.opciones) throw new Error(data.error || "No fue posible preparar las opciones en este momento.");
+ let objetivo="";
+ if(metodo.includes("Revisión")) objetivo=`Analizar y sintetizar la evidencia científica disponible sobre ${tema}, mediante criterios de búsqueda y selección definidos para la revisión.`;
+ else if(metodo.includes("cualitativo")) objetivo=`Comprender las experiencias, percepciones o prácticas de los participantes en relación con ${tema}.`;
+ else if(metodo.includes("correlacional")) objetivo=`Establecer la relación entre las variables definidas en torno a ${tema}, de acuerdo con el diseño y la población seleccionada.`;
+ else if(metodo.includes("observacional")) objetivo=`Describir las características y patrones relacionados con ${tema} en la población o unidad de análisis seleccionada.`;
+ else objetivo=`Analizar ${tema} integrando información cuantitativa y cualitativa, de acuerdo con los objetivos y alcance del estudio.`;
 
-  cont.innerHTML = `
-   <p><strong>Paso 1: Selecciona el enfoque de título que más te interese</strong> (haz clic sobre una opción para desplegar la pregunta, objetivo, estadísticas y referentes reales):</p>
-   <div class="title-options" id="lista-opciones-titulo">
-    ${data.opciones.map((op, i) => `
-     <div class="title-card" data-idx="${i}">
-      <span class="title-badge">${escapar(op.enfoque)}</span>
-      <div style="font-weight:800;color:var(--navy);font-size:1.02rem;margin-bottom:4px">${escapar(op.titulo)}</div>
-      <div class="small">${escapar(op.justificacion)}</div>
-     </div>
-    `).join("")}
-   </div>
-   <div id="desarrollo-completo"></div>
-  `;
+ propuestaActual={carrera,tema,metodo,contexto,titulo,pregunta,objetivo};
 
-  document.querySelectorAll(".title-card").forEach(card => {
-   card.addEventListener("click", () => {
-    document.querySelectorAll(".title-card").forEach(c => c.classList.remove("selected"));
-    card.classList.add("selected");
-    const opcion = data.opciones.at(Number(card.dataset.idx));
-    desarrollarPropuestaCompleta(carrera, tema, metodo, contexto, opcion.titulo);
-   });
-  });
+ const cont=document.getElementById("propuesta-contenido");
+ cont.innerHTML=`<p><strong>Título sugerido:</strong><br>${escapar(titulo)}</p><p><strong>Pregunta orientadora:</strong><br>${escapar(pregunta)}</p><p><strong>Objetivo general preliminar:</strong><br>${escapar(objetivo)}</p><p><strong>Área:</strong> ${escapar(carrera)} · <strong>Diseño:</strong> ${escapar(metodo)}</p><h3 style="margin-top:20px">Autores y literatura relacionada</h3><p id="estado-ref" class="small">Consultando publicaciones relacionadas con el tema…</p><ol class="refs" id="lista-ref"></ol>`;
 
- } catch (err) {
-  cont.innerHTML = `<p style="color:#b91c1c"><strong>Aviso:</strong> ${escapar(err.message)}</p>`;
- } finally {
-  btn.disabled = false;
-  btn.textContent = "Generar nuevas opciones de título";
- }
-});
+ document.getElementById("resultado").style.display="block";
+ document.getElementById("resultado").scrollIntoView({behavior:"smooth",block:"start"});
 
-async function desarrollarPropuestaCompleta(carrera, tema, metodo, contexto, tituloElegido){
- const devBox = document.getElementById("desarrollo-completo");
- devBox.innerHTML = `<hr style="border:0;border-top:1px solid #cbd5e1;margin:20px 0"><p class="small">⏳ Estructurando pregunta de investigación, objetivo general, indicadores estadísticos y literatura científica…</p>`;
+ try{
+  const works=await buscarReferentes(tema,carrera);
+  const lista=document.getElementById("lista-ref");
 
- try {
-  const resp = await fetch(WORKER_URL, {
-   method: "POST",
-   headers: {"Content-Type": "application/json"},
-   body: JSON.stringify({ paso: "desarrollar", carrera, tema, metodo, contexto, tituloElegido })
-  });
-  const info = await resp.json();
-  if(!resp.ok) throw new Error(info.error || "No se pudo completar la estructura de la propuesta.");
+  document.getElementById("estado-ref").textContent=works.length
+   ?"Publicaciones recuperadas de OpenAlex. Comprueba la pertinencia y los datos bibliográficos antes de citarlas."
+   :"No se encontraron publicaciones suficientemente relacionadas. Prueba con palabras clave más específicas o en inglés.";
 
-  propuestaActual = {
-   carrera, tema, metodo, contexto,
-   titulo: tituloElegido,
-   pregunta: info.pregunta,
-   objetivo: info.objetivoGeneral
-  };
-
-  const queryBusqueda = encodeURIComponent(`${tema} ${carrera}`);
-  const queryIngles = encodeURIComponent((info.palabrasClave || [tema]).join(" "));
-
-  devBox.innerHTML = `
-   <hr style="border:0;border-top:1px solid #cbd5e1;margin:20px 0">
-   <p><strong>Título seleccionado:</strong><br>${escapar(tituloElegido)}</p>
-   <p><strong>Pregunta de investigación:</strong><br>${escapar(info.pregunta)}</p>
-   <p><strong>Objetivo general:</strong><br>${escapar(info.objetivoGeneral)}</p>
-   <p><strong>Contexto de la problemática:</strong><br>${escapar(info.problematicaResumen)}</p>
-
-   ${renderTablaHTML(info.tablaMundial)}
-   ${renderTablaHTML(info.tablaNacional)}
-
-   <h3 style="margin-top:22px">Referentes académicos reales y bases de datos</h3>
-   <div class="repo-links">
-    <a href="https://google.com{queryBusqueda}" target="_blank" rel="noopener noreferrer">🔎 Buscar en Google Académico</a>
-    <a href="https://lens.org{queryIngles}" target="_blank" rel="noopener noreferrer">🔬 Buscar en Lens.org</a>
-    <a href="https://nih.gov{queryIngles}" target="_blank" rel="noopener noreferrer">🏥 Buscar en PubMed</a>
-    <a href="https://mendeley.com{queryIngles}" target="_blank" rel="noopener noreferrer">📚 Buscar en Mendeley</a>
-   </div>
-   <p id="estado-ref" class="small">Consultando publicaciones científicas verificadas…</p>
-   <ol class="refs" id="lista-ref"></ol>
-  `;
-
-  document.getElementById("wa-tesis").style.display = "inline-flex";
-
-  const works = await buscarReferentes((info.palabrasClave || [tema, carrera]).join(" "));
-  const lista = document.getElementById("lista-ref");
-  document.getElementById("estado-ref").textContent = works.length
-   ? "Artículos científicos reales indexados (incluye registros de PubMed, Crossref y repositorios con DOI):"
-   : "Usa los botones superiores para explorar resultados directos en Google Académico, Lens.org o PubMed.";
-
-  lista.innerHTML = works.map(w => {
-   const r = referenciaAPA(w);
-   return `<li><strong>${escapar(r.autor)}</strong> (${escapar(r.anio)}). ${escapar(r.titulo)}. <em>${escapar(r.revista)}</em> ${r.doi ? `<a href="${escapar(r.doi.trim())}" target="_blank" rel="noopener noreferrer">Ver artículo / DOI ↗</a>` : ""}</li>`;
+  lista.innerHTML=works.map(w=>{
+   const r=referenciaAPA(w);
+   return `<li><strong>${escapar(r.autor)}</strong> (${escapar(r.anio)}). ${escapar(r.titulo)}. ${escapar(r.revista)} ${r.doi?`<a href="${escapar(r.doi.trim())}" target="_blank" rel="noopener noreferrer">Consultar DOI</a>`:""}</li>`;
   }).join("");
 
- } catch (err) {
-  devBox.innerHTML = `<p style="color:#b91c1c"><strong>Aviso:</strong> ${escapar(err.message)}</p>`;
+  propuestaActual.referentes=works.map(referenciaAPA);
+ }catch(e){
+  document.getElementById("estado-ref").textContent="No fue posible consultar OpenAlex en este momento. La propuesta se generó, pero no se mostrarán autores ni referencias sin verificar.";
+  propuestaActual.referentes=[];
  }
-}
-document.getElementById("wa-tesis").addEventListener("click", () => {
- if(!propuestaActual) return;
- const p = propuestaActual;
- abrirWhatsApp(`Hola GRADUANDO, quisiera recibir orientación para mi proyecto de investigación.\n\nCarrera: ${p.carrera}\nTítulo seleccionado: ${p.titulo}\nPregunta: ${p.pregunta}\nObjetivo general: ${p.objetivo}\nEnfoque: ${p.metodo}`);
+
+ btn.disabled=false;
+ btn.textContent="Generar otra propuesta";
+});
+
+document.getElementById("wa-tesis").addEventListener("click",()=>{
+ if(!propuestaActual)return;
+ const p=propuestaActual;
+ abrirWhatsApp(`Hola GRADUANDO, quisiera recibir orientación para mi proyecto de investigación.\n\nCarrera: ${p.carrera}\nTema: ${p.tema}\nEnfoque: ${p.metodo}\nTítulo sugerido: ${p.titulo}\nPregunta: ${p.pregunta}\nObjetivo preliminar: ${p.objetivo}`);
 });
 
 const tipoTrabajo=document.getElementById("tipo-trabajo");
 const otroTrabajoWrap=document.getElementById("otro-trabajo-wrap");
+
 tipoTrabajo.addEventListener("change",()=>{
  const personalizado=/Otra actividad académica|Proyecto o actividad personalizada|Actividad interdisciplinaria/.test(tipoTrabajo.value);
  otroTrabajoWrap.hidden=!personalizado;
@@ -792,25 +759,29 @@ tipoTrabajo.addEventListener("change",()=>{
 
 document.getElementById("wa-trabajos").addEventListener("click",()=>{
  const tipo=valor("tipo-trabajo","");
+
  if(!tipo){
   alert("Selecciona el tipo de actividad académica. Si no aparece, elige «Otra actividad académica».");
   tipoTrabajo.focus();
   return;
  }
+
  if(/Otra actividad académica|Proyecto o actividad personalizada|Actividad interdisciplinaria/.test(tipo) && !valor("otro-trabajo","")){
   alert("Describe brevemente la actividad personalizada que necesitas.");
   document.getElementById("otro-trabajo").focus();
   return;
  }
+
  const archivos=Array.from(document.getElementById("archivo-trabajo").files||[]).map(f=>f.name);
  const detallePersonalizado=valor("otro-trabajo","");
+
  const mensaje=`Hola GRADUANDO, deseo solicitar una cotización para una actividad académica.\n\nTipo de actividad: ${tipo}${detallePersonalizado?`\nDescripción de la actividad personalizada: ${detallePersonalizado}`:""}\nAsignatura, carrera o tema: ${valor("tema-trabajo")}\nNivel académico: ${valor("nivel-trabajo")}\nFormato de entrega: ${valor("formato-trabajo")}\nFecha y hora límite: ${valor("fecha-trabajo")}\nInstrucciones y requisitos: ${valor("detalle-trabajo")}\n\nArchivos seleccionados: ${archivos.length?archivos.join(", "):"Ninguno"}\n${archivos.length?"Adjuntaré manualmente los archivos seleccionados en este chat de WhatsApp.":""}`;
+
  abrirWhatsApp(mensaje);
 });
 
 document.getElementById("wa-ciencias").addEventListener("click",()=>{
- const filesList = document.getElementById("archivo-ciencias").files;
- const file = (filesList && filesList.length > 0) ? filesList.item(0).name : "No adjuntado";
+ const file=document.getElementById("archivo-ciencias").files[0]?.name||"No adjuntado";
  abrirWhatsApp(`Hola GRADUANDO, necesito orientación con un taller de ciencias básicas.\nAsignatura: ${valor("materia-ciencias")}\nTema: ${valor("tema-ciencias")}\nFecha de entrega: ${valor("fecha-ciencias")}\nArchivo seleccionado: ${file}\n(Adjuntaré el archivo manualmente en este chat.)`);
 });
 
@@ -823,12 +794,15 @@ function renderProyectos(){
  const q=document.getElementById("buscar-proyecto").value.toLowerCase();
  const area=document.getElementById("filtro-proyecto").value;
  const items=PROYECTOS.filter(p=>(!area||p.area===area)&&(`${p.titulo} ${p.resumen} ${p.tipo} ${p.area}`).toLowerCase().includes(q));
+
  if(!items.length){
   grid.innerHTML=`<div class="empty"><strong>Estamos preparando este espacio.</strong><br>Pronto encontrarás aquí proyectos destacados de GRADUANDO, organizados por disciplina y tipo de trabajo.<br><span class="small">El repositorio se activará al incorporar los proyectos reales y sus respectivos permisos de publicación.</span></div>`;
   return;
  }
+
  grid.innerHTML=items.map(p=>`<article class="project-card"><div class="project-thumb">📘</div><div class="project-body"><span class="tag">${escapar(p.area)} · ${escapar(p.tipo)}</span><h3>${escapar(p.titulo)}</h3><p>${escapar(p.resumen)}</p>${p.enlace?`<p style="margin-top:12px"><a href="${escapar(p.enlace)}" target="_blank" rel="noopener noreferrer">Ver proyecto ↗</a></p>`:""}</div></article>`).join("");
 }
+
 document.getElementById("buscar-proyecto").addEventListener("input",renderProyectos);
 document.getElementById("filtro-proyecto").addEventListener("change",renderProyectos);
 renderProyectos();
