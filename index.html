@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -110,6 +109,37 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
  section{padding:52px 0}
  .floating-wa{right:12px;bottom:12px}
 }
+.generator-status{margin:14px 0;color:var(--blue);font-weight:700;min-height:1.4em}
+.generator-status.error{color:#b42318}
+.generator-status.success{color:#087e78}
+.titles-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:22px}
+.title-option{background:#fff;border:2px solid var(--line);border-radius:15px;padding:19px;text-align:left;cursor:pointer;transition:.2s;width:100%;color:var(--ink)}
+.title-option:hover{border-color:var(--teal);transform:translateY(-2px)}
+.title-option.selected{border-color:var(--teal);background:#effcf9;box-shadow:0 0 0 3px rgba(19,168,158,.12)}
+.title-option .option-number{display:inline-grid;place-items:center;width:31px;height:31px;border-radius:50%;background:var(--navy);color:#fff;font-weight:900;margin-bottom:10px}
+.title-option h3{font-size:1.02rem;line-height:1.4;color:var(--navy);margin:5px 0 10px}
+.title-option p{font-size:.9rem;color:var(--muted);margin:7px 0}
+.title-option .select-label{display:block;margin-top:13px;color:#087e78;font-weight:800;font-size:.84rem}
+.proposal-actions{margin-top:18px}
+.proposal-section{background:#fff;border:1px solid var(--line);border-radius:14px;padding:21px;margin:18px 0}
+.proposal-section h3{color:var(--navy);margin:0 0 12px}
+.proposal-section h4{color:var(--blue);margin:18px 0 7px}
+.proposal-section p{white-space:normal}
+.proposal-stat{border:1px solid var(--line);border-radius:10px;padding:12px;margin:10px 0;background:#fbfdff}
+.proposal-stat strong{color:var(--navy)}
+.proposal-stat a,.proposal-reference a{color:#087e78;overflow-wrap:anywhere}
+.stat-chart{margin:16px 0;padding:15px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.stat-chart h4{margin:0 0 12px;color:var(--navy)}
+.bar-row{display:grid;grid-template-columns:minmax(100px,1fr) 3fr auto;gap:10px;align-items:center;margin:9px 0;font-size:.88rem}
+.bar-track{height:13px;background:#e8eef3;border-radius:20px;overflow:hidden}
+.bar-fill{height:100%;background:var(--teal);border-radius:20px}
+.proposal-reference{padding:12px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.proposal-reference:last-child{border-bottom:0}
+.proposal-list{padding-left:22px}
+.proposal-list li{margin:8px 0}
+.proposal-meta{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.proposal-meta span{background:#edf5f8;border-radius:20px;padding:5px 10px;font-size:.82rem;color:var(--blue)}
+@media(max-width:800px){.titles-grid{grid-template-columns:1fr}.bar-row{grid-template-columns:1fr auto}.bar-track{grid-column:1/-1;grid-row:2}}
 </style>
 </head>
 <body>
@@ -184,54 +214,64 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
     <button class="tab" data-tab="tutorias">💻 Tutorías</button>
    </div>
 
-   <div id="tesis" class="tabcontent active">
-    <div class="grid2">
-     <div class="field">
+<div id="tesis" class="tabcontent active">
+  <div class="grid2">
+    <div class="field">
       <label for="carrera">Programa o carrera</label>
       <select id="carrera">
-       <option value="">Selecciona tu carrera</option>
-       <optgroup label="Ciencias de la salud">
-        <option>Medicina</option><option>Enfermería</option><option>Instrumentación Quirúrgica</option><option>Fisioterapia</option><option>Bacteriología</option><option>Odontología</option><option>Nutrición y Dietética</option><option>Psicología</option><option>Seguridad y Salud en el Trabajo</option>
-       </optgroup>
-       <optgroup label="Ingeniería y tecnología">
-        <option>Ingeniería Civil</option><option>Ingeniería de Sistemas</option><option>Ingeniería Industrial</option><option>Ingeniería Ambiental</option>
-       </optgroup>
-       <optgroup label="Sociales, jurídicas y administrativas">
-        <option>Derecho</option><option>Administración de Empresas</option><option>Contaduría Pública</option><option>Trabajo Social</option><option>Educación</option><option>Economía</option>
-       </optgroup>
-       <option>Otra disciplina</option>
+        <option value="">Selecciona tu carrera</option>
+        <optgroup label="Ciencias de la salud">
+          <option>Medicina</option><option>Enfermería</option><option>Instrumentación Quirúrgica</option><option>Fisioterapia</option><option>Bacteriología</option><option>Odontología</option><option>Nutrición y Dietética</option><option>Psicología</option><option>Seguridad y Salud en el Trabajo</option>
+        </optgroup>
+        <optgroup label="Ingeniería y tecnología">
+          <option>Ingeniería Civil</option><option>Ingeniería de Sistemas</option><option>Ingeniería Industrial</option><option>Ingeniería Ambiental</option>
+        </optgroup>
+        <optgroup label="Sociales, jurídicas y administrativas">
+          <option>Derecho</option><option>Administración de Empresas</option><option>Contaduría Pública</option><option>Trabajo Social</option><option>Educación</option><option>Economía</option>
+        </optgroup>
+        <option>Otra disciplina</option>
       </select>
-     </div>
-     <div class="field">
-      <label for="enfoque">Tema o problema de interés</label>
-      <input id="enfoque" placeholder="Ej. seguridad del paciente en cirugía robótica">
-     </div>
-     <div class="field">
-      <label for="tipo-estudio">Enfoque metodológico</label>
+    </div>
+    <div class="field">
+      <label for="enfoque">Tema o idea de interés</label>
+      <input id="enfoque" placeholder="Ej. vías, análisis estructural, seguridad del paciente, educación inclusiva...">
+      <p class="hint">Puedes escribir una idea breve, una palabra o una temática general.</p>
+    </div>
+    <div class="field">
+      <label for="tipo-estudio">Preferencia metodológica (opcional)</label>
       <select id="tipo-estudio">
-       <option>Revisión de literatura</option>
-       <option>Revisión sistemática</option>
-       <option>Estudio cuantitativo / correlacional</option>
-       <option>Estudio observacional / descriptivo</option>
-       <option>Estudio cualitativo</option>
-       <option>Estudio mixto</option>
+        <option value="">Que la herramienta recomiende la más pertinente</option>
+        <option>Revisión de literatura</option>
+        <option>Revisión sistemática</option>
+        <option>Estudio cuantitativo / correlacional</option>
+        <option>Estudio observacional / descriptivo</option>
+        <option>Estudio cualitativo</option>
+        <option>Estudio mixto</option>
       </select>
-     </div>
-     <div class="field">
+    </div>
+    <div class="field">
       <label for="contexto">Población, lugar o periodo (opcional)</label>
-      <input id="contexto" placeholder="Ej. personal de enfermería, Colombia, 2024–2026">
-     </div>
+      <input id="contexto" placeholder="Ej. estudiantes universitarios, Colombia, 2024–2026">
     </div>
-    <button class="btn wide" id="generar">Generar propuesta temática y referentes</button>
-    <div class="result" id="resultado">
-     <h3>Propuesta inicial</h3>
-     <div id="propuesta-contenido"></div>
-     <button class="btn wide" id="wa-tesis" style="margin-top:16px">Enviar propuesta por WhatsApp</button>
-     <p class="small">Los títulos son sugerencias iniciales que deben delimitarse con el alcance real del proyecto. Las referencias se consultan en OpenAlex y deben verificarse antes de incorporarlas al documento.</p>
-    </div>
-   </div>
+  </div>
 
-   <div id="trabajos" class="tabcontent">
+  <button class="btn wide" id="generar">Generar tres opciones de investigación</button>
+  <p id="estado-generador" class="generator-status" role="status" aria-live="polite"></p>
+
+  <div id="titulos-container" class="titles-grid" hidden></div>
+  <div id="propuesta-acciones" class="proposal-actions" hidden>
+    <button class="btn wide" id="desarrollar-propuesta">Desarrollar la propuesta del título seleccionado</button>
+  </div>
+  <p id="estado-propuesta" class="generator-status" role="status" aria-live="polite"></p>
+
+  <div class="result" id="resultado">
+    <div id="propuesta-contenido"></div>
+    <button class="btn wide" id="wa-tesis" style="margin-top:18px">Enviar esta propuesta por WhatsApp</button>
+    <p class="small">Las cifras y referencias deben comprobarse en las fuentes originales antes de incorporarlas a un documento académico. La herramienta no sustituye la revisión metodológica ni los requisitos de tu institución.</p>
+  </div>
+</div>
+
+<div id="trabajos" class="tabcontent">
     <div class="field">
      <label for="tipo-trabajo">¿Qué tipo de actividad académica necesitas?</label>
      <select id="tipo-trabajo" required>
@@ -553,7 +593,7 @@ footer{background:#0b2034;color:#d3dfeb;padding:48px 0 25px}
    </details>
    <details>
     <summary>¿Los autores y referencias que aparecen son definitivos?</summary>
-    <p>La herramienta consulta registros bibliográficos de OpenAlex. Los resultados son sugerencias de búsqueda: se debe comprobar pertinencia, datos editoriales y texto completo antes de citar.</p>
+    <p>La herramienta consulta publicaciones y fuentes disponibles mediante el servicio de investigación. Comprueba pertinencia, datos editoriales, cifras y texto completo en las fuentes originales antes de citar.</p>
    </details>
   </div>
  </div>
@@ -621,132 +661,346 @@ document.querySelectorAll(".tab").forEach(btn=>btn.addEventListener("click",()=>
  document.querySelectorAll(".tabcontent").forEach(p=>p.classList.toggle("active",p.id===btn.dataset.tab));
 }));
 
-function familiaDisciplina(carrera){
- const c=carrera.toLowerCase();
- if(/medicina|enfermer|instrumentación|fisioterapia|bacteriología|odontología|nutrición|psicología|salud|farmacia/.test(c)) return "salud";
- if(/ingeniería|sistemas|civil|industrial|ambiental/.test(c)) return "ingenieria";
- if(/derecho|trabajo social|educación/.test(c)) return "social";
- if(/administración|contaduría|economía/.test(c)) return "administracion";
- return "general";
-}
+const GEMINI_WORKER_URL = "https://graduando-gemini.rocadevi996.workers.dev/";
 
-function construirTitulo(carrera,tema,metodo,contexto){
- const fam=familiaDisciplina(carrera);
- const lugar=contexto && contexto!=="No especificado" ? ` en ${contexto}` : "";
- const sujeto = fam==="salud" ? `la atención y los resultados asociados con ${tema}` :
- fam==="ingenieria" ? `el desempeño, diseño o gestión de soluciones relacionadas con ${tema}` :
- fam==="administracion" ? `la gestión y los resultados organizacionales relacionados con ${tema}` :
- fam==="social" ? `las prácticas, experiencias y dinámicas sociales vinculadas con ${tema}` :
- `el análisis de ${tema}`;
-
- if(metodo==="Revisión de literatura" || metodo==="Revisión sistemática") return `Evidencia científica sobre ${sujeto}: ${metodo.toLowerCase()}${lugar}`;
- if(metodo==="Estudio cualitativo") return `Experiencias y perspectivas sobre ${sujeto}${lugar}: un estudio cualitativo`;
- if(metodo==="Estudio cuantitativo / correlacional") return `Relación entre variables asociadas con ${tema}${lugar}: estudio cuantitativo correlacional`;
- if(metodo==="Estudio observacional / descriptivo") return `Caracterización de ${tema}${lugar}: estudio observacional descriptivo`;
- if(metodo==="Estudio mixto") return `Análisis integral de ${tema}${lugar} mediante un enfoque mixto`;
- return `Análisis de ${sujeto}${lugar}`;
-}
-
-function construirPregunta(tema,metodo,contexto){
- const poblacion=contexto && contexto!=="No especificado" ? ` en ${contexto}` : "";
- if(metodo.includes("Revisión")) return `¿Qué evidencia científica se ha publicado sobre ${tema}${poblacion} y cuáles son sus principales hallazgos?`;
- if(metodo.includes("cualitativo")) return `¿Cómo describen los participantes sus experiencias y perspectivas relacionadas con ${tema}${poblacion}?`;
- if(metodo.includes("correlacional")) return `¿Qué relación existe entre las variables vinculadas con ${tema}${poblacion}?`;
- if(metodo.includes("observacional")) return `¿Cuáles son las características y patrones observables relacionados con ${tema}${poblacion}?`;
- return `¿Cómo puede comprenderse o analizarse ${tema}${poblacion} desde las dimensiones definidas para el estudio?`;
-}
+let titulosGenerados = [];
+let tituloSeleccionado = null;
+let propuestaActual = null;
 
 function escapar(s){
- return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  return String(s ?? "").replace(/[&<>"']/g, c => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[c]));
 }
 
-async function buscarReferentes(tema,carrera){
- const q=encodeURIComponent(`${tema} ${carrera}`);
- const url=`https://api.openalex.org/works?search=${q}&per-page=6&sort=relevance_score:desc`;
- const response=await fetch(url,{headers:{Accept:"application/json"}});
- if(!response.ok) throw new Error("No fue posible consultar OpenAlex");
- const data=await response.json();
- return (data.results||[]).filter(w=>w.title && w.authorships?.length).slice(0,5);
+function textoSeguro(valor, fallback="No especificado"){
+  if(valor === null || valor === undefined || valor === "") return fallback;
+  if(typeof valor === "object") return JSON.stringify(valor);
+  return String(valor);
 }
 
-function referenciaAPA(work){
- const autores=(work.authorships||[]).slice(0,3).map(a=>a.author?.display_name).filter(Boolean);
- let autor=autores.length?autores.join(", "):"Autor no identificado";
- if((work.authorships||[]).length>3) autor+=" et al.";
- const anio=work.publication_year||"s. f.";
- const titulo=work.title||"Título no disponible";
- const revista=work.primary_location?.source?.display_name||work.host_venue?.display_name||"";
- const doi=work.doi?` https://doi.org/${work.doi.replace("https://doi.org/","")}`:"";
- return {autor,anio,titulo,revista,doi,apa:`${autor} (${anio}). ${titulo}.${revista?` ${revista}.`:""}${doi}`};
+function urlSegura(url){
+  try{
+    const u = new URL(String(url || ""));
+    return ["https:","http:"].includes(u.protocol) ? u.href : "";
+  }catch{return "";}
 }
 
-let propuestaActual=null;
+async function llamarWorker(payload){
+  const response = await fetch(GEMINI_WORKER_URL, {
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify(payload)
+  });
 
-document.getElementById("generar").addEventListener("click",async()=>{
- const carrera=valor("carrera","");
- const tema=valor("enfoque","");
- const metodo=valor("tipo-estudio");
- const contexto=valor("contexto","");
+  let result;
+  try{ result = await response.json(); }
+  catch{ throw new Error("El Worker devolvió una respuesta que no se pudo leer."); }
 
- if(!carrera || carrera==="No especificado"){
-  alert("Selecciona tu programa o carrera.");
-  return;
- }
+  if(!response.ok || !result.ok){
+    throw new Error(result.error || `Error de conexión (${response.status}).`);
+  }
+  return result.data;
+}
 
- if(!tema || tema==="No especificado"){
-  alert("Escribe el tema o problema de interés para generar una propuesta pertinente.");
-  return;
- }
+function leerDatosFormulario(){
+  const carrera = document.getElementById("carrera").value.trim();
+  const enfoque = document.getElementById("enfoque").value.trim();
+  const metodologia = document.getElementById("tipo-estudio").value.trim();
+  const contexto = document.getElementById("contexto").value.trim();
 
- const btn=document.getElementById("generar");
- btn.disabled=true;
- btn.textContent="Construyendo propuesta y consultando literatura…";
+  if(!carrera){
+    throw new Error("Selecciona tu programa o carrera.");
+  }
+  if(!enfoque){
+    throw new Error("Escribe tu idea o temática de investigación.");
+  }
+  return {carrera,enfoque,metodologia,contexto};
+}
 
- const titulo=construirTitulo(carrera,tema,metodo,contexto);
- const pregunta=construirPregunta(tema,metodo,contexto);
+function mostrarEstado(id, mensaje, tipo=""){
+  const el = document.getElementById(id);
+  el.textContent = mensaje || "";
+  el.className = "generator-status" + (tipo ? " " + tipo : "");
+}
 
- let objetivo="";
- if(metodo.includes("Revisión")) objetivo=`Analizar y sintetizar la evidencia científica disponible sobre ${tema}, mediante criterios de búsqueda y selección definidos para la revisión.`;
- else if(metodo.includes("cualitativo")) objetivo=`Comprender las experiencias, percepciones o prácticas de los participantes en relación con ${tema}.`;
- else if(metodo.includes("correlacional")) objetivo=`Establecer la relación entre las variables definidas en torno a ${tema}, de acuerdo con el diseño y la población seleccionada.`;
- else if(metodo.includes("observacional")) objetivo=`Describir las características y patrones relacionados con ${tema} en la población o unidad de análisis seleccionada.`;
- else objetivo=`Analizar ${tema} integrando información cuantitativa y cualitativa, de acuerdo con los objetivos y alcance del estudio.`;
+function renderTitulos(data){
+  const lista = Array.isArray(data.titulos) ? data.titulos : [];
+  if(lista.length !== 3){
+    throw new Error("La herramienta no devolvió exactamente tres títulos. Intenta nuevamente.");
+  }
 
- propuestaActual={carrera,tema,metodo,contexto,titulo,pregunta,objetivo};
+  titulosGenerados = lista;
+  tituloSeleccionado = null;
 
- const cont=document.getElementById("propuesta-contenido");
- cont.innerHTML=`<p><strong>Título sugerido:</strong><br>${escapar(titulo)}</p><p><strong>Pregunta orientadora:</strong><br>${escapar(pregunta)}</p><p><strong>Objetivo general preliminar:</strong><br>${escapar(objetivo)}</p><p><strong>Área:</strong> ${escapar(carrera)} · <strong>Diseño:</strong> ${escapar(metodo)}</p><h3 style="margin-top:20px">Autores y literatura relacionada</h3><p id="estado-ref" class="small">Consultando publicaciones relacionadas con el tema…</p><ol class="refs" id="lista-ref"></ol>`;
+  const cont = document.getElementById("titulos-container");
+  cont.hidden = false;
+  cont.innerHTML = lista.map((item,index) => `
+    <button type="button" class="title-option" data-index="${index}" aria-pressed="false">
+      <span class="option-number">${index+1}</span>
+      <h3>${escapar(item.titulo)}</h3>
+      <p><strong>Enfoque:</strong> ${escapar(item.enfoque || "No especificado")}</p>
+      <p>${escapar(item.justificacion || "")}</p>
+      <span class="select-label">Seleccionar este título</span>
+    </button>
+  `).join("");
 
- document.getElementById("resultado").style.display="block";
- document.getElementById("resultado").scrollIntoView({behavior:"smooth",block:"start"});
+  cont.querySelectorAll(".title-option").forEach(btn => {
+    btn.addEventListener("click", () => {
+      cont.querySelectorAll(".title-option").forEach(card => {
+        card.classList.remove("selected");
+        card.setAttribute("aria-pressed","false");
+      });
+      btn.classList.add("selected");
+      btn.setAttribute("aria-pressed","true");
+      tituloSeleccionado = titulosGenerados[Number(btn.dataset.index)];
+      document.getElementById("propuesta-acciones").hidden = false;
+      mostrarEstado("estado-propuesta", "Título seleccionado. Ahora puedes desarrollar la propuesta completa.", "success");
+    });
+  });
 
- try{
-  const works=await buscarReferentes(tema,carrera);
-  const lista=document.getElementById("lista-ref");
+  const recomendacion = data.recomendacion
+    ? `<div class="proposal-section"><strong>Recomendación:</strong> ${escapar(data.recomendacion)}</div>`
+    : "";
+  cont.insertAdjacentHTML("beforeend", recomendacion);
+  document.getElementById("propuesta-acciones").hidden = true;
+  document.getElementById("resultado").style.display = "none";
+  document.getElementById("titulos-container").scrollIntoView({behavior:"smooth",block:"start"});
+}
 
-  document.getElementById("estado-ref").textContent=works.length
-   ?"Publicaciones recuperadas de OpenAlex. Comprueba la pertinencia y los datos bibliográficos antes de citarlas."
-   :"No se encontraron publicaciones suficientemente relacionadas. Prueba con palabras clave más específicas o en inglés.";
+function renderEstadisticas(datos, etiqueta){
+  if(!Array.isArray(datos) || !datos.length){
+    return `<p>No se proporcionaron estadísticas verificables para este ámbito.</p>`;
+  }
 
-  lista.innerHTML=works.map(w=>{
-   const r=referenciaAPA(w);
-   return `<li><strong>${escapar(r.autor)}</strong> (${escapar(r.anio)}). ${escapar(r.titulo)}. ${escapar(r.revista)} ${r.doi?`<a href="${escapar(r.doi.trim())}" target="_blank" rel="noopener noreferrer">Consultar DOI</a>`:""}</li>`;
+  return datos.map(d => {
+    const valor = d.valor === null || d.valor === undefined ? "No disponible" : textoSeguro(d.valor);
+    const url = urlSegura(d.url);
+    return `<div class="proposal-stat">
+      <strong>${escapar(d.indicador || "Indicador")}</strong>
+      <p><b>Valor:</b> ${escapar(valor)} ${escapar(d.unidad || "")}</p>
+      <p><b>Año:</b> ${escapar(d.anio || "No especificado")} · <b>Ámbito:</b> ${escapar(d.pais || etiqueta)}</p>
+      <p><b>Fuente:</b> ${escapar(d.fuente || "No especificada")}${url ? ` · <a href="${escapar(url)}" target="_blank" rel="noopener noreferrer">Consultar fuente</a>` : ""}</p>
+    </div>`;
   }).join("");
+}
 
-  propuestaActual.referentes=works.map(referenciaAPA);
- }catch(e){
-  document.getElementById("estado-ref").textContent="No fue posible consultar OpenAlex en este momento. La propuesta se generó, pero no se mostrarán autores ni referencias sin verificar.";
-  propuestaActual.referentes=[];
- }
+function renderGraficos(graficos){
+  if(!Array.isArray(graficos) || !graficos.length){
+    return `<p>No se generaron gráficos porque no se dispuso de una serie de datos suficiente y comparable.</p>`;
+  }
 
- btn.disabled=false;
- btn.textContent="Generar otra propuesta";
+  return graficos.map(g => {
+    const etiquetas = Array.isArray(g.etiquetas) ? g.etiquetas : [];
+    const valores = Array.isArray(g.valores) ? g.valores : [];
+    const nums = valores.map(v => Number(v));
+    const max = Math.max(1, ...nums.filter(Number.isFinite));
+    const filas = etiquetas.map((label,i) => {
+      const n = nums[i];
+      if(!Number.isFinite(n)) return "";
+      const width = Math.max(0, Math.min(100, n / max * 100));
+      return `<div class="bar-row">
+        <span>${escapar(label)}</span>
+        <div class="bar-track"><div class="bar-fill" style="width:${width}%"></div></div>
+        <strong>${escapar(valores[i])} ${escapar(g.unidad || "")}</strong>
+      </div>`;
+    }).join("");
+    const url = urlSegura(g.url);
+    return `<div class="stat-chart">
+      <h4>${escapar(g.titulo || "Gráfico de datos")}</h4>
+      ${filas || "<p>No hay valores numéricos utilizables para este gráfico.</p>"}
+      <p class="small">Fuente: ${escapar(g.fuente || "No especificada")}${url ? ` · <a href="${escapar(url)}" target="_blank" rel="noopener noreferrer">Consultar</a>` : ""}</p>
+    </div>`;
+  }).join("");
+}
+
+function renderObjetivos(objetivos){
+  const arr = Array.isArray(objetivos) ? objetivos : [];
+  if(!arr.length) return "<p>No se proporcionaron objetivos específicos.</p>";
+  return `<ol class="proposal-list">${arr.map(x => `<li>${escapar(x)}</li>`).join("")}</ol>`;
+}
+
+function renderReferencias(referencias){
+  if(!Array.isArray(referencias) || !referencias.length){
+    return "<p>No se recuperaron referentes bibliográficos suficientes. Realiza una búsqueda complementaria en bases de datos académicas.</p>";
+  }
+
+  return referencias.map(r => {
+    const autores = escapar(r.autores || "Autor no identificado");
+    const anio = escapar(r.anio || "s. f.");
+    const titulo = escapar(r.titulo || "Título no disponible");
+    const revista = escapar(r.revista || "");
+    const doiRaw = String(r.doi || "");
+    const url = urlSegura(r.url) || urlSegura(doiRaw);
+    return `<div class="proposal-reference">
+      <p><strong>${autores} (${anio}).</strong> ${titulo}. ${revista}</p>
+      ${r.aporte ? `<p>${escapar(r.aporte)}</p>` : ""}
+      ${url ? `<a href="${escapar(url)}" target="_blank" rel="noopener noreferrer">Consultar publicación ↗</a>` : ""}
+    </div>`;
+  }).join("");
+}
+
+function renderMetodologia(m){
+  const campos = [
+    ["Enfoque",m.enfoque],["Tipo de investigación",m.tipo],["Diseño",m.diseno],
+    ["Alcance",m.alcance],["Población",m.poblacion],["Muestra",m.muestra],
+    ["Criterios de inclusión",m.criterios_inclusion],["Criterios de exclusión",m.criterios_exclusion],
+    ["Variables o categorías",m.variables_categorias],["Técnicas e instrumentos",m.tecnicas_instrumentos],
+    ["Procedimiento",m.procedimiento],["Plan de análisis",m.plan_analisis],
+    ["Consideraciones éticas",m.consideraciones_eticas]
+  ];
+  return campos.map(([label,value]) =>
+    `<p><strong>${label}:</strong> ${escapar(value || "Pendiente de definir con la información del proyecto.")}</p>`
+  ).join("");
+}
+
+function renderPropuesta(data){
+  const p = data.pertinencia || {};
+  const internacional = p.internacional || {};
+  const colombia = p.colombia || {};
+  const metodologia = data.metodologia || {};
+
+  const contenido = document.getElementById("propuesta-contenido");
+  contenido.innerHTML = `
+    <h2 style="margin-top:0">${escapar(data.titulo || tituloSeleccionado?.titulo || "Propuesta de investigación")}</h2>
+    <div class="proposal-meta">
+      <span>${escapar(document.getElementById("carrera").value)}</span>
+      <span>Propuesta preliminar</span>
+    </div>
+
+    <div class="proposal-section">
+      <h3>1. Pertinencia internacional</h3>
+      <p>${escapar(internacional.analisis || "No se proporcionó análisis internacional.")}</p>
+      <h4>Estadísticas internacionales</h4>
+      ${renderEstadisticas(internacional.estadisticas,"Internacional")}
+    </div>
+
+    <div class="proposal-section">
+      <h3>2. Pertinencia en Colombia</h3>
+      <p>${escapar(colombia.analisis || "No se proporcionó análisis nacional.")}</p>
+      <h4>Estadísticas nacionales</h4>
+      ${renderEstadisticas(colombia.estadisticas,"Colombia")}
+    </div>
+
+    <div class="proposal-section">
+      <h3>3. Visualización de datos</h3>
+      ${renderGraficos(data.graficos)}
+    </div>
+
+    <div class="proposal-section">
+      <h3>4. Pregunta de investigación</h3>
+      <p>${escapar(data.pregunta_investigacion || "Pendiente de formular.")}</p>
+    </div>
+
+    <div class="proposal-section">
+      <h3>5. Objetivo general</h3>
+      <p>${escapar(data.objetivo_general || "Pendiente de formular.")}</p>
+      <h4>Objetivos específicos</h4>
+      ${renderObjetivos(data.objetivos_especificos)}
+    </div>
+
+    <div class="proposal-section">
+      <h3>6. Metodología sugerida</h3>
+      ${renderMetodologia(metodologia)}
+    </div>
+
+    <div class="proposal-section">
+      <h3>7. Referentes científicos</h3>
+      ${renderReferencias(data.referentes)}
+    </div>
+
+    ${data.limitaciones_datos ? `<div class="proposal-section"><h3>8. Limitaciones de la información</h3><p>${escapar(data.limitaciones_datos)}</p></div>` : ""}
+  `;
+
+  document.getElementById("resultado").style.display = "block";
+  document.getElementById("resultado").scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+document.getElementById("generar").addEventListener("click", async () => {
+  const btn = document.getElementById("generar");
+  try{
+    const datos = leerDatosFormulario();
+    btn.disabled = true;
+    btn.textContent = "Procesando idea y generando posibles títulos...";
+    mostrarEstado("estado-generador","La herramienta está analizando tu temática. Puede tardar unos segundos.");
+    document.getElementById("titulos-container").hidden = true;
+    document.getElementById("propuesta-acciones").hidden = true;
+    document.getElementById("resultado").style.display = "none";
+    tituloSeleccionado = null;
+    propuestaActual = null;
+
+    const respuesta = await llamarWorker({
+      action:"titulos",
+      carrera:datos.carrera,
+      enfoque:datos.enfoque,
+      contexto:datos.contexto,
+      metodologia:datos.metodologia
+    });
+
+    renderTitulos(respuesta);
+    mostrarEstado("estado-generador","Selecciona el título que mejor se ajuste a tu interés.","success");
+  }catch(error){
+    mostrarEstado("estado-generador",error.message,"error");
+  }finally{
+    btn.disabled = false;
+    btn.textContent = "Generar tres opciones de investigación";
+  }
 });
 
-document.getElementById("wa-tesis").addEventListener("click",()=>{
- if(!propuestaActual)return;
- const p=propuestaActual;
- abrirWhatsApp(`Hola GRADUANDO, quisiera recibir orientación para mi proyecto de investigación.\n\nCarrera: ${p.carrera}\nTema: ${p.tema}\nEnfoque: ${p.metodo}\nTítulo sugerido: ${p.titulo}\nPregunta: ${p.pregunta}\nObjetivo preliminar: ${p.objetivo}`);
+document.getElementById("desarrollar-propuesta").addEventListener("click", async () => {
+  const btn = document.getElementById("desarrollar-propuesta");
+  try{
+    if(!tituloSeleccionado) throw new Error("Primero selecciona uno de los tres títulos.");
+
+    const datos = leerDatosFormulario();
+    btn.disabled = true;
+    btn.textContent = "Desarrollando la propuesta completa...";
+    mostrarEstado("estado-propuesta","Consultando información y organizando los componentes de investigación.");
+    document.getElementById("resultado").style.display = "none";
+
+    const respuesta = await llamarWorker({
+      action:"propuesta",
+      carrera:datos.carrera,
+      enfoque:datos.enfoque,
+      titulo:tituloSeleccionado.titulo,
+      contexto:datos.contexto,
+      metodologia:datos.metodologia
+    });
+
+    propuestaActual = {
+      carrera:datos.carrera,
+      enfoque:datos.enfoque,
+      contexto:datos.contexto,
+      metodologia:datos.metodologia,
+      titulo:tituloSeleccionado.titulo,
+      propuesta:respuesta
+    };
+
+    renderPropuesta(respuesta);
+    mostrarEstado("estado-propuesta","La propuesta está lista. Revisa las fuentes y los datos antes de utilizarlos.","success");
+  }catch(error){
+    mostrarEstado("estado-propuesta",error.message,"error");
+  }finally{
+    btn.disabled = false;
+    btn.textContent = "Desarrollar la propuesta del título seleccionado";
+  }
+});
+
+document.getElementById("wa-tesis").addEventListener("click", () => {
+  if(!propuestaActual) return;
+  const p = propuestaActual;
+  const d = p.propuesta || {};
+  const mensaje = `Hola GRADUANDO, quisiera recibir orientación para mi proyecto de investigación.
+
+Carrera: ${p.carrera}
+Tema de interés: ${p.enfoque}
+Título seleccionado: ${p.titulo}
+Pregunta: ${d.pregunta_investigacion || "No disponible"}
+Objetivo general: ${d.objetivo_general || "No disponible"}
+Metodología: ${d.metodologia?.enfoque || "Por definir"}
+
+Deseo recibir información sobre el acompañamiento para desarrollar este proyecto.`;
+  abrirWhatsApp(mensaje);
 });
 
 const tipoTrabajo=document.getElementById("tipo-trabajo");
